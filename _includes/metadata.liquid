@@ -34,6 +34,8 @@
     {% else %}
       {{ page.title }} | {{ title }}
     {% endif %}
+  {% elsif page.url == '/' and page.title and page.title != 'blank' and page.title != '' %}
+    {{ page.title }}
   {% else %}
     {{ title }}
   {% endif %}

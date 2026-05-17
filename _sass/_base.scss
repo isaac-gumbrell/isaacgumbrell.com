@@ -190,6 +190,90 @@ ul.task-list input[type="checkbox"] {
   color: var(--global-theme-color);
 }
 
+// Hero layout (homepage)
+
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  margin-bottom: 2rem;
+
+  .hero-text {
+    flex: 1;
+    min-width: 0;
+
+    .post-title {
+      margin-bottom: 0.2rem;
+    }
+
+    .hero-tagline {
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--global-theme-color);
+      margin-bottom: 0.6rem;
+    }
+
+    .desc {
+      margin-bottom: 0.75rem;
+    }
+  }
+
+  .hero-portrait {
+    flex: 0 0 200px;
+    width: 200px;
+
+    figure,
+    img {
+      width: 100%;
+      margin: 0;
+    }
+  }
+
+  @media (max-width: 575px) {
+    flex-direction: column-reverse;
+    text-align: center;
+
+    .hero-portrait {
+      flex: none;
+      width: 55%;
+      margin: 0 auto;
+    }
+
+    .hero-actions {
+      justify-content: center;
+    }
+  }
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.hero-social {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 1.35rem;
+
+  a {
+    line-height: 1;
+
+    i::before {
+      color: var(--global-text-color);
+      transition: color 0.2s ease-in-out;
+    }
+
+    &:hover i::before {
+      color: var(--global-theme-color);
+    }
+  }
+}
+
 // Profile
 
 .profile {
@@ -690,9 +774,6 @@ footer.sticky-bottom {
 
     li {
       margin-bottom: 1rem;
-
-      .preview {
-      }
 
       .abbr {
         margin-bottom: 0.5rem;

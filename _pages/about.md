@@ -1,8 +1,9 @@
 ---
 layout: about
-title: about...
+title: Isaac Gumbrell | Energy Economist
 permalink: /
-subtitle: I’m Isaac, an Energy Economist from Auckland, New Zealand. I work with energy industry professionals to navigate and thrive in an ever-changing landscape.
+tagline: Energy Market Modelling Specialist
+subtitle: I work with energy industry professionals to navigate and thrive in an ever-changing landscape.
 
 profile:
   align: right
