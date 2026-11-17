@@ -293,7 +293,7 @@ article p,
   margin: 0;
   justify-self: end;
   width: 100%;
-  max-width: 17rem;
+  max-width: 13.6rem; /* 80% of the original 17rem */
   border: 1px solid var(--ink);
   padding: 6px;
   figure,
@@ -325,10 +325,6 @@ article p,
     max-width: 62ch;
     margin: 0;
   }
-}
-.section-more {
-  margin-top: 1rem;
-  font-family: $font-quant;
 }
 
 /* Merit-order chart */
@@ -458,11 +454,6 @@ article p,
   width: 0;
   height: 0;
   overflow: hidden;
-}
-.mo-explain {
-  color: var(--ink-2);
-  max-width: 56ch;
-  margin-bottom: 0.9rem;
 }
 .mo-rows {
   display: none;
@@ -710,7 +701,7 @@ article p,
   .hero-portrait {
     order: -1;
     justify-self: start;
-    width: 9rem;
+    width: 7.2rem;
   }
   .home-section {
     margin-top: 3.75rem;

@@ -137,23 +137,6 @@ projects:
       - label: Scope of Works
         url: https://www.wa.gov.au/system/files/2024-03/evolution_of_the_pilbara_network_rules-scope_of_works.pdf
 
-  - id: competition-benefits
-    title: "Quantifying competition benefits of transmission investment: methodology selection"
-    short: Competition benefits
-    client: Transpower New Zealand
-    client_short: Transpower
-    chart_label: ["Competition", "benefits"]
-    firm: dae
-    start: 2025
-    end: 2025
-    years: "2025"
-    role: Modelling design, report drafting
-    modelling: true
-    qualitative: true
-    links:
-      - label: Methodology selection report
-        url: https://static.transpower.co.nz/public/uncontrolled_docs/Quantifying%20competition%20benefits%20of%20transmission%20investment.%20Methodology%20selection.pdf?VersionId=QMzicFkq.erXOjNoSj5u9fXucOpHh59D
-
   - id: future-grid-cba
     title: Future Grid Cost Benefit Assessment methodology (Te Kanapu Future Grid Blueprint)
     short: Future Grid CBA
@@ -162,14 +145,31 @@ projects:
     chart_label: ["Future Grid", "CBA"]
     firm: dae
     start: 2025
-    end: 2026
-    years: "2025 – 2026"
+    end: 2025
+    years: "2025"
     role: Methodology design, report drafting
     modelling: false
     qualitative: true
     links:
       - label: CBA methodology
         url: https://static.transpower.co.nz/public/2026-08/Transpower%20Future%20Grid%20CBA%20Tool%20-%20Methodology.pdf?VersionId=Umtz.yyh7RtxFyNjvbMi19E1HbiXIIop
+
+  - id: competition-benefits
+    title: "Quantifying competition benefits of transmission investment: methodology selection"
+    short: Competition benefits
+    client: Transpower New Zealand
+    client_short: Transpower
+    chart_label: ["Competition", "benefits"]
+    firm: dae
+    start: 2025
+    end: 2026
+    years: "2025 – 2026"
+    role: Modelling design, report drafting
+    modelling: true
+    qualitative: true
+    links:
+      - label: Methodology selection report
+        url: https://static.transpower.co.nz/public/uncontrolled_docs/Quantifying%20competition%20benefits%20of%20transmission%20investment.%20Methodology%20selection.pdf?VersionId=QMzicFkq.erXOjNoSj5u9fXucOpHh59D
 
 writing:
   - title: "Streamline Your Modelling Workflow: Small Efforts Now, Big Productivity Gains Later"
