@@ -1,0 +1,203 @@
+{%- comment -%}
+  Isaac's projects drawn as a merit order (supply stack).
+  Steps stack in date order; step width = years on the project.
+  Fill encodes the role recorded in _data/work.yml:
+    solid = modelling only, solid + hatch = modelling and qualitative, hatch only = qualitative only.
+  The final dashed step is the next piece of work; the falling demand curve (new questions) clears there.
+  Wide screens get the SVG chart; narrow screens get the same stack turned on its side (.mo-rows).
+{%- endcomment -%}
+{%- assign projects = site.data.work.projects -%}
+{%- assign plot_left = 24 -%}
+{%- assign plot_right = 1184 -%}
+{%- assign base_y = 250 -%}
+{%- assign step_rise = 24 -%}
+{%- assign first_height = 30 -%}
+{%- assign units = 2 -%}
+{%- for p in projects -%}
+  {%- assign span = p.end | minus: p.start | plus: 1 -%}
+  {%- assign units = units | plus: span -%}
+{%- endfor -%}
+{%- assign plot_w = plot_right | minus: plot_left -%}
+{%- assign unit_w = plot_w | times: 1.0 | divided_by: units -%}
+{%- assign latest = projects | last -%}
+{%- assign visitor_h = projects | size | times: step_rise | plus: first_height -%}
+
+{% include mo_defs.liquid %}
+<figure class="mo" data-merit-order>
+  <svg class="mo-chart" viewBox="0 -34 1200 334" role="group" aria-labelledby="mo-title mo-desc">
+    <title id="mo-title">My work as a merit order</title>
+    <desc id="mo-desc">
+      {{ projects | size }} projects stacked in date order, step width equal to years on the project. Solid steps are modelling,
+      hatched steps are qualitative work such as research and report drafting. The last, empty step is your project, where the
+      demand curve of new questions clears.
+    </desc>
+
+    <g class="mo-grid" aria-hidden="true">
+      {%- for i in (1..4) -%}
+        {%- assign gy = i | times: 50 -%}
+        {%- assign gy = base_y | minus: gy -%}
+        <line x1="{{ plot_left }}" x2="{{ plot_right }}" y1="{{ gy }}" y2="{{ gy }}" />
+      {%- endfor -%}
+    </g>
+
+    {%- assign x = plot_left -%}
+    {%- for p in projects -%}
+      {%- assign span = p.end | minus: p.start | plus: 1 -%}
+      {%- assign w = unit_w | times: span -%}
+      {%- assign idx = forloop.index0 -%}
+      {%- assign h = idx | times: step_rise | plus: first_height -%}
+      {%- assign y = base_y | minus: h -%}
+      {%- assign cx = w | divided_by: 2.0 | plus: x -%}
+      {%- capture roles -%}{% if p.modelling and p.qualitative %}Modelling and qualitative{% elsif p.modelling %}Modelling{% else %}Qualitative{% endif %}{%- endcapture -%}
+      <a
+        class="mo-step"
+        href="{{ '/projects/' | relative_url }}#{{ p.id }}"
+        style="--i: {{ idx }}"
+        data-title="{{ p.title | escape }}"
+        data-client="{{ p.client_short | escape }}"
+        data-years="{{ p.years | escape }}"
+        data-role="{{ p.role | escape }}"
+        aria-label="{{ p.title | escape }}, {{ p.client_short | escape }}, {{ p.years }}. {{ roles }}: {{ p.role | escape }}"
+      >
+        <g class="mo-bar">
+          {%- if p.modelling -%}
+            <rect class="mo-fill" x="{{ x | round: 1 }}" y="{{ y }}" width="{{ w | round: 1 }}" height="{{ h }}" />
+            {%- if p.qualitative -%}
+              <rect x="{{ x | round: 1 }}" y="{{ y }}" width="{{ w | round: 1 }}" height="{{ h }}" fill="url(#mo-hatch-on)" />
+            {%- endif -%}
+          {%- else -%}
+            <rect x="{{ x | round: 1 }}" y="{{ y }}" width="{{ w | round: 1 }}" height="{{ h }}" fill="url(#mo-hatch)" />
+          {%- endif -%}
+          <rect class="mo-edge" x="{{ x | round: 1 }}" y="{{ y }}" width="{{ w | round: 1 }}" height="{{ h }}" />
+        </g>
+        <text class="mo-label" x="{{ cx | round: 1 }}" y="{{ base_y | plus: 23 }}" text-anchor="middle">{{ p.client_short }}</text>
+        <text class="mo-label mo-label--years" x="{{ cx | round: 1 }}" y="{{ base_y | plus: 43 }}" text-anchor="middle">{{ p.years }}</text>
+      </a>
+      {%- assign x = x | plus: w -%}
+    {%- endfor -%}
+
+    {%- comment -%} What comes next: an empty dashed step where demand clears. {%- endcomment -%}
+    {%- assign w = unit_w | times: 2 -%}
+    {%- assign y = base_y | minus: visitor_h -%}
+    {%- assign cx = w | divided_by: 2.0 | plus: x -%}
+    <g class="mo-next" aria-hidden="true">
+      <rect x="{{ x | round: 1 }}" y="{{ y }}" width="{{ w | round: 1 }}" height="{{ visitor_h }}" />
+      <text class="mo-next-label" x="{{ cx | round: 1 }}" y="{{ y | plus: 90 }}" text-anchor="middle">What's next</text>
+      <text class="mo-label mo-label--years" x="{{ cx | round: 1 }}" y="{{ base_y | plus: 43 }}" text-anchor="middle">Next</text>
+    </g>
+
+    {%- comment -%}
+      Demand curve: falls from the upper left across the whole plot and clears on the next step.
+      Every earlier step sits below the clearing price, so the line only meets the stack there.
+    {%- endcomment -%}
+    {%- assign clear_x = cx | minus: 10 -%}
+    {%- assign d_x1 = plot_left | plus: 250 -%}
+    {%- assign d_y1 = -26 -%}
+    {%- assign run = clear_x | minus: d_x1 -%}
+    {%- assign rise = y | minus: d_y1 -%}
+    {%- assign d_x2 = plot_right | plus: 6 -%}
+    {%- assign extra = d_x2 | minus: clear_x -%}
+    {%- assign d_y2 = extra | times: rise | divided_by: run | plus: y -%}
+    <g class="mo-demand" aria-hidden="true">
+      <line x1="{{ d_x1 }}" y1="{{ d_y1 }}" x2="{{ d_x2 | round: 1 }}" y2="{{ d_y2 | round: 1 }}" pathLength="1" />
+      <circle cx="{{ clear_x | round: 1 }}" cy="{{ y }}" r="6.5" />
+      <text x="{{ d_x1 | minus: 12 }}" y="{{ d_y1 | plus: 6 }}" text-anchor="end">New questions</text>
+    </g>
+
+    <line class="mo-axis" x1="{{ plot_left }}" x2="{{ plot_right }}" y1="{{ base_y }}" y2="{{ base_y }}" aria-hidden="true" />
+  </svg>
+
+  {%- comment -%} Narrow screens: the same stack turned on its side, one row per step. {%- endcomment -%}
+  <div class="mo-rows">
+    <p class="mo-rows-cue">Tap a step to see the project.</p>
+    {%- assign v_axis = 116 -%}
+    {%- assign v_len = 214 -%}
+    {%- assign v_year = 34 -%}
+    {%- assign v_top = 40 -%}
+    {%- assign v_total = units | times: v_year | plus: v_top | plus: 8 -%}
+    <svg class="mo-vchart" viewBox="0 0 340 {{ v_total }}" role="group" aria-label="My work as a merit order, turned on its side">
+      {%- assign vy = v_top -%}
+      {%- for p in projects -%}
+        {%- assign span = p.end | minus: p.start | plus: 1 -%}
+        {%- assign rh = span | times: v_year -%}
+        {%- assign idx = forloop.index0 -%}
+        {%- assign h = idx | times: step_rise | plus: first_height -%}
+        {%- assign bl = h | times: v_len | divided_by: visitor_h -%}
+        {%- assign ty = rh | divided_by: 2 | plus: vy -%}
+        <a
+          class="mo-step"
+          href="{{ '/projects/' | relative_url }}#{{ p.id }}"
+          data-title="{{ p.title | escape }}"
+          data-client="{{ p.client_short | escape }}"
+          data-years="{{ p.years | escape }}"
+          data-role="{{ p.role | escape }}"
+          aria-label="{{ p.title | escape }}, {{ p.client_short | escape }}, {{ p.years }}"
+        >
+          <rect class="mo-hit" x="0" y="{{ vy }}" width="340" height="{{ rh }}" />
+          {%- if p.modelling -%}
+            <rect class="mo-fill" x="{{ v_axis }}" y="{{ vy }}" width="{{ bl }}" height="{{ rh }}" />
+            {%- if p.qualitative -%}<rect x="{{ v_axis }}" y="{{ vy }}" width="{{ bl }}" height="{{ rh }}" fill="url(#mo-hatch-on)" />{%- endif -%}
+          {%- else -%}
+            <rect x="{{ v_axis }}" y="{{ vy }}" width="{{ bl }}" height="{{ rh }}" fill="url(#mo-hatch)" />
+          {%- endif -%}
+          <rect class="mo-edge" x="{{ v_axis }}" y="{{ vy }}" width="{{ bl }}" height="{{ rh }}" />
+          <text class="mo-vlabel" x="0" y="{{ ty | minus: 2 }}">{{ p.client_short }}</text>
+          <text class="mo-vlabel mo-vlabel--years" x="0" y="{{ ty | plus: 14 }}">{{ p.years }}</text>
+        </a>
+        {%- assign vy = vy | plus: rh -%}
+      {%- endfor -%}
+      {%- assign rh = 2 | times: v_year -%}
+      {%- assign ty = rh | divided_by: 2 | plus: vy -%}
+      <g class="mo-next" aria-hidden="true">
+        <rect x="{{ v_axis }}" y="{{ vy }}" width="{{ v_len }}" height="{{ rh }}" />
+        <text class="mo-vlabel mo-vlabel--next" x="0" y="{{ ty | plus: 5 }}">What's next</text>
+      </g>
+      {%- comment -%}
+        Turned on its side, price runs left to right and quantity runs down, so the demand curve
+        falls from the upper right and clears at the far end of the next step.
+      {%- endcomment -%}
+      {%- assign v_clear_x = v_axis | plus: v_len | minus: 10 -%}
+      {%- assign v_drop = vy | minus: 22 -%}
+      {%- assign v_dx = 338 | minus: v_clear_x | times: 24.0 | divided_by: v_drop -%}
+      <g class="mo-demand" aria-hidden="true">
+        <line x1="338" y1="22" x2="{{ v_clear_x | minus: v_dx | round: 1 }}" y2="{{ vy | plus: 24 }}" />
+        <circle cx="{{ v_clear_x }}" cy="{{ vy }}" r="5" />
+        <text x="334" y="14" text-anchor="end">New questions</text>
+      </g>
+      <line class="mo-axis" x1="{{ v_axis }}" x2="{{ v_axis }}" y1="{{ v_top | minus: 6 }}" y2="{{ vy | plus: rh }}" aria-hidden="true" />
+    </svg>
+  </div>
+
+  <figcaption class="mo-foot">
+    <div>
+      <p class="mo-explain">
+        Each step is a project, stacked in date order, its <span class="mo-dim-wide">width</span><span class="mo-dim-narrow">thickness</span>
+        the years it ran. Most pair a model with research or a report, because a result only helps once someone can act on it.
+      </p>
+      <ul class="mo-legend" aria-label="Legend">
+        <li>
+          <svg class="mo-swatch" viewBox="0 0 26 16" aria-hidden="true">
+            <rect class="mo-fill" width="26" height="16" /><rect class="mo-edge" x=".5" y=".5" width="25" height="15" />
+          </svg>
+          Modelling
+        </li>
+        <li>
+          <svg class="mo-swatch" viewBox="0 0 26 16" aria-hidden="true">
+            <rect class="mo-fill" width="26" height="16" /><rect width="26" height="16" fill="url(#mo-hatch-on)" /><rect class="mo-edge" x=".5" y=".5" width="25" height="15" />
+          </svg>
+          Modelling and qualitative
+        </li>
+        <li>
+          <svg class="mo-swatch" viewBox="0 0 26 16" aria-hidden="true">
+            <rect width="26" height="16" fill="url(#mo-hatch)" /><rect class="mo-edge" x=".5" y=".5" width="25" height="15" />
+          </svg>
+          Qualitative: research, review, report drafting
+        </li>
+      </ul>
+    </div>
+    <p class="mo-readout" aria-live="polite" data-mo-readout>
+      <span class="mo-readout-title">{{ latest.title }}</span>
+      <span class="mo-readout-meta">{{ latest.client_short }} · {{ latest.years }} · {{ latest.role }}</span>
+    </p>
+  </figcaption>
+</figure>

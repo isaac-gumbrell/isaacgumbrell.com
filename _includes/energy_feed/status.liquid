@@ -1,0 +1,23 @@
+{%- assign feed = site.data.energy_feed -%}
+<div class="ef-status">
+  <p class="ef-status-meta">
+    <span
+      >Updated <time datetime="{{ feed.generated_at }}">{{ feed.generated_label | default: 'recently' }}</time></span
+    >
+    <span>Refreshed every 12 hours</span>
+    <span> Sources: AEMO, Energy Policy WA, AEMC, AER, ERA, ARENA, NZ Electricity Authority, Transpower, government releases, web searches </span>
+  </p>
+  <p class="ef-status-note">
+    {%- if feed.mode == 'full' -%}
+      Summaries are written by AI (
+      {%- if feed.model contains 'deepseek' %}DeepSeek{% elsif feed.model contains 'claude' %}Claude{% else %}{{ feed.model }}{% endif -%}
+      ).
+    {% endif -%}
+    Check the source before relying on any date or detail.
+  </p>
+  {%- if include.other_url %}
+    <p class="ef-status-link">
+      <a href="{{ include.other_url | relative_url }}">{{ include.other_label }}</a>
+    </p>
+  {%- endif %}
+</div>

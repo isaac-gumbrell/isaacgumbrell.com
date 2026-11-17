@@ -10,3 +10,8 @@ lighthouse_results/**
 _posts/2015-10-20-math.md
 _sass/font-awesome/*.scss
 _sass/tabler-icons/*.scss
+# Third-party agent skill files, design records and bot-written data (rewritten every 12 hours)
+.claude/**
+.impeccable/**
+_data/energy_feed.json
+scripts/energy_feed/state.json

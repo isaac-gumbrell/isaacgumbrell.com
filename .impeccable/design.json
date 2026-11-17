@@ -1,0 +1,438 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-10T04:02:42+00:00",
+  "title": "Design System: Isaac Gumbrell",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Chart Paper",
+        "canonical": "oklch(97.8% 0.003 128)",
+        "tonalRamp": [
+          "oklch(15% 0.000 128)",
+          "oklch(26% 0.001 128)",
+          "oklch(37% 0.001 128)",
+          "oklch(48% 0.001 128)",
+          "oklch(59% 0.002 128)",
+          "oklch(70% 0.002 128)",
+          "oklch(82% 0.002 128)",
+          "oklch(95% 0.001 128)"
+        ],
+        "darkValue": "#101415",
+        "darkShipping": false
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Axis Ink",
+        "canonical": "oklch(21.0% 0.007 229)",
+        "tonalRamp": [
+          "oklch(15% 0.003 229)",
+          "oklch(26% 0.007 229)",
+          "oklch(37% 0.006 229)",
+          "oklch(48% 0.005 229)",
+          "oklch(59% 0.004 229)",
+          "oklch(70% 0.003 229)",
+          "oklch(82% 0.002 229)",
+          "oklch(95% 0.001 229)"
+        ],
+        "darkValue": "#e8ecea",
+        "darkShipping": false
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Pencil Grey",
+        "canonical": "oklch(43.6% 0.013 226)",
+        "tonalRamp": [
+          "oklch(15% 0.004 226)",
+          "oklch(26% 0.011 226)",
+          "oklch(37% 0.012 226)",
+          "oklch(48% 0.013 226)",
+          "oklch(59% 0.011 226)",
+          "oklch(70% 0.009 226)",
+          "oklch(82% 0.008 226)",
+          "oklch(95% 0.002 226)"
+        ],
+        "darkValue": "#a9b2af",
+        "darkShipping": false
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Rule",
+        "canonical": "oklch(84.9% 0.008 165)",
+        "tonalRamp": [
+          "oklch(15% 0.001 165)",
+          "oklch(26% 0.003 165)",
+          "oklch(37% 0.004 165)",
+          "oklch(48% 0.005 165)",
+          "oklch(59% 0.006 165)",
+          "oklch(70% 0.006 165)",
+          "oklch(82% 0.007 165)",
+          "oklch(95% 0.003 165)"
+        ],
+        "darkValue": "#3b4442",
+        "darkShipping": false
+      },
+      "rule-soft": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "oklch(92.1% 0.006 154)",
+        "tonalRamp": [
+          "oklch(15% 0.001 154)",
+          "oklch(26% 0.002 154)",
+          "oklch(37% 0.002 154)",
+          "oklch(48% 0.003 154)",
+          "oklch(59% 0.004 154)",
+          "oklch(70% 0.004 154)",
+          "oklch(82% 0.005 154)",
+          "oklch(95% 0.002 154)"
+        ],
+        "darkValue": "#242b2a",
+        "darkShipping": false
+      },
+      "step": {
+        "role": "primary",
+        "displayName": "Plant Teal",
+        "canonical": "oklch(42.9% 0.060 190)",
+        "tonalRamp": [
+          "oklch(15% 0.017 190)",
+          "oklch(26% 0.049 190)",
+          "oklch(37% 0.056 190)",
+          "oklch(48% 0.057 190)",
+          "oklch(59% 0.050 190)",
+          "oklch(70% 0.042 190)",
+          "oklch(82% 0.034 190)",
+          "oklch(95% 0.010 190)"
+        ],
+        "darkValue": "#5fb3ac",
+        "darkShipping": false
+      },
+      "step-ink": {
+        "role": "neutral",
+        "displayName": "Step Ink",
+        "canonical": "oklch(97.8% 0.003 128)",
+        "tonalRamp": [
+          "oklch(15% 0.000 128)",
+          "oklch(26% 0.001 128)",
+          "oklch(37% 0.001 128)",
+          "oklch(48% 0.001 128)",
+          "oklch(59% 0.002 128)",
+          "oklch(70% 0.002 128)",
+          "oklch(82% 0.002 128)",
+          "oklch(95% 0.001 128)"
+        ],
+        "darkValue": "#101415",
+        "darkShipping": false
+      },
+      "action": {
+        "role": "secondary",
+        "displayName": "Signal Orange",
+        "canonical": "oklch(55.3% 0.174 38)",
+        "tonalRamp": [
+          "oklch(15% 0.039 38)",
+          "oklch(26% 0.118 38)",
+          "oklch(37% 0.139 38)",
+          "oklch(48% 0.160 38)",
+          "oklch(59% 0.167 38)",
+          "oklch(70% 0.146 38)",
+          "oklch(82% 0.123 38)",
+          "oklch(95% 0.039 38)"
+        ],
+        "darkValue": "#ff7a3d",
+        "darkShipping": false
+      },
+      "action-hover": {
+        "role": "secondary",
+        "displayName": "Burnt Signal",
+        "canonical": "oklch(47.0% 0.143 37)",
+        "tonalRamp": [
+          "oklch(15% 0.037 37)",
+          "oklch(26% 0.110 37)",
+          "oklch(37% 0.127 37)",
+          "oklch(48% 0.141 37)",
+          "oklch(59% 0.124 37)",
+          "oklch(70% 0.107 37)",
+          "oklch(82% 0.088 37)",
+          "oklch(95% 0.027 37)"
+        ],
+        "darkValue": "#ff9a68",
+        "darkShipping": false
+      },
+      "action-ink": {
+        "role": "secondary",
+        "displayName": "Action Ink",
+        "canonical": "oklch(100.0% 0.000 90)",
+        "tonalRamp": [
+          "oklch(15% 0.000 90)",
+          "oklch(26% 0.000 90)",
+          "oklch(37% 0.000 90)",
+          "oklch(48% 0.000 90)",
+          "oklch(59% 0.000 90)",
+          "oklch(70% 0.000 90)",
+          "oklch(82% 0.000 90)",
+          "oklch(95% 0.000 90)"
+        ],
+        "darkValue": "#101415",
+        "darkShipping": false
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Home headline only, max 24ch."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Page titles."
+      },
+      "headline-section": {
+        "displayName": "Headline Section",
+        "purpose": "Home section heads."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Project and feed item titles, max 70ch."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Prose, the qualitative voice, max 70ch."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "Hero and page ledes in Pencil Grey."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Metadata, dates, badges, chips, legend; tabular figures."
+      },
+      "button": {
+        "displayName": "Button",
+        "purpose": "Action and Line buttons."
+      },
+      "chart-label": {
+        "displayName": "Chart Label",
+        "purpose": "Client labels under merit-order steps; years at 15px/420."
+      }
+    },
+    "shadows": [],
+    "strokes": [
+      {
+        "name": "axis",
+        "value": "1.5px solid ink",
+        "purpose": "Chart axes."
+      },
+      {
+        "name": "edge",
+        "value": "1px solid ink; 3px on hover/active; 3px action on focus",
+        "purpose": "Merit-order step edges."
+      },
+      {
+        "name": "section-rule",
+        "value": "2px solid ink",
+        "purpose": "Top of every major section."
+      },
+      {
+        "name": "hairline",
+        "value": "1px solid rule-soft",
+        "purpose": "Ledger, list and feed row dividers; chart gridlines."
+      },
+      {
+        "name": "next-dash",
+        "value": "1.5px dashed ink-2 (SVG dasharray 6 5)",
+        "purpose": "The empty \"What's next\" step at the end of the merit order only."
+      },
+      {
+        "name": "hatch",
+        "value": "45deg, 9px pitch; teal 2.4px on paper, or paper 2px at 60% over teal",
+        "purpose": "Qualitative work."
+      }
+    ],
+    "focus": {
+      "value": "outline: 2px solid var(--action); outline-offset: 3px",
+      "purpose": "Global keyboard focus."
+    },
+    "motion": [
+      {
+        "name": "ease-ui",
+        "value": "160ms ease-out",
+        "purpose": "Button colour transitions."
+      },
+      {
+        "name": "edge",
+        "value": "140ms ease-out",
+        "purpose": "Step edge thickening."
+      },
+      {
+        "name": "mo-rise",
+        "value": "900ms cubic-bezier(0.16, 1, 0.3, 1), stagger 70ms + 120ms",
+        "purpose": "Steps rise from the axis on load; reduced-motion gated."
+      },
+      {
+        "name": "mo-draw",
+        "value": "700ms cubic-bezier(0.16, 1, 0.3, 1), delay 900ms",
+        "purpose": "Demand curve draws in."
+      },
+      {
+        "name": "mo-fade",
+        "value": "400ms ease-out, delay 1450ms",
+        "purpose": "Clearing point and label fade in."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "narrow",
+        "value": "767px",
+        "purpose": "Hero stacks, portrait moves up, chart turns on its side."
+      },
+      {
+        "name": "ledger-stack",
+        "value": "575px",
+        "purpose": "Ledger year column stacks above entry."
+      }
+    ],
+    "darkMode": {
+      "shipping": false,
+      "note": "Dark tokens defined under html[data-theme=dark]; enable_darkmode is false in _config.yml."
+    }
+  },
+  "components": [
+    {
+      "name": "Action Button",
+      "kind": "button",
+      "refersTo": "button-action",
+      "description": "The one orange action: Email Isaac.",
+      "html": "<a class=\"ds-btn-action\" href=\"#\">Email Isaac</a>",
+      "css": ".ds-btn-action{display:inline-flex;align-items:center;min-height:2.9rem;padding:0.65rem 1.3rem;font-family:Archivo,'Arial Narrow',sans-serif;font-stretch:92%;font-weight:600;font-size:1.02rem;border-radius:2px;text-decoration:none;background:var(--action,#c2410c);color:var(--action-ink,#fff);border:1px solid var(--action,#c2410c);transition:background-color 160ms ease-out,border-color 160ms ease-out}.ds-btn-action:hover{background:var(--action-hover,#9a3412);border-color:var(--action-hover,#9a3412)}.ds-btn-action:focus-visible{outline:2px solid var(--action,#c2410c);outline-offset:3px}"
+    },
+    {
+      "name": "Line Button",
+      "kind": "button",
+      "refersTo": "button-line",
+      "description": "Secondary route in ink outline; inverts on hover.",
+      "html": "<a class=\"ds-btn-line\" href=\"#\">Open Market Watch</a>",
+      "css": ".ds-btn-line{display:inline-flex;align-items:center;min-height:2.9rem;padding:0.65rem 1.3rem;font-family:Archivo,'Arial Narrow',sans-serif;font-stretch:92%;font-weight:600;font-size:1.02rem;border-radius:2px;text-decoration:none;background:transparent;color:var(--ink,#15191b);border:1px solid var(--ink,#15191b);transition:background-color 160ms ease-out,color 160ms ease-out}.ds-btn-line:hover{background:var(--ink,#15191b);color:var(--paper,#f7f8f6)}.ds-btn-line:focus-visible{outline:2px solid var(--action,#c2410c);outline-offset:3px}"
+    },
+    {
+      "name": "Filter Chip",
+      "kind": "chip",
+      "refersTo": "chip-filter",
+      "description": "Market Watch category filter; pressed fills teal.",
+      "html": "<div class=\"ds-chips\"><button class=\"ds-chip\" aria-pressed=\"true\">All</button><button class=\"ds-chip\" aria-pressed=\"false\">Consultations</button><button class=\"ds-chip\" aria-pressed=\"false\">Rule changes</button></div>",
+      "css": ".ds-chips{display:flex;gap:0.4rem;flex-wrap:wrap}.ds-chip{border:1px solid var(--rule-soft,#e2e6e3);background:transparent;color:var(--ink,#15191b);border-radius:2px;padding:0.3rem 0.8rem;font-family:Archivo,'Arial Narrow',sans-serif;font-size:0.85rem;cursor:pointer}.ds-chip:hover{border-color:var(--step,#1f5a57)}.ds-chip[aria-pressed=true]{background:var(--step,#1f5a57);border-color:var(--step,#1f5a57);color:var(--step-ink,#f7f8f6)}.ds-chip:focus-visible{outline:2px solid var(--action,#c2410c);outline-offset:2px}"
+    },
+    {
+      "name": "Role Tags",
+      "kind": "chip",
+      "refersTo": "tag-modelling",
+      "description": "Modelling (solid teal) and Qualitative (teal outline with hatch swatch) on Projects.",
+      "html": "<span class=\"ds-tags\"><span class=\"ds-tag ds-tag--model\">Modelling</span><span class=\"ds-tag\"><svg width=\"12\" height=\"12\" viewBox=\"0 0 30 30\" aria-hidden=\"true\"><defs><pattern id=\"ds-h\" width=\"9\" height=\"9\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"9\" stroke=\"#1f5a57\" stroke-width=\"2.4\"/></pattern></defs><rect width=\"30\" height=\"30\" fill=\"url(#ds-h)\"/></svg>Qualitative</span></span>",
+      "css": ".ds-tags{display:inline-flex;gap:0.45rem}.ds-tag{display:inline-flex;align-items:center;gap:0.35rem;padding:0 0.45rem;border:1px solid var(--step,#1f5a57);border-radius:2px;font-family:Archivo,'Arial Narrow',sans-serif;font-size:0.85rem;color:var(--step,#1f5a57)}.ds-tag--model{background:var(--step,#1f5a57);color:var(--step-ink,#f7f8f6)}"
+    },
+    {
+      "name": "Feed Item with Status Ramp",
+      "kind": "card",
+      "refersTo": "status-new",
+      "description": "Feed row: neutral category badge, ink New chip, orange closing-soon deadline, struck closed deadline.",
+      "html": "<div class=\"ds-ef\"><div class=\"ds-ef-meta\"><span class=\"ds-badge\">Consultation</span><span class=\"ds-badge ds-badge--out\">WA</span><span>Energy Policy WA</span><time>3 Nov 2026</time><span class=\"ds-new\">New</span></div><h3 class=\"ds-ef-title\"><a href=\"#\">Reserve Capacity Mechanism review: consultation paper</a></h3><p class=\"ds-ef-sum\">Submissions sought on proposed changes to capacity pricing.</p><p class=\"ds-ef-dates\"><span class=\"ds-soon\">Closes Fri 14 Nov 2026 (4 days)</span><span class=\"ds-closed\">Closes Mon 3 Nov 2026 (closed)</span></p></div>",
+      "css": ".ds-ef{padding:1rem 0;border-bottom:1px solid var(--rule-soft,#e2e6e3);font-family:'Source Serif 4',Georgia,serif;color:var(--ink,#15191b)}.ds-ef-meta,.ds-ef-dates{font-family:Archivo,'Arial Narrow',sans-serif;display:flex;flex-wrap:wrap;align-items:center;gap:0.35rem 0.6rem;font-size:0.8rem;color:var(--ink-2,#4a5357);font-variant-numeric:tabular-nums;margin:0}.ds-badge{padding:0.05rem 0.5rem;border-radius:2px;border:1px solid var(--rule,#c9cfcc);color:var(--ink,#15191b);font-weight:560}.ds-badge--out{border-color:transparent;padding:0;font-weight:650}.ds-new{padding:0.05rem 0.45rem;border-radius:2px;background:var(--ink,#15191b);color:var(--paper,#f7f8f6);font-weight:600}.ds-ef-title{font-family:Archivo,'Arial Narrow',sans-serif;font-size:1.1rem;font-weight:600;font-stretch:92%;line-height:1.35;margin:0.2rem 0 0.3rem}.ds-ef-title a{color:var(--ink,#15191b)}.ds-ef-title a:hover{color:var(--step,#1f5a57)}.ds-ef-sum{font-size:0.95rem;margin:0 0 0.3rem}.ds-soon{color:var(--action,#c2410c);font-weight:600}.ds-closed{text-decoration:line-through}"
+    },
+    {
+      "name": "Ledger",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "Year column plus entry; hairline row rules under a 2px ink section top.",
+      "html": "<section class=\"ds-ruled\"><h2>Writing</h2><ul class=\"ds-ledger\"><li><span class=\"ds-year\">2024</span><a href=\"#\">What the WEM capacity price is really telling us</a><span class=\"ds-meta\">Medium</span></li><li><span class=\"ds-year\">2021</span><a href=\"#\">Ethical energy retail</a><span class=\"ds-meta\">Ethically Kate</span></li></ul></section>",
+      "css": ".ds-ruled h2{font-family:Archivo,'Arial Narrow',sans-serif;font-size:1.5rem;font-weight:650;font-stretch:88%;padding-top:0.75rem;border-top:2px solid var(--ink,#15191b);color:var(--ink,#15191b)}.ds-ledger{list-style:none;margin:0;padding:0}.ds-ledger li{display:grid;grid-template-columns:5.5rem minmax(0,1fr);gap:0.15rem 1rem;padding:0.85rem 0;border-bottom:1px solid var(--rule-soft,#e2e6e3)}.ds-ledger a{font-family:Archivo,'Arial Narrow',sans-serif;font-weight:560;font-size:1.05rem;color:var(--ink,#15191b);text-decoration:none}.ds-ledger a:hover{color:var(--action,#c2410c);text-decoration:underline}.ds-year{grid-row:span 2;font-family:Archivo,'Arial Narrow',sans-serif;color:var(--ink-2,#4a5357);font-variant-numeric:tabular-nums}.ds-meta{grid-column:2;color:var(--ink-2,#4a5357);font-family:'Source Serif 4',Georgia,serif;font-size:0.97rem}"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "",
+      "description": "Paper navbar, rule bottom border, teal active link, no shadow.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-mark\" href=\"#\">Isaac Gumbrell</a><span class=\"ds-links\"><a href=\"#\" class=\"is-active\">Market Watch</a><a href=\"#\">Projects</a><a href=\"#\">Repositories</a></span></nav>",
+      "css": ".ds-nav{display:flex;justify-content:space-between;align-items:center;padding:0.75rem 1rem;background:var(--paper,#f7f8f6);border-bottom:1px solid var(--rule,#c9cfcc);font-family:Archivo,'Arial Narrow',sans-serif;}.ds-mark{font-stretch:88%;font-weight:650;font-size:1.15rem;letter-spacing:-0.01em;color:var(--ink,#15191b);text-decoration:none}.ds-links{display:flex;gap:1.25rem}.ds-links a{font-size:0.98rem;color:var(--ink,#15191b);text-decoration:none}.ds-links a:hover{color:var(--action,#c2410c)}.ds-links a.is-active{color:var(--step,#1f5a57);font-weight:600}.ds-links a:focus-visible,.ds-mark:focus-visible{outline:2px solid var(--action,#c2410c);outline-offset:3px}"
+    },
+    {
+      "name": "Merit-Order Chart",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "Signature: three-fill project steps on an ink axis, an empty dashed \"What's next\" step, and the orange \"New questions\" demand curve and clearing point.",
+      "html": "<svg class=\"ds-mo\" viewBox=\"0 -20 400 170\" role=\"img\" aria-label=\"Merit order\"><defs><pattern id=\"ds-mh\" width=\"9\" height=\"9\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"9\" stroke=\"#1f5a57\" stroke-width=\"2.4\"/></pattern><pattern id=\"ds-mho\" width=\"9\" height=\"9\" patternUnits=\"userSpaceOnUse\" patternTransform=\"rotate(45)\"><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"9\" stroke=\"#f7f8f6\" stroke-width=\"2\" opacity=\"0.6\"/></pattern></defs><g class=\"ds-grid\"><line x1=\"10\" x2=\"390\" y1=\"100\" y2=\"100\"/><line x1=\"10\" x2=\"390\" y1=\"60\" y2=\"60\"/><line x1=\"10\" x2=\"390\" y1=\"20\" y2=\"20\"/></g><a class=\"ds-step\" href=\"#\"><rect class=\"ds-fill\" x=\"10\" y=\"110\" width=\"90\" height=\"30\"/><rect class=\"ds-edge\" x=\"10\" y=\"110\" width=\"90\" height=\"30\"/></a><a class=\"ds-step\" href=\"#\"><rect class=\"ds-fill\" x=\"100\" y=\"86\" width=\"90\" height=\"54\"/><rect x=\"100\" y=\"86\" width=\"90\" height=\"54\" fill=\"url(#ds-mho)\"/><rect class=\"ds-edge\" x=\"100\" y=\"86\" width=\"90\" height=\"54\"/></a><a class=\"ds-step\" href=\"#\"><rect x=\"190\" y=\"62\" width=\"90\" height=\"78\" fill=\"url(#ds-mh)\"/><rect class=\"ds-edge\" x=\"190\" y=\"62\" width=\"90\" height=\"78\"/></a><g class=\"ds-next\"><rect x=\"280\" y=\"38\" width=\"100\" height=\"102\"/><text x=\"330\" y=\"94\" text-anchor=\"middle\" class=\"ds-nl\">What's next</text></g><g class=\"ds-demand\"><line x1=\"60\" y1=\"-12\" x2=\"395\" y2=\"50\"/><circle cx=\"320\" cy=\"38\" r=\"5\"/></g><line class=\"ds-axis\" x1=\"10\" x2=\"390\" y1=\"140\" y2=\"140\"/></svg>",
+      "css": ".ds-mo{width:100%;max-width:520px;font-family:Archivo,'Arial Narrow',sans-serif;background:var(--paper,#f7f8f6);overflow:visible}.ds-grid line{stroke:var(--rule-soft,#e2e6e3);stroke-width:1}.ds-axis{stroke:var(--ink,#15191b);stroke-width:1.5}.ds-fill{fill:var(--step,#1f5a57)}.ds-edge{fill:none;stroke:var(--ink,#15191b);stroke-width:1;transition:stroke-width 140ms ease-out}.ds-step:hover .ds-edge{stroke-width:3}.ds-step:focus{outline:none}.ds-step:focus-visible .ds-edge{stroke:var(--action,#c2410c);stroke-width:3}.ds-next rect{fill:transparent;stroke:var(--ink-2,#4a5357);stroke-width:1.5;stroke-dasharray:6 5}.ds-next:hover rect{fill:color-mix(in srgb,var(--action,#c2410c) 8%,transparent);stroke-width:2.5}.ds-nl{fill:var(--ink,#15191b);font-size:13px;font-weight:650}.ds-nc{fill:var(--action,#c2410c);font-size:12px;font-weight:600}.ds-demand line{stroke:var(--action,#c2410c);stroke-width:2.5;stroke-linecap:round}.ds-demand circle{fill:var(--action,#c2410c)}"
+    },
+    {
+      "name": "Contact Close",
+      "kind": "card",
+      "refersTo": "",
+      "description": "Contact close: a 2px ink rule above a plain invitation and the Email action.",
+      "html": "<section class=\"ds-contact\"><h2>Get in touch</h2><p>Happy to talk about energy market modelling, market design, or any of the work on this site.</p><a class=\"ds-contact-btn\" href=\"#\">Email Isaac</a></section>",
+      "css": ".ds-contact{border-top:2px solid var(--ink,#15191b);padding:2.25rem 0 1rem;background:var(--paper,#f7f8f6)}.ds-contact h2{font-family:Archivo,'Arial Narrow',sans-serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:650;font-stretch:88%;letter-spacing:-0.015em;max-width:24ch;color:var(--ink,#15191b);margin:0 0 0.5rem}.ds-contact p{font-family:'Source Serif 4',Georgia,serif;color:var(--ink-2,#4a5357);max-width:56ch;margin:0 0 1.5rem}.ds-contact-btn{display:inline-flex;align-items:center;min-height:2.9rem;padding:0.65rem 1.3rem;font-family:Archivo,'Arial Narrow',sans-serif;font-stretch:92%;font-weight:600;border-radius:2px;text-decoration:none;background:var(--action,#c2410c);color:#fff}.ds-contact-btn:hover{background:var(--action-hover,#9a3412)}.ds-contact-btn:focus-visible{outline:2px solid var(--action,#c2410c);outline-offset:3px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Merit Order",
+    "overview": "The site is drawn on cool white chart paper. Isaac's work stacks as supply steps on an ink axis, filled solid where he built the model and hatched where he did the research, review and report drafting; new questions are the orange demand curve that clears on the last, empty step: what comes next. Everything else on the site inherits that chart: ink rules, hairline gridlines, one deep-teal fill, and a single signal orange that only appears where something can be done or is due.\n\nTwo type voices carry the two halves of the work. Archivo, at condensed widths with tabular figures, is the quantitative voice: headings, axes, labels, numbers, navigation, buttons and metadata. Source Serif 4 is the qualitative voice: prose, ledes and summaries. Density is that of a well-set report: ruled ledgers, generous section spacing, measured line lengths. The surface is flat; depth comes from overlap and line weight, never from shadow.\n\nThe world refuses the consultant default of headshot beside a headline over three service cards. The portrait sits in a ruled rectangular frame, like a figure plate, not a soft avatar.",
+    "keyCharacteristics": [
+      "Cool white chart paper, ink axes, hairline gridlines.",
+      "One teal for modelling fills and links; diagonal hatch for qualitative work.",
+      "Signal orange spent only on actions, the demand curve and things that are due.",
+      "Archivo (condensed, tabular) for the quantitative voice; Source Serif 4 for prose.",
+      "Flat: no shadows, 2px corners, depth by overlap and stroke weight.",
+      "Ruled 2px ink tops open every major section."
+    ],
+    "rules": [
+      {
+        "name": "The Due-or-Doable Rule",
+        "body": "Orange appears only where the visitor can act or where something is due: the Email action, the demand curve and its clearing point, open submissions, deadlines inside seven days, and interaction states (hover, focus, caret). Never on decoration, headings or category labels.",
+        "section": "colors"
+      },
+      {
+        "name": "The Labels-Are-Not-Statuses Rule",
+        "body": "Category and region badges are neutral ink with a Rule border. Colour in the feed belongs to the status ramp alone.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Voices Rule",
+        "body": "Numbers, structure and anything you would find on a chart axis are Archivo; anything you would find in the written report is Source Serif 4. Do not set prose in Archivo or labels in the serif.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tabular Figures Rule",
+        "body": "Years, dates, times, tables and the feed status line use tabular figures so columns of numbers align.",
+        "section": "typography"
+      },
+      {
+        "name": "The Line-Weight Rule",
+        "body": "To lift something, thicken its line or overlap it; never cast a shadow.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Three Fills Rule",
+        "body": "Solid teal = modelling; solid teal with a paper hatch over it = modelling and qualitative; teal hatch on paper = qualitative only. The vocabulary is the same in the chart, the legend and the Projects tags, and it means nothing else.",
+        "section": "shapes"
+      },
+      {
+        "name": "The What's-Next Dash Rule",
+        "body": "A dashed ink outline marks only the empty last step of the merit order: work not yet done. It is not a call to action and carries no orange.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do spend Signal Orange only on actions, the demand curve and clearing point, open submissions, deadlines inside seven days, and interaction states.",
+      "Do encode modelling and qualitative work with the three fills (solid, solid with paper hatch, hatch) wherever roles are shown.",
+      "Do open major sections with a 2px Ink rule and list content as ledgers with Hairline row dividers.",
+      "Do set numbers, labels, navigation and headings in Archivo at condensed widths (82–92%) with tabular figures, and prose in Source Serif 4.",
+      "Do keep corners at 2px on controls and 0 on images and chart steps.",
+      "Do express emphasis through line weight and overlap: 1px edges, 2px section rules, 3px on hover or focus.",
+      "Do gate chart motion behind `prefers-reduced-motion: no-preference`."
+    ],
+    "donts": [
+      "Don't cast shadows on any surface, including cards, the navbar or images.",
+      "Don't use Signal Orange for headings, category badges, decoration or anything the visitor cannot act on.",
+      "Don't use cream or warm off-white paper; the paper is cool white (`paper`).",
+      "Don't add a second accent hue or colour feed categories; colour belongs to the status ramp.",
+      "Don't use a dashed outline for anything other than the empty \"What's next\" step, and never present it as a sales prompt.",
+      "Don't add uppercase tracked kickers or eyebrows above headings; headings stand on their ruled tops.",
+      "Don't fall back to the headshot beside a headline over three service cards."
+    ]
+  }
+}

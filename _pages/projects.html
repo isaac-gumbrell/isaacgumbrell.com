@@ -1,0 +1,66 @@
+---
+layout: page
+permalink: /projects/
+title: Projects
+description: Public work I have been involved in, most of it pairing a model with research or a report. For a full CV, email me.
+nav: true
+nav_order: 2
+---
+
+{%- assign work = site.data.work -%} {%- assign newest_first = work.projects | reverse -%} {% include mo_defs.liquid %}
+
+<section class="proj-section" aria-labelledby="policy-title">
+  <h2 id="policy-title">Policy and market work</h2>
+  <div class="proj-note">{{ work.consulting_note | markdownify }}</div>
+  <ul class="ledger ledger--projects">
+    {%- for p in newest_first %}
+    <li id="{{ p.id }}">
+      <span class="ledger-year">{{ p.years }}</span>
+      <h3 class="proj-title">{{ p.title }}</h3>
+      <span class="ledger-meta">{{ p.client }}</span>
+      <span class="ledger-meta proj-role">
+        <span class="proj-role-text">{{ p.role }}</span>
+        <span class="proj-tags">
+          {%- if p.modelling %}<span class="proj-tag proj-tag--model">Modelling</span>{% endif -%} {%- if p.qualitative -%}
+          <span class="proj-tag proj-tag--qual">
+            <svg class="proj-tag-swatch" viewBox="0 0 30 30" aria-hidden="true"><rect width="30" height="30" fill="url(#mo-hatch)" /></svg>
+            Qualitative
+          </span>
+          {%- endif -%}
+        </span>
+      </span>
+      <span class="ledger-meta proj-links">
+        {%- for l in p.links %}<a href="{{ l.url }}" target="_blank" rel="noopener">{{ l.label }}</a>{% endfor -%}
+      </span>
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
+
+<section class="proj-section" aria-labelledby="writing-title">
+  <h2 id="writing-title">Writing</h2>
+  <ul class="ledger">
+    {%- for w in work.writing %}
+    <li>
+      <span class="ledger-year">{{ w.year }}</span>
+      <a href="{{ w.url }}" target="_blank" rel="noopener">{{ w.title }}</a>
+      <span class="ledger-meta">{{ w.venue }}</span>
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
+
+<section class="proj-section" aria-labelledby="academic-title">
+  <h2 id="academic-title">Academic</h2>
+  <ul class="ledger">
+    {%- for a in work.academic %}
+    <li>
+      <span class="ledger-year">Thesis</span>
+      <a href="{{ a.url }}" target="_blank" rel="noopener">{{ a.title }}</a>
+      <span class="ledger-meta">{{ a.type }}, {{ a.institution }}</span>
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
+
+<p class="proj-cta"><a class="btn-action" href="mailto:{{ site.email }}">Email Isaac for a full CV</a></p>

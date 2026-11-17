@@ -1,0 +1,45 @@
+---
+layout: page
+permalink: /repositories/
+title: Repositories
+description: Open-source modelling code I write, contribute to, or rely on.
+nav: true
+nav_order: 3
+---
+
+{%- assign tools = site.data.work.tools -%}
+
+<section class="proj-section" aria-labelledby="mine-title">
+  <h2 id="mine-title">I write and contribute to</h2>
+  <ul class="ledger ledger--projects">
+    {%- for t in tools %}{% if t.role != 'Recommended' %}
+    <li>
+      <span class="ledger-year">{{ t.language }}</span>
+      <h3 class="proj-title"><a href="{{ t.url }}" target="_blank" rel="noopener">{{ t.name }}</a></h3>
+      <span class="ledger-meta">{{ t.description }}</span>
+      <span class="ledger-meta proj-role">{{ t.role }} · {{ t.owner }}</span>
+      <span class="ledger-meta proj-links">
+        <a href="{{ t.url }}" target="_blank" rel="noopener">GitHub</a>
+        {%- if t.docs %}<a href="{{ t.docs }}" target="_blank" rel="noopener">Documentation</a>{% endif -%}
+      </span>
+    </li>
+    {%- endif %}{% endfor %}
+  </ul>
+</section>
+
+<section class="proj-section" aria-labelledby="rec-title">
+  <h2 id="rec-title">I recommend</h2>
+  <ul class="ledger ledger--projects">
+    {%- for t in tools %}{% if t.role == 'Recommended' %}
+    <li>
+      <span class="ledger-year">{{ t.language }}</span>
+      <h3 class="proj-title"><a href="{{ t.url }}" target="_blank" rel="noopener">{{ t.name }}</a></h3>
+      <span class="ledger-meta">{{ t.description }}</span>
+      <span class="ledger-meta proj-links">
+        <a href="{{ t.url }}" target="_blank" rel="noopener">GitHub</a>
+        {%- if t.docs %}<a href="{{ t.docs }}" target="_blank" rel="noopener">{{ t.docs | remove: 'https://' }}</a>{% endif -%}
+      </span>
+    </li>
+    {%- endif %}{% endfor %}
+  </ul>
+</section>

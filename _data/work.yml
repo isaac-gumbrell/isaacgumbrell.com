@@ -1,0 +1,154 @@
+# Single source for Isaac's work history.
+# Rendered by the home-page merit-order chart (_includes/merit_order.liquid) and the Projects page.
+# modelling / qualitative flags come straight from each project's listed role:
+#   modelling   = model design, execution, software testing
+#   qualitative = research, review, report drafting or writing
+
+consulting_note: Completed with [Robinson Bowmaker Paul](https://rbp.consulting/).
+
+projects:
+  # Ordered by start year (the chart stacks them in this order).
+  - id: spd
+    title: Scheduling, Pricing and Dispatch (SPD) real-time pricing rollout
+    short: SPD real-time pricing
+    client: Transpower New Zealand
+    client_short: Transpower
+    start: 2021
+    end: 2023
+    years: "2021 – 2023"
+    role: Software testing and certification
+    modelling: true
+    qualitative: false
+    links:
+      - label: Real-time pricing
+        url: https://www.transpower.co.nz/projects/real-time-pricing
+
+  - id: lt-pasa
+    title: Long-Term Projected Assessment of System Adequacy modelling
+    short: Long-term PASA
+    client: Australian Energy Market Operator
+    client_short: AEMO
+    start: 2022
+    end: 2022
+    years: "2022"
+    role: Modelling design, report writing
+    modelling: true
+    qualitative: true
+    links:
+      - label: 2022 Reliability Assessment
+        url: https://aemo.com.au/-/media/files/electricity/wem/planning_and_forecasting/esoo/2022/2022-aemo-reliability-assessment---rbp.pdf?la=en
+
+  - id: ieso-data
+    title: System Operator Market Information and Data Review
+    short: IESO data review
+    client: Ontario Independent Electricity System Operator (through PA Consulting)
+    client_short: IESO
+    start: 2022
+    end: 2022
+    years: "2022"
+    role: Research, report drafting
+    modelling: false
+    qualitative: true
+    links:
+      - label: ISO Markets and Planning Data
+        url: https://www.ieso.ca/-/media/Files/IESO/Document-Library/corporate/applications/PA-IESO-Markets-and-Planning-Data-JR-Report-20230623.ashx
+
+  - id: gpg
+    title: Gas Powered Generation Forecast
+    short: GPG forecast
+    client: Australian Energy Market Operator
+    client_short: AEMO
+    start: 2022
+    end: 2023
+    years: "2022, 2023"
+    role: Modelling design, report writing
+    modelling: true
+    qualitative: true
+    links:
+      - label: GPG Forecast report
+        url: https://aemo.com.au/-/media/files/gas/national_planning_and_forecasting/wa_gsoo/2023/rbp---gas-powered-generation-forecast-modelling-to-2033.pdf?la=en
+
+  - id: investment-certainty
+    title: Wholesale Electricity Market Investment Certainty Review
+    short: WEM Investment Certainty
+    client: Energy Policy Western Australia
+    client_short: Energy Policy WA
+    start: 2023
+    end: 2024
+    years: "2023 – 2024"
+    role: Modelling design, report drafting
+    modelling: true
+    qualitative: true
+    links:
+      - label: Review documents
+        url: https://www.wa.gov.au/government/document-collections/wholesale-electricity-market-investment-certainty-review
+
+  - id: brcp
+    title: Benchmark Reserve Capacity Price (BRCP) Review
+    short: BRCP Review
+    client: Energy Policy Western Australia
+    client_short: Energy Policy WA
+    start: 2023
+    end: 2024
+    years: "2023 – 2024"
+    role: Modelling design and execution, report drafting
+    modelling: true
+    qualitative: true
+    links:
+      - label: BRCP Review
+        url: https://www.erawa.com.au/electricity/wholesale-electricity-market/benchmark-reserve-capacity-price-review-working-group
+
+  - id: pilbara
+    title: Evolution of Pilbara Network Rules
+    short: Pilbara Network Rules
+    client: Energy Policy Western Australia
+    client_short: Energy Policy WA
+    start: 2024
+    end: 2025
+    years: "2024 – 2025"
+    role: "Modelling design and execution; stages 2\u00a0and\u00a03"
+    modelling: true
+    qualitative: false
+    links:
+      - label: Working Group
+        url: https://www.wa.gov.au/government/document-collections/evolution-of-the-pilbara-networks-rules-working-group#meeting-materials
+      - label: Scope of Works
+        url: https://www.wa.gov.au/system/files/2024-03/evolution_of_the_pilbara_network_rules-scope_of_works.pdf
+
+writing:
+  - title: "Streamline Your Modelling Workflow: Small Efforts Now, Big Productivity Gains Later"
+    venue: Medium
+    year: 2024
+    url: https://medium.com/@isaacgumbrell/streamline-your-modelling-workflow-small-efforts-now-big-productivity-gains-later-8b4afc47292a
+  - title: How To Shop For The Most Sustainable Electricity
+    venue: Ethically Kate
+    year: 2021
+    url: https://ethicallykate.com/blog/2021/9/7/how-to-shop-for-the-most-sustainable-electricity
+
+academic:
+  - title: "Electricity storage in 100% renewable markets: The case of New Zealand in 2050"
+    institution: University of Auckland
+    type: Master's thesis
+    url: https://www.researchgate.net/publication/385938648_Electricity_storage_in_100_renewable_markets_The_case_of_New_Zealand_in_2050#fullTextFileContent
+
+tools:
+  - name: scenario_framework_manager
+    owner: isaac-gumbrell
+    description: Scenario management framework for energy market modelling workflows
+    language: Python
+    role: Author and maintainer
+    url: https://github.com/isaac-gumbrell/scenario_framework_manager
+  - name: ASSUME
+    owner: assume-framework
+    description: Agent-based simulation framework for electricity markets, built on Mesa
+    language: Python
+    role: Contributor
+    url: https://github.com/assume-framework/assume
+    docs: https://assume.readthedocs.io
+  - name: PyPSA
+    owner: PyPSA
+    description: Python for Power System Analysis, an open-source toolbox for simulating and optimising power systems
+    language: Python
+    role: Recommended
+    url: https://github.com/PyPSA/PyPSA
+    docs: https://pypsa.org

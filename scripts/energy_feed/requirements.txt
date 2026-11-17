@@ -1,0 +1,6 @@
+anthropic>=2.7,<3
+beautifulsoup4>=4.12
+feedparser>=6.0
+pyyaml>=6.0
+requests>=2.32
+playwright>=1.50   # headless browser for settings.browser_hosts (AEMO, ASL)

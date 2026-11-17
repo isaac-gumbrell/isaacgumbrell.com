@@ -11,3 +11,11 @@ assets/libs/
 node_modules/
 vendor
 .idea
+
+# Secrets: never commit real keys (CI reads them from GitHub Actions secrets)
+.env
+.env.*
+!.env.example
+
+# Impeccable engine binary (re-downloaded by its launcher on first run)
+.claude/skills/impeccable/scripts/bin/

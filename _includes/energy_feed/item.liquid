@@ -1,0 +1,68 @@
+{%- assign item = include.item -%}
+{%- assign meta = site.data.energy_feed_meta -%}
+{%- assign hl = include.level | default: 2 -%}
+{%- assign today = site.time | date: '%Y-%m-%d' -%}
+{%- assign submissions_open = false -%}
+{%- if item.submission_required -%}
+  {%- if item.deadline == '' or item.deadline >= today -%}{%- assign submissions_open = true -%}{%- endif -%}
+{%- endif -%}
+{%- capture search_text -%}{{ item.title }} {{ item.summary }} {{ item.source }} {{ item.topics | join: ' ' }}{%- endcapture -%}
+<li
+  class="ef-item{% if item.importance == 'high' %} ef-item--high{% endif %}"
+  data-category="{{ item.category }}"
+  data-jurisdiction="{{ item.jurisdiction }}"
+  data-topics="{{ item.topics | join: ' ' }}"
+  data-submission="{% if submissions_open %}open{% endif %}"
+  data-first-seen="{{ item.first_seen }}"
+  data-due="{{ item.due }}"
+  data-search="{{ search_text | downcase | escape }}"
+>
+  <div class="ef-meta">
+    <span class="ef-badge">{{ meta.category_singular[item.category] | default: item.category }}</span>
+    <span class="ef-badge ef-badge--outline" title="{{ meta.jurisdiction_labels[item.jurisdiction] | default: item.jurisdiction }}">
+      {{- meta.jurisdiction_badges[item.jurisdiction] | default: item.jurisdiction -}}
+    </span>
+    <span class="ef-source">{{ item.source | escape }}</span>
+    {%- if include.show_date != false %}
+      {%- if item.published != '' %}
+        <time class="ef-date" datetime="{{ item.published }}">{{ item.published | date: '%-d %b %Y' }}</time>
+      {%- elsif item.updated and item.updated != '' %}
+        <time class="ef-date" datetime="{{ item.updated }}">Updated {{ item.updated | date: '%-d %b %Y' }}</time>
+      {%- else %}
+        <time class="ef-date" datetime="{{ item.first_seen | slice: 0, 10 }}">Added {{ item.first_seen | date: '%-d %b %Y' }}</time>
+      {%- endif %}
+    {%- endif %}
+    <span class="ef-new" hidden>New</span>
+  </div>
+  <h{{ hl }} class="ef-title">
+    <a href="{{ item.url | escape }}" target="_blank" rel="noopener">{{ item.title | escape }}</a>
+  </h{{ hl }}>
+  {%- if item.summary != '' %}
+    <p class="ef-summary">{{ item.summary | escape }}</p>
+  {%- endif %}
+  {%- if item.deadline != '' or item.event_date != '' %}
+    <p class="ef-dates">
+      {%- if item.event_date != '' %}
+        <span><i class="fa-regular fa-calendar" aria-hidden="true"></i> {{ item.event_date | date: '%a %-d %b %Y' }}</span>
+      {%- endif %}
+      {%- if item.deadline != '' %}
+        <span class="ef-deadline" data-deadline="{{ item.deadline }}">
+          <i class="fa-regular fa-clock" aria-hidden="true"></i> Closes {{ item.deadline | date: '%a %-d %b %Y' -}}
+          <span class="ef-countdown"></span>
+        </span>
+      {%- endif %}
+    </p>
+  {%- endif %}
+  {%- if submissions_open or item.topics.size > 0 %}
+    <ul class="ef-tags" aria-label="Tags">
+      {%- if submissions_open %}
+        <li><button type="button" class="ef-tag ef-tag--submit" data-tag-submission>Submissions open</button></li>
+      {%- endif %}
+      {%- for t in item.topics %}
+        <li>
+          <button type="button" class="ef-tag" data-tag-topic="{{ t }}">{{ meta.topics[t] | default: t }}</button>
+        </li>
+      {%- endfor %}
+    </ul>
+  {%- endif %}
+</li>

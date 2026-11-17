@@ -1,0 +1,284 @@
+/*******************************************************************************
+ * Market Watch (energy feed) pages
+ ******************************************************************************/
+
+.ef-status {
+  border-top: 2px solid var(--ink);
+  padding: 0.75rem 0 0;
+  margin-bottom: 1.5rem;
+  font-family: "Archivo", sans-serif;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.95rem;
+  color: var(--ink-2);
+  p {
+    margin: 0 0 0.3rem;
+    max-width: none;
+  }
+}
+.ef-status-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 1.25rem;
+  color: var(--ink);
+}
+.ef-status-link a {
+  font-weight: 600;
+}
+
+.ef-toolbar {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+
+  .ef-search {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  .ef-select {
+    flex: 0 0 9.5rem;
+  }
+  .form-control {
+    background-color: var(--global-bg-color);
+    color: var(--global-text-color);
+    border-color: var(--global-divider-color);
+  }
+}
+
+.ef-chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.ef-chip {
+  border: 1px solid var(--global-divider-color);
+  background: transparent;
+  color: var(--global-text-color);
+  border-radius: 2px;
+  padding: 0.3rem 0.8rem;
+  font-family: "Archivo", sans-serif;
+  font-size: 0.85rem;
+  cursor: pointer;
+
+  &:hover {
+    border-color: var(--global-theme-color);
+  }
+  &[aria-pressed="true"] {
+    background: var(--global-theme-color);
+    border-color: var(--global-theme-color);
+    color: var(--global-hover-text-color);
+  }
+  &:focus-visible {
+    outline: 2px solid var(--global-theme-color);
+    outline-offset: 2px;
+  }
+}
+
+.ef-count {
+  margin-left: auto;
+  font-size: 0.85rem;
+  color: var(--global-text-color-light);
+}
+
+.ef-heading {
+  font-size: 1.25rem;
+  margin: 1.75rem 0 0.75rem;
+}
+
+.ef-note {
+  font-size: 0.85rem;
+  color: var(--global-text-color-light);
+}
+
+.ef-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ef-item {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--global-divider-color);
+
+  &--high .ef-title {
+    font-weight: 700;
+  }
+}
+
+.ef-meta {
+  font-family: "Archivo", sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.6rem;
+  font-size: 0.8rem;
+  color: var(--global-text-color-light);
+  margin-bottom: 0.25rem;
+}
+
+/* Category and region are labels, not statuses: neutral ink only. */
+.ef-badge {
+  display: inline-block;
+  padding: 0.05rem 0.5rem;
+  border-radius: 2px;
+  border: 1px solid var(--rule);
+  color: var(--ink);
+  font-family: "Archivo", sans-serif;
+  font-weight: 560;
+
+  &--outline {
+    border-color: transparent;
+    padding-left: 0;
+    padding-right: 0;
+    font-weight: 650;
+  }
+}
+
+/* One status ramp: new (ink, filled) > open (default) > closing soon (orange, due) > closed (struck). */
+.ef-new {
+  padding: 0.05rem 0.45rem;
+  border-radius: 2px;
+  background: var(--ink);
+  color: var(--paper);
+  font-weight: 600;
+}
+
+.ef-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-stretch: 92%;
+  max-width: 70ch;
+  line-height: 1.35;
+  margin: 0.2rem 0 0.3rem;
+  overflow-wrap: anywhere;
+
+  a {
+    color: var(--global-text-color);
+  }
+  a:hover {
+    color: var(--global-theme-color);
+  }
+}
+
+.ef-summary {
+  max-width: 70ch;
+  margin: 0 0 0.3rem;
+  font-size: 0.95rem;
+}
+
+.ef-dates {
+  font-family: "Archivo", sans-serif;
+  font-variant-numeric: tabular-nums;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--global-text-color-light);
+}
+
+.ef-deadline--soon {
+  color: var(--action);
+  font-weight: 600;
+}
+
+.ef-countdown {
+  margin-left: 0.3em;
+}
+
+.ef-deadline--closed {
+  text-decoration: line-through;
+}
+
+.ef-empty {
+  padding: 2rem 0;
+  text-align: center;
+  color: var(--global-text-color-light);
+}
+
+@media (max-width: 576px) {
+  .ef-toolbar {
+    flex-direction: column;
+    .ef-select {
+      flex-basis: auto;
+    }
+  }
+}
+
+/* Market Watch tabs: the two views of one tool */
+.ef-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.75rem;
+  margin: -0.5rem 0 1.5rem;
+  font-family: "Archivo", sans-serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  a {
+    color: var(--ink-2);
+    text-decoration: none;
+    padding-bottom: 0.3rem;
+    border-bottom: 2px solid transparent;
+    &:hover {
+      color: var(--ink);
+    }
+    &[aria-current="page"] {
+      color: var(--ink);
+      border-bottom-color: var(--ink);
+    }
+  }
+}
+
+.ef-toolbar .ef-select {
+  flex: 0 0 11.5rem;
+}
+
+/* Topic and status tags on each entry; each one is a filter shortcut. */
+.ef-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  list-style: none;
+  margin: 0.55rem 0 0;
+  padding: 0;
+}
+.ef-tag {
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  background: transparent;
+  padding: 0.1rem 0.5rem;
+  font-family: "Archivo", sans-serif;
+  font-size: 0.82rem;
+  color: var(--ink-2);
+  cursor: pointer;
+  &:hover {
+    border-color: var(--ink);
+    color: var(--ink);
+  }
+  &--submit {
+    border-color: var(--action);
+    color: var(--action);
+    font-weight: 600;
+    &:hover {
+      border-color: var(--action-hover);
+      color: var(--action-hover);
+    }
+  }
+}
+.ef-chip--submit {
+  border-color: var(--action);
+  color: var(--action);
+  &[aria-pressed="true"] {
+    background: var(--action);
+    border-color: var(--action);
+    color: var(--action-ink);
+  }
+}
+
+@media (max-width: 576px) {
+  .ef-toolbar .ef-select {
+    flex-basis: auto;
+  }
+}
