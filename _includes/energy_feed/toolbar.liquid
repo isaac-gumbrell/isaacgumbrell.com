@@ -1,0 +1,29 @@
+{%- assign meta = site.data.energy_feed_meta -%}
+<nav class="ef-tabs" aria-label="Market Watch">
+  <a href="{{ '/market-watch/updates/' | relative_url }}" {% if page.url contains '/updates/' %}aria-current="page"{% endif %}>Updates</a>
+  <a href="{{ '/market-watch/opportunities/' | relative_url }}" {% if page.url contains '/opportunities/' %}aria-current="page"{% endif %}>Consultations &amp; opportunities</a>
+</nav>
+
+{% include energy_feed/status.liquid %}
+
+<div class="ef-toolbar">
+  <input type="search" class="form-control ef-search" placeholder="{{ include.placeholder }}" aria-label="{{ include.placeholder }}">
+  <select class="form-control ef-select" data-filter-topic aria-label="Filter by topic">
+    <option value="">All topics</option>
+    {% for t in meta.topics %}<option value="{{ t[0] }}">{{ t[1] }}</option>{% endfor %}
+  </select>
+  <select class="form-control ef-select" data-filter-jurisdiction aria-label="Filter by region">
+    <option value="">All regions</option>
+    {% for j in meta.jurisdictions %}<option value="{{ j }}">{{ meta.jurisdiction_labels[j] | default: j }}</option>{% endfor %}
+  </select>
+</div>
+<div class="ef-chips" role="group" aria-label="Filter by category">
+  <button type="button" class="ef-chip" data-filter-category="" aria-pressed="true">All</button>
+  {%- for c in meta.categories %}
+    {%- if include.categories == nil or include.categories contains c[0] %}
+      <button type="button" class="ef-chip" data-filter-category="{{ c[0] }}" aria-pressed="false">{{ c[1] }}</button>
+    {%- endif %}
+  {%- endfor %}
+  <button type="button" class="ef-chip ef-chip--submit" data-filter-submission aria-pressed="false">Submissions open</button>
+  <span class="ef-count" aria-live="polite"></span>
+</div>

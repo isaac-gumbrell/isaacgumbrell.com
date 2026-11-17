@@ -1,0 +1,51 @@
+---
+layout: page
+title: Consultations & Opportunities
+permalink: /market-watch/opportunities/
+description: Open consultations, submission deadlines, tenders, funding rounds and upcoming industry events across the Australian and New Zealand energy sectors.
+nav: false
+---
+
+{% assign feed = site.data.energy_feed %}
+{% assign meta = site.data.energy_feed_meta %}
+{% assign today = site.time | date: '%Y-%m-%d' %}
+{% assign dated = feed.items | where_exp: 'i', "i.deadline != ''" | where_exp: 'i', "i.category != 'event'" | sort: 'deadline' %}
+{% assign events = feed.items | where_exp: 'i', "i.category == 'event'" | where_exp: 'i', "i.event_date != ''" | sort: 'event_date' %}
+{% assign undated = feed.items | where_exp: 'i', 'i.actionable' | where_exp: 'i', "i.due == ''" %}
+
+<div class="ef" data-energy-feed data-ef-upcoming>
+  {% include energy_feed/toolbar.liquid placeholder="Search opportunities" categories="consultation,rule_change,tender,event" %}
+
+  <section data-ef-section>
+    <h2 class="ef-heading">Closing soon</h2>
+    <ol class="ef-list">
+      {% for item in dated %}
+        {% if item.deadline >= today %}{% include energy_feed/item.liquid item=item show_date=false level=3 %}{% endif %}
+      {% endfor %}
+    </ol>
+  </section>
+
+  <section data-ef-section>
+    <h2 class="ef-heading">Upcoming events</h2>
+    <ol class="ef-list">
+      {% for item in events %}
+        {% if item.event_date >= today %}{% include energy_feed/item.liquid item=item show_date=false level=3 %}{% endif %}
+      {% endfor %}
+    </ol>
+  </section>
+
+  <section data-ef-section>
+    <h2 class="ef-heading">Open, no closing date listed</h2>
+    <p class="ef-note">Check the source for timing. These drop off once the feed confirms a date or the item is more than 60 days old.</p>
+    <ol class="ef-list">
+      {% assign undated_cutoff = 'now' | date: '%s' | minus: 5184000 | date: '%Y-%m-%d' %}
+      {% for item in undated %}
+        {% if item.sort_date >= undated_cutoff %}{% include energy_feed/item.liquid item=item level=3 %}{% endif %}
+      {% endfor %}
+    </ol>
+  </section>
+
+  <p class="ef-empty" hidden>Nothing open matches these filters.</p>
+</div>
+
+<script defer src="{{ '/assets/js/energy-feed.js' | relative_url | bust_file_cache }}"></script>

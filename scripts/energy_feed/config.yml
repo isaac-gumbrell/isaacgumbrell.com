@@ -1,0 +1,275 @@
+# Energy feed configuration
+#
+# Two kinds of input:
+#   sources  - pages/feeds fetched directly by the script (cheap, deterministic).
+#              New links are handed to the AI model to triage, classify and summarise.
+#   research - open-ended "beats" where the model searches the web itself. Use these
+#              for sites that block scripted requests (AEMO) and for things that
+#              have no single listing page (events, tenders, political news).
+#
+# jurisdiction: WA | NEM | National (Australia-wide) | NZ | Other
+# keeper: true marks an official RSS feed checked for quality (Nov 2026). Prefer these over
+#   scraping or research; don't drop them without re-checking. match: regex a feed item's title
+#   or summary must contain before triage (for whole-of-government tender feeds).
+# category hint: rule_change | consultation | tender | event | political | report | news
+
+settings:
+  lookback_days: 30          # ignore direct-source items published before this
+  retain_days: 180           # drop items older than this unless a deadline/event is still ahead
+  triage_batch_size: 30      # candidates per triage request
+  max_agent_iterations: 8    # request/response rounds per agent run
+  search_uses_per_beat: 4    # web_search cap per research beat (search fees are most of the cost)
+  fetch_uses_per_beat: 8     # web_fetch cap per research beat / triage batch
+  # Hosts behind Cloudflare that refuse plain HTTP but serve a real browser (tested Nov 2026).
+  # Their pages are rendered in headless Chromium with the same identifying user agent.
+  browser_hosts: [aemo.com.au, asl.org.au]
+
+sources:
+  # ---- AEMO and AEMO Services (ASL): rendered in a browser, see settings.browser_hosts
+  - name: AEMO
+    url: https://www.aemo.com.au/newsroom/media-release
+    type: html
+    include: "aemo\\.com\\.au/newsroom/media-release/[^/?#]+$"
+    jurisdiction: NEM
+    category: news
+
+  - name: AEMO
+    url: https://www.aemo.com.au/newsroom/news-updates
+    type: html
+    include: "aemo\\.com\\.au/newsroom/news-updates/[^/?#]+$"
+    jurisdiction: NEM
+    category: news
+
+  - name: AEMO
+    url: https://www.aemo.com.au/consultations/current-and-closed-consultations
+    type: html
+    include: "aemo\\.com\\.au/consultations/current-and-closed-consultations/[^/?#]+$"
+    jurisdiction: NEM
+    category: consultation
+
+  - name: AEMO
+    url: https://www.aemo.com.au/consultations/tenders
+    type: html
+    include: "aemo\\.com\\.au/consultations/tenders/[^/?#]+$"
+    jurisdiction: NEM
+    category: tender
+
+  - name: AEMO Services (ASL)
+    url: https://asl.org.au/news
+    type: html
+    include: "asl\\.org\\.au/news/(?:media-release|blog)/[^/?#]+$"
+    jurisdiction: NEM
+    category: news
+
+  - name: AEMO Services (ASL)
+    url: https://asl.org.au/tenders
+    type: html
+    include: "asl\\.org\\.au/tenders/[^/?#]+$"
+    jurisdiction: NEM
+    category: tender
+
+  - name: AEMC
+    url: https://www.aemc.gov.au/rss.xml
+    type: rss
+    jurisdiction: NEM
+    category: rule_change
+
+  - name: Energy Policy WA
+    url: https://www.wa.gov.au/organisation/energy-policy-wa
+    type: html
+    include: "/government/announcements/"
+    jurisdiction: WA
+    category: political
+
+  - name: Energy Policy WA
+    url: https://www.wa.gov.au/organisation/energy-policy-wa/consultations-and-reviews
+    type: html
+    include: "/government/document-collections/"
+    jurisdiction: WA
+    category: consultation
+
+  - name: Economic Regulation Authority (WA)
+    url: https://www.erawa.com.au/current-consultations
+    type: html
+    include: "erawa\\.com\\.au/"
+    jurisdiction: WA
+    category: consultation
+
+  - name: Economic Regulation Authority (WA)
+    url: https://www.erawa.com.au/news
+    type: html
+    include: "/news/"
+    jurisdiction: WA
+    category: news
+
+  - name: AER
+    url: https://www.aer.gov.au/news
+    type: html
+    include: "/news/articles/"
+    jurisdiction: NEM
+    category: news
+
+  - name: ARENA
+    url: https://arena.gov.au/feed/
+    type: rss
+    jurisdiction: National
+    category: news
+
+  - name: Federal Minister for Climate Change and Energy
+    url: https://minister.dcceew.gov.au/bowen/media-releases
+    type: html
+    include: "/media-releases/"
+    jurisdiction: National
+    category: political
+
+  - name: DCCEEW
+    url: https://www.dcceew.gov.au/about/news
+    type: html
+    include: "/about/news/"
+    jurisdiction: National
+    category: news
+    llm_only: true            # mixed energy/environment content; only publish after the model filters it
+
+  - name: energy.gov.au
+    url: https://www.energy.gov.au/news/rss
+    type: rss
+    jurisdiction: National
+    category: news
+    keeper: true
+
+  - name: AusTender
+    url: https://www.tenders.gov.au/public_data/rss/rss.xml
+    type: rss
+    jurisdiction: National
+    category: tender
+    keeper: true
+    match: &energy_tender "electricity|energy|solar|wind (?:farm|turbine)|batter(?:y|ies)|substation|transmission|generation|renewable|microgrid|hydrogen|geotherm|EV charg|power station|lines compan|biogas|\\bLNG\\b|gas (?:supply|pipeline)"
+    llm_only: true            # mixed with non-energy tenders; only publish what the model confirms
+
+  # ---- New Zealand
+  - name: GETS (NZ Government tenders)
+    url: https://www.gets.govt.nz/ExternalRSSFeed.htm
+    type: rss
+    jurisdiction: NZ
+    category: tender
+    keeper: true
+    match: *energy_tender
+    llm_only: true
+
+  - name: Commerce Commission (NZ)
+    url: https://www.comcom.govt.nz/news-and-media/news-and-events/
+    type: html
+    include: "/news-and-media/news-and-events/20\\d\\d/"
+    jurisdiction: NZ
+    category: news
+    llm_only: true            # all ComCom work (groceries, telco, credit); keep electricity and gas only
+
+  - name: Electricity Authority (NZ)
+    url: https://www.ea.govt.nz/news/
+    type: html
+    include: "ea\\.govt\\.nz/news/general-news/[^/]+/?$"
+    jurisdiction: NZ
+    category: news
+
+  - name: Electricity Authority (NZ)
+    url: https://www.ea.govt.nz/consultations/
+    type: html
+    include: "ea\\.govt\\.nz/projects/all/[^/]+/consultation/[^/]+/?$"
+    jurisdiction: NZ
+    category: consultation
+
+  - name: Transpower
+    url: https://www.transpower.co.nz/news
+    type: html
+    include: "transpower\\.co\\.nz/news/(?!news-transpower)[a-z0-9-]+$"
+    jurisdiction: NZ
+    category: news
+
+  - name: NZ Government (Beehive)
+    url: https://www.beehive.govt.nz/rss.xml
+    type: rss
+    jurisdiction: NZ
+    category: political
+    llm_only: true            # every portfolio; only publish what the model confirms is energy
+
+research:
+  - id: aemo
+    name: AEMO (NEM and WEM)
+    allowed_domains: [aemo.com.au]
+    prompt: >-
+      Find new announcements from the Australian Energy Market Operator covering both the
+      NEM and the WA Wholesale Electricity Market (WEM): media releases, open stakeholder
+      consultations (NEM and WEM procedure changes, methodology reviews), major reports
+      (ESOO, ISP, WEM ESOO, quarterly energy dynamics), industry forums and webinars.
+      Prefer pages under aemo.com.au/newsroom, aemo.com.au/consultations and
+      aemo.com.au/energy-systems/electricity/wholesale-electricity-market-wem.
+
+  - id: wa_politics
+    name: WA Government and Parliament
+    allowed_domains: [mediastatements.wa.gov.au, wa.gov.au, parliament.wa.gov.au, westernpower.com.au, synergy.net.au, horizonpower.com.au]
+    prompt: >-
+      Find new Western Australian Government energy announcements: WA Minister for Energy
+      media statements, energy legislation before WA Parliament, state budget energy
+      measures, and major announcements from Western Power, Synergy and Horizon Power
+      (network investment, procurement, tariff changes).
+
+  - id: federal_policy
+    name: Federal policy and national bodies
+    allowed_domains: [energy.gov.au, dcceew.gov.au, consult.dcceew.gov.au, aemc.gov.au, aer.gov.au, cefc.com.au, cleanenergyregulator.gov.au, asl.org.au, aph.gov.au]
+    prompt: >-
+      Find new national energy policy items relevant to Australian energy professionals:
+      Energy and Climate Change Ministerial Council communiques, DCCEEW consultations
+      (consult.dcceew.gov.au), Capacity Investment Scheme tender announcements (ASL),
+      Clean Energy Regulator updates, CEFC funding announcements and federal energy
+      legislation.
+
+  - id: tenders
+    name: Tenders, RFPs and funding rounds
+    allowed_domains: []
+    prompt: >-
+      Find currently open tenders, requests for proposal, expressions of interest and
+      grant/funding rounds for the Australian energy sector, with emphasis on Western
+      Australia: Tenders WA, AusTender, Western Power, Synergy, Horizon Power, AEMO,
+      ARENA funding rounds, Capacity Investment Scheme tenders, state renewable energy
+      auctions and energy-consultancy panels. Only record items whose closing date has not
+      passed (or is not stated), and always record the closing date when it is given.
+
+  - id: events
+    name: Industry events
+    allowed_domains: []
+    prompt: >-
+      Find upcoming energy-industry events in Australia over the next four months,
+      prioritising Perth/Western Australia and online events: conferences, AEMO and EPWA
+      stakeholder forums and information sessions, AEMC public forums, Energy Club WA,
+      Clean Energy Council, Energy Networks Australia, EUAA, CEDA energy events, and
+      major national conferences. Record the event date and, if relevant, the
+      registration deadline.
+
+  # ---- New Zealand (MBIE, Beehive portfolio pages, EECA and the Commerce Commission's
+  # release list block or hide content from scripts, so the agent covers them.)
+  - id: nz_market
+    name: New Zealand regulators and government
+    location: nz
+    allowed_domains: [ea.govt.nz, transpower.co.nz, mbie.govt.nz, beehive.govt.nz, comcom.govt.nz, gasindustry.co.nz, eeca.govt.nz, legislation.govt.nz, parliament.nz]
+    prompt: >-
+      Find new New Zealand energy-market announcements: Electricity Authority Code
+      amendments, consultations and decisions (including wholesale market, security of
+      supply and distribution pricing work); Transpower as grid owner and system operator
+      (security of supply notices, consultations, major investment proposals); MBIE energy
+      policy and consultations; Commerce Commission electricity lines and gas pipeline
+      decisions (default price-quality paths, input methodologies); Gas Industry Company
+      consultations and gas governance rule changes; EECA programmes; Energy Minister
+      announcements on beehive.govt.nz; and energy legislation before Parliament.
+
+  - id: nz_opportunities
+    name: New Zealand tenders and events
+    location: nz
+    allowed_domains: []
+    prompt: >-
+      Find currently open New Zealand energy-sector tenders, RFPs, expressions of interest
+      and funding rounds (GETS, Transpower, EECA, MBIE, gentailers and lines companies),
+      and upcoming New Zealand energy-industry events over the next four months
+      (Electricity Authority and Transpower industry forums and webinars, Downstream,
+      BusinessNZ Energy Council, Electricity Networks Aotearoa, NZ Wind Energy Association,
+      SEANZ and similar). Only record tenders whose closing date has not passed (or is not
+      stated), and always record closing and event dates when given.

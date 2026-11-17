@@ -1,0 +1,23 @@
+---
+layout: page
+title: Market Updates
+permalink: /market-watch/updates/
+description: Rule changes, consultations, policy announcements and industry news for energy professionals in Australia and New Zealand, with a focus on Western Australia, the NEM and the NZ electricity market.
+nav: false
+---
+
+{% assign feed = site.data.energy_feed %}
+{% assign meta = site.data.energy_feed_meta %}
+
+<div class="ef" data-energy-feed>
+  {% include energy_feed/toolbar.liquid placeholder="Search updates" %}
+
+  <ol class="ef-list">
+    {% for item in feed.items %}
+      {% include energy_feed/item.liquid item=item %}
+    {% endfor %}
+  </ol>
+  <p class="ef-empty" hidden>No updates match these filters.</p>
+</div>
+
+<script defer src="{{ '/assets/js/energy-feed.js' | relative_url | bust_file_cache }}"></script>

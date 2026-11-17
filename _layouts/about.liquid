@@ -1,80 +1,112 @@
 ---
 layout: default
 ---
-<div class="post">
-  <header class="post-header">
-    <div class="hero{% if page.profile and page.profile.image %} hero--with-image{% endif %}">
-      <div class="hero-text">
-        <h1 class="post-title">
-          {% if site.title == 'blank' %}
-            <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
-            {{ site.last_name }}
-          {% else %}
-            {{ site.title }}
-          {% endif %}
-        </h1>
-        {% if page.tagline %}<p class="hero-tagline">{{ page.tagline }}</p>{% endif %}
-        <p class="desc">{{ page.subtitle }}</p>
+{%- assign work = site.data.work -%}
+{%- assign feed = site.data.energy_feed -%}
+{%- assign today = site.time | date: '%Y-%m-%d' -%}
+{%- assign closing = feed.items | where_exp: 'i', "i.deadline != ''" | where_exp: 'i', 'i.deadline >= today' -%}
+{%- assign events = feed.items | where_exp: 'i', "i.event_date != ''" | where_exp: 'i', 'i.event_date >= today' -%}
+
+<div class="home">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-top">
+      <div class="hero-copy">
+        <h1 id="hero-title" class="hero-title">{{ page.headline }}</h1>
+        <p class="hero-lede">{{ page.lede }}</p>
         <div class="hero-actions">
-          {% if site.email %}
-            <a href="mailto:{{ site.email }}" class="btn btn-sm btn-outline-primary hero-cta">Get in touch &rarr;</a>
-          {% endif %}
-          <span class="hero-social">{% include social.liquid %}</span>
+          <a class="btn-action" href="mailto:{{ site.email }}">Email Isaac</a>
+          <a class="btn-line" href="{{ '/market-watch/updates/' | relative_url }}">Open Market Watch</a>
         </div>
       </div>
-      {% if page.profile %}
-        <div class="hero-portrait">
-          {% if page.profile.image %}
-            {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
-            {% if page.profile.image_circular %}
-              {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
-            {% else %}
-              {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
-            {% endif %}
-            {% capture sizes %}(min-width: {{ site.max_width }}) 220px, (min-width: 576px) 25vw, 60vw{% endcapture %}
-            {% capture profile_alt %}{{ site.first_name }} {{ site.last_name }}{% endcapture %}
-            {%
-              include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=profile_alt
-              cache_bust=true
-            %}
-          {% endif %}
-          {% if page.profile.more_info %}
-            <div class="more-info">{{ page.profile.more_info }}</div>
-          {% endif %}
-        </div>
-      {% endif %}
+      {%- if page.profile.image %}
+        <figure class="hero-portrait">
+          {%- assign profile_image_path = page.profile.image | prepend: 'assets/img/' -%}
+          {%- capture profile_alt %}{{ site.first_name }} {{ site.last_name }}{% endcapture -%}
+          {% include figure.liquid loading="eager" path=profile_image_path class="hero-portrait-img" sizes="(min-width: 992px) 280px, 40vw" alt=profile_alt cache_bust=true %}
+        </figure>
+      {%- endif %}
     </div>
-  </header>
+    <div class="hero-chart">
+      {% include merit_order.liquid %}
+    </div>
+  </section>
 
-  <article>
-    <div class="clearfix">{{ content }}</div>
+  <section class="home-section tools" aria-labelledby="tools-title">
+    <div class="section-head">
+      <h2 id="tools-title">Tools I use every week</h2>
+    </div>
+    <div class="tools-grid">
+      <div class="tool tool--watch">
+        <h3><a href="{{ '/market-watch/updates/' | relative_url }}">Market Watch</a></h3>
+        <p class="tool-desc">
+          Announcements, rule changes, consultations, tenders and events from AEMO, Energy Policy WA, the AEMC, New Zealand's Electricity Authority and others, refreshed every
+          12 hours.
+        </p>
+        <ol class="watch-list">
+          {%- for item in feed.items limit: 4 %}
+            <li>
+              <a href="{{ item.url | escape }}" target="_blank" rel="noopener">{{ item.title | escape }}</a>
+              <span class="watch-meta">
+                {{- site.data.energy_feed_meta.category_singular[item.category] }} · {{ item.source | escape -}}
+              </span>
+            </li>
+          {%- endfor %}
+        </ol>
+        <p class="tool-links">
+          <a href="{{ '/market-watch/updates/' | relative_url }}">All updates</a>
+          <a href="{{ '/market-watch/opportunities/' | relative_url }}">
+            {%- if closing.size > 0 %}{{ closing.size }} closing soon{% else %}Open consultations{% endif -%}
+            {%- if events.size > 0 %} · {{ events.size }} upcoming events{% endif -%}
+          </a>
+        </p>
+      </div>
 
-    <!-- News -->
-    {% if page.news and site.announcements.enabled %}
-      <h2>
-        <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
-      </h2>
-      {% include news.liquid limit=true %}
-    {% endif %}
+      <div class="tool tool--code">
+        <h3><a href="{{ '/repositories/' | relative_url }}">Open-source modelling</a></h3>
+        <ul class="code-list">
+          {%- for t in work.tools %}
+            <li>
+              <a href="{{ t.url }}" target="_blank" rel="noopener">{{ t.name }}</a>
+              <span class="code-role">{{ t.role }}</span>
+              <span class="code-desc">{{ t.description }}</span>
+            </li>
+          {%- endfor %}
+        </ul>
+      </div>
+    </div>
+  </section>
 
-    <!-- Latest posts -->
-    {% if site.latest_posts.enabled %}
-      <h2>
-        <a href="{{ '/blog/' | relative_url }}" style="color: inherit">latest posts</a>
-      </h2>
-      {% include latest_posts.liquid %}
-    {% endif %}
+  <section class="home-section writing" aria-labelledby="writing-title">
+    <div class="section-head">
+      <h2 id="writing-title">Writing</h2>
+    </div>
+    <ul class="ledger">
+      {%- for w in work.writing %}
+        <li>
+          <span class="ledger-year">{{ w.year }}</span>
+          <a href="{{ w.url }}" target="_blank" rel="noopener">{{ w.title }}</a>
+          <span class="ledger-meta">{{ w.venue }}</span>
+        </li>
+      {%- endfor %}
+      {%- for a in work.academic %}
+        <li>
+          <span class="ledger-year">Thesis</span>
+          <a href="{{ a.url }}" target="_blank" rel="noopener">{{ a.title }}</a>
+          <span class="ledger-meta">{{ a.type }}, {{ a.institution }}</span>
+        </li>
+      {%- endfor %}
+    </ul>
+    <p class="section-more"><a href="{{ '/projects/' | relative_url }}">All projects and writing</a></p>
+  </section>
 
-    <!-- Selected papers -->
-    {% if page.selected_papers %}
-      <h2>
-        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">selected publications</a>
-      </h2>
-      {% include selected_papers.liquid %}
-    {% endif %}
-
-    {% if site.newsletter.enabled and site.footer_fixed %}
-      {% include scripts/newsletter.liquid center=true %}
-    {% endif %}
-  </article>
+  <section class="home-section contact" aria-labelledby="contact-title">
+    <h2 id="contact-title">Get in touch</h2>
+    <p>Happy to talk about energy market modelling, market design, or any of the work on this site.</p>
+    <div class="hero-actions">
+      <a class="btn-action" href="mailto:{{ site.email }}">Email Isaac</a>
+      <span class="contact-social">{% include social.liquid %}</span>
+    </div>
+  </section>
 </div>
+
+<script defer src="{{ '/assets/js/merit-order.js' | relative_url | bust_file_cache }}"></script>

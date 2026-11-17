@@ -1,0 +1,45 @@
+# Display labels for the Market Watch pages (keys match scripts/energy_feed/update_feed.py)
+categories:
+  rule_change: Rule changes
+  consultation: Consultations
+  political: Policy & politics
+  tender: Tenders & funding
+  event: Events
+  report: Reports
+  news: News
+category_singular:
+  rule_change: Rule change
+  consultation: Consultation
+  political: Policy
+  tender: Tender
+  event: Event
+  report: Report
+  news: News
+jurisdictions:
+  - WA
+  - NEM
+  - National
+  - NZ
+  - Other
+# Region dropdown wording, and the short badge on each entry ("National" means Australia-wide).
+jurisdiction_labels:
+  WA: Western Australia
+  NEM: NEM (eastern states)
+  National: Australia-wide
+  NZ: New Zealand
+  Other: Other
+jurisdiction_badges:
+  National: AU
+topics:
+  generation: Generation
+  storage: Storage
+  gas: Gas
+  renewables: Renewables
+  hydrogen: Hydrogen
+  networks: Networks
+  consumer_energy: Rooftop solar, EVs & DER
+  reliability: Reliability & capacity
+  prices: Prices & tariffs
+  rules: Market rules
+  emissions: Emissions & climate
+  retail: Retail & customers
