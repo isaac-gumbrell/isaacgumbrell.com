@@ -128,7 +128,7 @@ pirsch_analytics: # your Pirsch analytics site ID (length 32 characters)
 openpanel_analytics: # your Openpanel analytics client ID (format: XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX)
 # GoatCounter: cookie-free visitor counts. Put your site code here (the part before .goatcounter.com);
 # leave empty to turn counting off. Only the live (production) build loads the script.
-goatcounter_code:
+goatcounter_code: isaac-gumbrell
 
 # For Google Search Console, see https://support.google.com/webmasters/answer/9008080?hl=en#meta_tag_verification&zippy=%2Chtml-tag
 google_site_verification: # your google-site-verification ID (Google Search Console)
