@@ -144,3 +144,8 @@
 {% if page.tikzjax %}
   <link defer rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
 {% endif %}
+
+{% comment %} GoatCounter visitor counts (cookie-free). Set goatcounter_code in _config.yml. {% endcomment %}
+{% if site.goatcounter_code and jekyll.environment == 'production' %}
+  <script data-goatcounter="https://{{ site.goatcounter_code }}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+{% endif %}
