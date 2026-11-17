@@ -292,6 +292,8 @@ article p,
 .hero-portrait {
   margin: 0;
   justify-self: end;
+  align-self: start; /* top in line with the headline, not the buttons */
+  margin-top: 0.5rem;
   width: 100%;
   max-width: 13.6rem; /* 80% of the original 17rem */
   border: 1px solid var(--ink);

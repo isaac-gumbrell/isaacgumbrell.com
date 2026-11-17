@@ -196,7 +196,7 @@ tools:
     url: https://github.com/isaac-gumbrell/scenario_framework_manager
   - name: ASSUME
     owner: assume-framework
-    description: Agent-based simulation framework for electricity markets, built on Mesa
+    description: Agent-based electricity market simulation toolbox with reinforcement-learning bidding agents
     language: Python
     role: Contributor
     url: https://github.com/assume-framework/assume
