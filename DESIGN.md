@@ -199,11 +199,11 @@ Dark tokens are defined under `html[data-theme="dark"]` (paper `#101415`, ink `#
 
 ## Layout
 
-A single reading column inside the theme container. The home hero splits 8fr / 4fr (headline and actions left, portrait right, bottom-aligned, 3rem gap) above a full-width merit-order chart (SVG viewBox 1200 wide, about 300px tall). The Tools band splits 7fr / 5fr. Sections sit 5.5rem apart (3.75rem under 768px).
+A single reading column inside the theme container. The home hero splits 8fr / 4fr (headline and actions left, a 13.6rem portrait right, bottom-aligned, 3rem gap) above a full-width merit-order chart (SVG viewBox 1200 wide, about 300px tall). The Tools band splits 7fr / 5fr. Sections sit 5.5rem apart (3.75rem under 768px).
 
 Lists are ledgers: a fixed left column for the year or language (5.5rem; 7.5rem on Projects and Repositories) and a flexible right column, rows separated by Hairline rules with 0.85rem vertical padding. Under 576px the year column stacks above the entry.
 
-Under 768px the hero collapses to one column with a 9rem portrait moved above the headline, and the wide chart is replaced by the same stack turned on its side (`.mo-rows`): steps become rows whose thickness is years and whose length is price, with the demand curve falling from the upper right.
+Under 768px the hero collapses to one column with a 7.2rem portrait moved above the headline, and the wide chart is replaced by the same stack turned on its side (`.mo-rows`): steps become rows whose thickness is years and whose length is price, with the demand curve falling from the upper right.
 
 ## Elevation & Depth
 

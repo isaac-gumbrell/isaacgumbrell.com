@@ -22,7 +22,7 @@ layout: default
         <figure class="hero-portrait">
           {%- assign profile_image_path = page.profile.image | prepend: 'assets/img/' -%}
           {%- capture profile_alt %}{{ site.first_name }} {{ site.last_name }}{% endcapture -%}
-          {% include figure.liquid loading="eager" path=profile_image_path class="hero-portrait-img" sizes="(min-width: 992px) 280px, 40vw" alt=profile_alt cache_bust=true %}
+          {% include figure.liquid loading="eager" path=profile_image_path class="hero-portrait-img" sizes="(min-width: 992px) 224px, 32vw" alt=profile_alt cache_bust=true %}
         </figure>
       {%- endif %}
     </div>
@@ -72,29 +72,6 @@ layout: default
         </ul>
       </div>
     </div>
-  </section>
-
-  <section class="home-section writing" aria-labelledby="writing-title">
-    <div class="section-head">
-      <h2 id="writing-title">Writing</h2>
-    </div>
-    <ul class="ledger">
-      {%- for w in work.writing %}
-        <li>
-          <span class="ledger-year">{{ w.year }}</span>
-          <a href="{{ w.url }}" target="_blank" rel="noopener">{{ w.title }}</a>
-          <span class="ledger-meta">{{ w.venue }}</span>
-        </li>
-      {%- endfor %}
-      {%- for a in work.academic %}
-        <li>
-          <span class="ledger-year">Thesis</span>
-          <a href="{{ a.url }}" target="_blank" rel="noopener">{{ a.title }}</a>
-          <span class="ledger-meta">{{ a.type }}, {{ a.institution }}</span>
-        </li>
-      {%- endfor %}
-    </ul>
-    <p class="section-more"><a href="{{ '/projects/' | relative_url }}">All projects and writing</a></p>
   </section>
 
   <section class="home-section contact" aria-labelledby="contact-title">
