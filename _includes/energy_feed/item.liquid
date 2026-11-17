@@ -19,7 +19,9 @@
 >
   <div class="ef-meta">
     <span class="ef-badge">{{ meta.category_singular[item.category] | default: item.category }}</span>
-    <span class="ef-badge ef-badge--outline" title="{{ meta.jurisdiction_labels[item.jurisdiction] | default: item.jurisdiction }}">{{ meta.jurisdiction_badges[item.jurisdiction] | default: item.jurisdiction }}</span>
+    <span class="ef-badge ef-badge--outline" title="{{ meta.jurisdiction_labels[item.jurisdiction] | default: item.jurisdiction }}">
+      {{- meta.jurisdiction_badges[item.jurisdiction] | default: item.jurisdiction -}}
+    </span>
     <span class="ef-source">{{ item.source | escape }}</span>
     {%- if include.show_date != false %}
       {%- if item.published != '' %}
@@ -57,7 +59,9 @@
         <li><button type="button" class="ef-tag ef-tag--submit" data-tag-submission>Submissions open</button></li>
       {%- endif %}
       {%- for t in item.topics %}
-        <li><button type="button" class="ef-tag" data-tag-topic="{{ t }}">{{ meta.topics[t] | default: t }}</button></li>
+        <li>
+          <button type="button" class="ef-tag" data-tag-topic="{{ t }}">{{ meta.topics[t] | default: t }}</button>
+        </li>
       {%- endfor %}
     </ul>
   {%- endif %}

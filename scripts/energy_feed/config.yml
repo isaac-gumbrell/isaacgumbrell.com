@@ -14,12 +14,12 @@
 # category hint: rule_change | consultation | tender | event | political | report | news
 
 settings:
-  lookback_days: 30          # ignore direct-source items published before this
-  retain_days: 180           # drop items older than this unless a deadline/event is still ahead
-  triage_batch_size: 30      # candidates per triage request
-  max_agent_iterations: 8    # request/response rounds per agent run
-  search_uses_per_beat: 4    # web_search cap per research beat (search fees are most of the cost)
-  fetch_uses_per_beat: 8     # web_fetch cap per research beat / triage batch
+  lookback_days: 30 # ignore direct-source items published before this
+  retain_days: 180 # drop items older than this unless a deadline/event is still ahead
+  triage_batch_size: 30 # candidates per triage request
+  max_agent_iterations: 8 # request/response rounds per agent run
+  search_uses_per_beat: 4 # web_search cap per research beat (search fees are most of the cost)
+  fetch_uses_per_beat: 8 # web_fetch cap per research beat / triage batch
   # Hosts behind Cloudflare that refuse plain HTTP but serve a real browser (tested Nov 2026).
   # Their pages are rendered in headless Chromium with the same identifying user agent.
   browser_hosts: [aemo.com.au, asl.org.au]
@@ -128,7 +128,7 @@ sources:
     include: "/about/news/"
     jurisdiction: National
     category: news
-    llm_only: true            # mixed energy/environment content; only publish after the model filters it
+    llm_only: true # mixed energy/environment content; only publish after the model filters it
 
   - name: energy.gov.au
     url: https://www.energy.gov.au/news/rss
@@ -144,7 +144,7 @@ sources:
     category: tender
     keeper: true
     match: &energy_tender "electricity|energy|solar|wind (?:farm|turbine)|batter(?:y|ies)|substation|transmission|generation|renewable|microgrid|hydrogen|geotherm|EV charg|power station|lines compan|biogas|\\bLNG\\b|gas (?:supply|pipeline)"
-    llm_only: true            # mixed with non-energy tenders; only publish what the model confirms
+    llm_only: true # mixed with non-energy tenders; only publish what the model confirms
 
   # ---- New Zealand
   - name: GETS (NZ Government tenders)
@@ -162,7 +162,7 @@ sources:
     include: "/news-and-media/news-and-events/20\\d\\d/"
     jurisdiction: NZ
     category: news
-    llm_only: true            # all ComCom work (groceries, telco, credit); keep electricity and gas only
+    llm_only: true # all ComCom work (groceries, telco, credit); keep electricity and gas only
 
   - name: Electricity Authority (NZ)
     url: https://www.ea.govt.nz/news/
@@ -190,7 +190,7 @@ sources:
     type: rss
     jurisdiction: NZ
     category: political
-    llm_only: true            # every portfolio; only publish what the model confirms is energy
+    llm_only: true # every portfolio; only publish what the model confirms is energy
 
 research:
   - id: aemo
@@ -215,7 +215,8 @@ research:
 
   - id: federal_policy
     name: Federal policy and national bodies
-    allowed_domains: [energy.gov.au, dcceew.gov.au, consult.dcceew.gov.au, aemc.gov.au, aer.gov.au, cefc.com.au, cleanenergyregulator.gov.au, asl.org.au, aph.gov.au]
+    allowed_domains:
+      [energy.gov.au, dcceew.gov.au, consult.dcceew.gov.au, aemc.gov.au, aer.gov.au, cefc.com.au, cleanenergyregulator.gov.au, asl.org.au, aph.gov.au]
     prompt: >-
       Find new national energy policy items relevant to Australian energy professionals:
       Energy and Climate Change Ministerial Council communiques, DCCEEW consultations
@@ -250,7 +251,18 @@ research:
   - id: nz_market
     name: New Zealand regulators and government
     location: nz
-    allowed_domains: [ea.govt.nz, transpower.co.nz, mbie.govt.nz, beehive.govt.nz, comcom.govt.nz, gasindustry.co.nz, eeca.govt.nz, legislation.govt.nz, parliament.nz]
+    allowed_domains:
+      [
+        ea.govt.nz,
+        transpower.co.nz,
+        mbie.govt.nz,
+        beehive.govt.nz,
+        comcom.govt.nz,
+        gasindustry.co.nz,
+        eeca.govt.nz,
+        legislation.govt.nz,
+        parliament.nz,
+      ]
     prompt: >-
       Find new New Zealand energy-market announcements: Electricity Authority Code
       amendments, consultations and decisions (including wholesale market, security of

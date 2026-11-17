@@ -137,6 +137,7 @@ Two type voices carry the two halves of the work. Archivo, at condensed widths w
 The world refuses the consultant default of headshot beside a headline over three service cards. The portrait sits in a ruled rectangular frame, like a figure plate, not a soft avatar.
 
 **Key Characteristics:**
+
 - Cool white chart paper, ink axes, hairline gridlines.
 - One teal for modelling fills and links; diagonal hatch for qualitative work.
 - Signal orange spent only on actions, the demand curve and things that are due.
@@ -149,12 +150,15 @@ The world refuses the consultant default of headshot beside a headline over thre
 A cool, near-neutral chart-paper palette with one working teal and one scarce signal orange.
 
 ### Primary
+
 - **Plant Teal** (`step`): fills modelling steps, colours links, the pressed filter chip, the Modelling tag, text selection and the qualitative hatch stroke. It is the colour of the work itself.
 
 ### Secondary
+
 - **Signal Orange** (`action`): the Email button, the demand curve and clearing point, deadlines closing within seven days, the "Submissions open" tag and filter, the focus ring, the text caret, and the hover state of links and buttons. **Burnt Signal** (`action-hover`) is its pressed and hovered fill. **Action Ink** (`action-ink`) is the white text on it.
 
 ### Neutral
+
 - **Chart Paper** (`paper`): page and navbar background. A cool white, deliberately not cream.
 - **Axis Ink** (`ink`): text, chart axes, step edges, the ruled section tops, the portrait frame, the outline button and the "New" status chip. Also the inverted fill of the outline button on hover.
 - **Pencil Grey** (`ink-2`): secondary text: ledes, metadata, years, axis labels, placeholders.
@@ -165,6 +169,7 @@ A cool, near-neutral chart-paper palette with one working teal and one scarce si
 Dark tokens are defined under `html[data-theme="dark"]` (paper `#101415`, ink `#e8ecea`, step `#5fb3ac`, action `#ff7a3d`) but do not ship: `enable_darkmode: false` in `_config.yml`. Treat them as reserved, not as part of the visible system.
 
 ### Named Rules
+
 **The Due-or-Doable Rule.** Orange appears only where the visitor can act or where something is due: the Email action, the demand curve and its clearing point, open submissions, deadlines inside seven days, and interaction states (hover, focus, caret). Never on decoration, headings or category labels.
 
 **The Labels-Are-Not-Statuses Rule.** Category and region badges are neutral ink with a Rule border. Colour in the feed belongs to the status ramp alone.
@@ -178,6 +183,7 @@ Dark tokens are defined under `html[data-theme="dark"]` (paper `#101415`, ink `#
 **Character:** A condensed engineering grotesque that reads like chart annotation, paired with a bookish optical-size serif that reads like the report. Width, not weight, does most of the hierarchy work.
 
 ### Hierarchy
+
 - **Display** (680, clamp(2.2rem, 4.2vw, 3.6rem), 1.02; width 82%, -0.025em): the home headline only, max 24ch.
 - **Headline** (650, clamp(2rem, 4vw, 3rem); width 88%): page titles. Section heads step down to clamp(1.5rem, 2.4vw, 2rem); ruled ledger section heads to 1.5rem.
 - **Title** (600, 1.1rem, 1.35; width 92%): project titles and feed item titles, max 70ch. High-importance feed items go to 700.
@@ -186,6 +192,7 @@ Dark tokens are defined under `html[data-theme="dark"]` (paper `#101415`, ink `#
 - **Chart label** (Archivo 560, 16px, width 85%; years 15px at 420 in Pencil Grey): axis labels under each step. The narrow chart uses 14px / 12.5px.
 
 ### Named Rules
+
 **The Two Voices Rule.** Numbers, structure and anything you would find on a chart axis are Archivo; anything you would find in the written report is Source Serif 4. Do not set prose in Archivo or labels in the serif.
 
 **The Tabular Figures Rule.** Years, dates, times, tables and the feed status line use tabular figures so columns of numbers align.
@@ -203,6 +210,7 @@ Under 768px the hero collapses to one column with a 9rem portrait moved above th
 Flat. There are no shadows in the world; the theme's navbar, portrait image and hero shadows are explicitly removed. Depth is conveyed by overlap (the hatch over the teal fill, the demand curve crossing the stack), by stroke weight (axis 1.5px, step edges 1px rising to 3px on hover or focus, ruled section tops 2px), and by the thin ink frame with 6px inset around the portrait.
 
 ### Named Rules
+
 **The Line-Weight Rule.** To lift something, thicken its line or overlap it; never cast a shadow.
 
 ## Shapes
@@ -210,6 +218,7 @@ Flat. There are no shadows in the world; the theme's navbar, portrait image and 
 Corners are nearly square: 2px on buttons, the Market Watch nav button, chips, tags, badges and the status chip; 0 on the portrait and on every chart step. Borders are 1px solid in Ink, Rule or Teal; section tops are 2px solid Ink. The one dashed form is the empty "What's next" step at the end of the chart (1.5px Ink Secondary, dash 6/5). Qualitative work is drawn as a 45° hatch on a 9px pitch.
 
 ### Named Rules
+
 **The Three Fills Rule.** Solid teal = modelling; solid teal with a paper hatch over it = modelling and qualitative; teal hatch on paper = qualitative only. The vocabulary is the same in the chart, the legend and the Projects tags, and it means nothing else.
 
 **The What's-Next Dash Rule.** A dashed ink outline marks only the empty last step of the merit order: work not yet done. It is not a call to action and carries no orange.
@@ -217,17 +226,21 @@ Corners are nearly square: 2px on buttons, the Market Watch nav button, chips, t
 ## Components
 
 ### Buttons
+
 Plain, squared and decisive; there are two and only two.
+
 - **Shape:** nearly square (2px), min height 2.9rem, padding 0.65rem 1.3rem, Archivo 600 at 92% width.
 - **Action:** Signal Orange fill, white text, matching 1px border. Used for Email Isaac (hero, contact, Projects CV request).
 - **Line:** transparent with a 1px Ink border and Ink text; hover inverts to Ink fill with Paper text. Used for the secondary route (Open Market Watch).
 - **Hover / Focus:** 160ms ease-out colour transitions; Action darkens to Burnt Signal. Focus is a 2px Signal Orange outline offset 3px (global).
 
 ### Chips (Market Watch filters)
+
 - **Style:** transparent, 1px Hairline border, 2px corners, Archivo 0.85rem, padding 0.3rem 0.8rem.
 - **State:** hover turns the border Teal; pressed (`aria-pressed="true"`) fills Teal with Paper text.
 
 ### Tags and badges
+
 - **Role tags (Projects):** Modelling is a solid Teal tag with Paper text; Qualitative is a Teal-outlined tag carrying a small hatch swatch. 2px corners, 0.85rem.
 - **Category badge (feed):** 1px Rule border, Ink text, Archivo 560. Region is the same label without a border at 650.
 - **Topic tags (feed):** one to four per entry under the explanation (Generation, Storage, Gas, Market rules…); 1px Rule border, Ink Secondary Archivo 0.82rem, hover to an Ink border. Each tag is a button that sets the topic filter.
@@ -235,27 +248,34 @@ Plain, squared and decisive; there are two and only two.
 - **Dates (feed):** the publish date taken from the source when one exists; otherwise "Updated …" from the page's last-modified date; "Added …" only when the source states neither.
 
 ### Feed status ramp
+
 One ramp for every feed state: **New** is a filled Ink chip (Paper text, 600, shown for items first seen within ~36 hours); **open** is the default meta line; **closing soon** (deadline within seven days) turns the deadline Signal Orange at 600; **closed** strikes the deadline through. The ramp runs in that order and adds no other colours.
 
 ### Ledgers
+
 The list form for writing, projects, repositories and the home Tools lists: year or language in a fixed Archivo column, title in Archivo 560–600 Ink, metadata in Pencil Grey, Hairline row rules. Titles hover to Signal Orange with an underline. A targeted project row (linked from its chart step) gets an 8% Teal wash.
 
 ### Ruled sections
+
 Major blocks (Tools columns, Projects and Repositories sections, the feed status line) open with a 2px solid Ink rule and 0.75–1rem of space above the heading. No cards, no boxes.
 
 ### Inputs / Fields
+
 - **Style:** the feed search and region select take Paper background, Ink text and a Hairline border on the theme's form control.
 - **Focus:** the global 2px Signal Orange outline.
 
 ### Navigation
+
 Paper navbar with a 1px Rule bottom border and no shadow. The wordmark is Archivo 650 at 88% width, 1.15rem, Ink. Links are Archivo 0.98rem Ink; the active page turns Teal at 600. Market Watch is the one tool with its own navbar button: 1px Ink border, 2px corners, Archivo 600; it fills Ink with Paper text on hover and while any Market Watch page is open. Inside Market Watch, two tabs (Updates, Consultations & opportunities) switch views, the current tab underlined 2px Ink.
 
 ### The Merit-Order Chart (signature)
+
 Projects stack left to right in date order on an Ink axis over four Hairline gridlines; step width is years on the project and each step rises 24 units. Fills follow the Three Fills Rule; every step has a 1px Ink edge that thickens to 3px on hover or active, and to a 3px Signal Orange edge on keyboard focus. The final step is an empty dashed Ink Secondary outline labelled "What's next"; it is not a link. The orange demand curve (2.5px, round caps) falls from "New questions" at the upper left and clears at an orange point on that step. A live readout under the chart names the project, client, years and roles of the hovered or focused step, beside a three-row legend. With motion allowed, steps rise from the axis (900ms, cubic-bezier(0.16, 1, 0.3, 1), staggered 70ms), then the curve draws (700ms) and its label and point fade in.
 
 ## Do's and Don'ts
 
 ### Do:
+
 - **Do** spend Signal Orange only on actions, the demand curve and clearing point, open submissions, deadlines inside seven days, and interaction states.
 - **Do** encode modelling and qualitative work with the three fills (solid, solid with paper hatch, hatch) wherever roles are shown.
 - **Do** open major sections with a 2px Ink rule and list content as ledgers with Hairline row dividers.
@@ -265,6 +285,7 @@ Projects stack left to right in date order on an Ink axis over four Hairline gri
 - **Do** gate chart motion behind `prefers-reduced-motion: no-preference`.
 
 ### Don't:
+
 - **Don't** cast shadows on any surface, including cards, the navbar, dropdowns or images.
 - **Don't** use Signal Orange for headings, category badges, decoration or anything the visitor cannot act on.
 - **Don't** use cream or warm off-white paper; the paper is cool white (`paper`).

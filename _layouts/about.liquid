@@ -39,16 +39,14 @@ layout: default
       <div class="tool tool--watch">
         <h3><a href="{{ '/market-watch/updates/' | relative_url }}">Market Watch</a></h3>
         <p class="tool-desc">
-          Announcements, rule changes, consultations, tenders and events from AEMO, Energy Policy WA, the AEMC, New Zealand's Electricity Authority and others, refreshed every
-          12 hours.
+          Announcements, rule changes, consultations, tenders and events from AEMO, Energy Policy WA, the AEMC, New Zealand's Electricity Authority
+          and others, refreshed every 12 hours.
         </p>
         <ol class="watch-list">
           {%- for item in feed.items limit: 4 %}
             <li>
               <a href="{{ item.url | escape }}" target="_blank" rel="noopener">{{ item.title | escape }}</a>
-              <span class="watch-meta">
-                {{- site.data.energy_feed_meta.category_singular[item.category] }} · {{ item.source | escape -}}
-              </span>
+              <span class="watch-meta">{{- site.data.energy_feed_meta.category_singular[item.category] }} · {{ item.source | escape -}}</span>
             </li>
           {%- endfor %}
         </ol>

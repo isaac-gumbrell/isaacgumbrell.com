@@ -19,7 +19,7 @@ isaacgumbrell.com is Isaac Gumbrell's professional home. It introduces him as an
 
 ## Positioning
 
-Quantitative modelling combined with qualitative work. Isaac's projects pair model design and execution with research, review and report drafting: five of the seven listed projects include qualitative work and four combine it with modelling (for example, the BRCP Review: "Modelling design and execution, report drafting"; the IESO data review: "Research, report drafting"). The site must present him as someone who builds the model *and* writes the advice, never as a modeller alone (confirmed by Isaac).
+Quantitative modelling combined with qualitative work. Isaac's projects pair model design and execution with research, review and report drafting: five of the seven listed projects include qualitative work and four combine it with modelling (for example, the BRCP Review: "Modelling design and execution, report drafting"; the IESO data review: "Research, report drafting"). The site must present him as someone who builds the model _and_ writes the advice, never as a modeller alone (confirmed by Isaac).
 
 It is also a modeller's site that runs on its own tools. Market Watch is a real, automatically refreshed tracker of Australian and New Zealand energy announcements (AEMO, Energy Policy WA, AEMC, AER, ERA, ARENA, the NZ Electricity Authority, Transpower, government), with a focus on Western Australia, the NEM and the NZ electricity market. The open-source repositories are tools he authors or contributes to (scenario_framework_manager, ASSUME). A generic consultant page cannot copy this, because the evidence is live and in daily use.
 
@@ -45,8 +45,8 @@ It is also a modeller's site that runs on its own tools. Market Watch is a real,
 ## Evidence on Hand
 
 - Portrait: `assets/img/portrait_pic.jpg`.
-- Projects and writing: `_pages/projects.md` (Medium article 2024, Ethically Kate article 2021, client projects with roles and dates).
-- Repositories: `_pages/repositories.md` (scenario_framework_manager, author and maintainer; ASSUME, contributor).
+- Projects and writing: `_data/work.yml`, rendered by `_pages/projects.html` (Medium article 2024, Ethically Kate article 2021, client projects with roles and dates).
+- Repositories: `_data/work.yml` tools, rendered by `_pages/repositories.html` (scenario_framework_manager, author and maintainer; ASSUME, contributor).
 - Market Watch: live data in `_data/energy_feed.json`. Entries carry an explanation, topic tags, a submissions-open flag, and the publish date read from the source page.
 - No testimonials, client logos, metrics or case-study results are on hand. Do not fabricate any.
 
