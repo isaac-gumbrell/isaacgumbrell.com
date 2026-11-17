@@ -19,7 +19,7 @@ isaacgumbrell.com is Isaac Gumbrell's professional home. It introduces him as an
 
 ## Positioning
 
-Quantitative modelling combined with qualitative work. Isaac's projects pair model design and execution with research, review and report drafting: five of the seven listed projects include qualitative work and four combine it with modelling (for example, the BRCP Review: "Modelling design and execution, report drafting"; the IESO data review: "Research, report drafting"). The site must present him as someone who builds the model _and_ writes the advice, never as a modeller alone (confirmed by Isaac).
+Quantitative modelling combined with qualitative work. Isaac's projects pair model design and execution with research, review and report drafting: seven of the nine listed projects include qualitative work and five combine it with modelling (for example, the BRCP Review: "Modelling design and execution, report drafting"; the IESO data review: "Research, report drafting"). The site must present him as someone who builds the model _and_ writes the advice, never as a modeller alone (confirmed by Isaac).
 
 It is also a modeller's site that runs on its own tools. Market Watch is a real, automatically refreshed tracker of Australian and New Zealand energy announcements (AEMO, Energy Policy WA, AEMC, AER, ERA, ARENA, the NZ Electricity Authority, Transpower, government), with a focus on Western Australia, the NEM and the NZ electricity market. The open-source repositories are tools he authors or contributes to (scenario_framework_manager, ASSUME). A generic consultant page cannot copy this, because the evidence is live and in daily use.
 

@@ -4,13 +4,15 @@
   Fill encodes the role recorded in _data/work.yml:
     solid = modelling only, solid + hatch = modelling and qualitative, hatch only = qualitative only.
   The final dashed step is the next piece of work; the falling demand curve (new questions) clears there.
+  Each step is labelled with the job (chart_label, one or two lines), not the client.
   Wide screens get the SVG chart; narrow screens get the same stack turned on its side (.mo-rows).
 {%- endcomment -%}
 {%- assign projects = site.data.work.projects -%}
 {%- assign plot_left = 24 -%}
 {%- assign plot_right = 1184 -%}
 {%- assign base_y = 250 -%}
-{%- assign step_rise = 24 -%}
+{%- comment -%} Steps share ~190 units of height, so the stack stays inside the plot as projects are added. {%- endcomment -%}
+{%- assign step_rise = 190 | divided_by: projects.size -%}
 {%- assign first_height = 30 -%}
 {%- assign units = 2 -%}
 {%- for p in projects -%}
@@ -24,11 +26,11 @@
 
 {% include mo_defs.liquid %}
 <figure class="mo" data-merit-order>
-  <svg class="mo-chart" viewBox="0 -34 1200 334" role="group" aria-labelledby="mo-title mo-desc">
-    <title id="mo-title">My work as a merit order</title>
+  {%- comment -%} aria-label rather than <title>: an SVG <title> shows as a hover tooltip over the chart. {%- endcomment -%}
+  <svg class="mo-chart" viewBox="0 -34 1200 346" role="group" aria-label="My work as a merit order" aria-describedby="mo-desc">
     <desc id="mo-desc">
       {{ projects | size }} projects stacked in date order, step width equal to years on the project. Solid steps are modelling,
-      hatched steps are qualitative work such as research and report drafting. The last, empty step is your project, where the
+      hatched steps are qualitative work such as research and report drafting. The last, empty step is what comes next, where the
       demand curve of new questions clears.
     </desc>
 
@@ -57,7 +59,7 @@
         data-client="{{ p.client_short | escape }}"
         data-years="{{ p.years | escape }}"
         data-role="{{ p.role | escape }}"
-        aria-label="{{ p.title | escape }}, {{ p.client_short | escape }}, {{ p.years }}. {{ roles }}: {{ p.role | escape }}"
+        aria-label="{{ p.title | escape }}, {{ p.client | escape }}, {{ p.years }}. {{ roles }}: {{ p.role | escape }}"
       >
         <g class="mo-bar">
           {%- if p.modelling -%}
@@ -70,8 +72,11 @@
           {%- endif -%}
           <rect class="mo-edge" x="{{ x | round: 1 }}" y="{{ y }}" width="{{ w | round: 1 }}" height="{{ h }}" />
         </g>
-        <text class="mo-label" x="{{ cx | round: 1 }}" y="{{ base_y | plus: 23 }}" text-anchor="middle">{{ p.client_short }}</text>
-        <text class="mo-label mo-label--years" x="{{ cx | round: 1 }}" y="{{ base_y | plus: 43 }}" text-anchor="middle">{{ p.years }}</text>
+        {%- assign label = p.chart_label | default: p.short -%}
+        <text class="mo-label" x="{{ cx | round: 1 }}" y="{{ base_y | plus: 21 }}" text-anchor="middle">
+          {%- for line in label -%}<tspan x="{{ cx | round: 1 }}" dy="{% if forloop.first %}0{% else %}17{% endif %}">{{ line }}</tspan>{%- endfor -%}
+        </text>
+        <text class="mo-label mo-label--years" x="{{ cx | round: 1 }}" y="{{ base_y | plus: 56 }}" text-anchor="middle">{{ p.years }}</text>
       </a>
       {%- assign x = x | plus: w -%}
     {%- endfor -%}
@@ -82,8 +87,8 @@
     {%- assign cx = w | divided_by: 2.0 | plus: x -%}
     <g class="mo-next" aria-hidden="true">
       <rect x="{{ x | round: 1 }}" y="{{ y }}" width="{{ w | round: 1 }}" height="{{ visitor_h }}" />
-      <text class="mo-next-label" x="{{ cx | round: 1 }}" y="{{ y | plus: 90 }}" text-anchor="middle">What's next</text>
-      <text class="mo-label mo-label--years" x="{{ cx | round: 1 }}" y="{{ base_y | plus: 43 }}" text-anchor="middle">Next</text>
+      <text class="mo-next-label" x="{{ cx | round: 1 }}" y="{{ y | plus: 90 }}" text-anchor="middle">What's next?</text>
+      <text class="mo-label mo-label--years" x="{{ cx | round: 1 }}" y="{{ base_y | plus: 56 }}" text-anchor="middle">Next</text>
     </g>
 
     {%- comment -%}
@@ -112,7 +117,7 @@
     <p class="mo-rows-cue">Tap a step to see the project.</p>
     {%- assign v_axis = 116 -%}
     {%- assign v_len = 214 -%}
-    {%- assign v_year = 34 -%}
+    {%- assign v_year = 46 -%}
     {%- assign v_top = 40 -%}
     {%- assign v_total = units | times: v_year | plus: v_top | plus: 8 -%}
     <svg class="mo-vchart" viewBox="0 0 340 {{ v_total }}" role="group" aria-label="My work as a merit order, turned on its side">
@@ -131,7 +136,7 @@
           data-client="{{ p.client_short | escape }}"
           data-years="{{ p.years | escape }}"
           data-role="{{ p.role | escape }}"
-          aria-label="{{ p.title | escape }}, {{ p.client_short | escape }}, {{ p.years }}"
+          aria-label="{{ p.title | escape }}, {{ p.client | escape }}, {{ p.years }}"
         >
           <rect class="mo-hit" x="0" y="{{ vy }}" width="340" height="{{ rh }}" />
           {%- if p.modelling -%}
@@ -141,8 +146,11 @@
             <rect x="{{ v_axis }}" y="{{ vy }}" width="{{ bl }}" height="{{ rh }}" fill="url(#mo-hatch)" />
           {%- endif -%}
           <rect class="mo-edge" x="{{ v_axis }}" y="{{ vy }}" width="{{ bl }}" height="{{ rh }}" />
-          <text class="mo-vlabel" x="0" y="{{ ty | minus: 2 }}">{{ p.client_short }}</text>
-          <text class="mo-vlabel mo-vlabel--years" x="0" y="{{ ty | plus: 14 }}">{{ p.years }}</text>
+          {%- assign label = p.chart_label | default: p.short -%}
+          <text class="mo-vlabel" x="0" y="{% if label.size > 1 %}{{ ty | minus: 11 }}{% else %}{{ ty | minus: 2 }}{% endif %}">
+            {%- for line in label -%}<tspan x="0" dy="{% if forloop.first %}0{% else %}14{% endif %}">{{ line }}</tspan>{%- endfor -%}
+          </text>
+          <text class="mo-vlabel mo-vlabel--years" x="0" y="{% if label.size > 1 %}{{ ty | plus: 17 }}{% else %}{{ ty | plus: 14 }}{% endif %}">{{ p.years }}</text>
         </a>
         {%- assign vy = vy | plus: rh -%}
       {%- endfor -%}
@@ -150,7 +158,7 @@
       {%- assign ty = rh | divided_by: 2 | plus: vy -%}
       <g class="mo-next" aria-hidden="true">
         <rect x="{{ v_axis }}" y="{{ vy }}" width="{{ v_len }}" height="{{ rh }}" />
-        <text class="mo-vlabel mo-vlabel--next" x="0" y="{{ ty | plus: 5 }}">What's next</text>
+        <text class="mo-vlabel mo-vlabel--next" x="0" y="{{ ty | plus: 5 }}">What's next?</text>
       </g>
       {%- comment -%}
         Turned on its side, price runs left to right and quantity runs down, so the demand curve

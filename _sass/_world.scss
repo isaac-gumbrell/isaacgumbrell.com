@@ -374,13 +374,13 @@ article p,
 }
 .mo-label {
   fill: var(--ink);
-  font-size: 16px;
+  font-size: 14.5px;
   font-weight: 560;
   font-stretch: 85%;
 }
 .mo-label--years {
   fill: var(--ink-2);
-  font-size: 15px;
+  font-size: 13.5px;
   font-weight: 420;
 }
 .mo-step {
@@ -485,7 +485,7 @@ article p,
 }
 .mo-vlabel {
   fill: var(--ink);
-  font-size: 14px;
+  font-size: 13.5px;
   font-weight: 560;
   font-stretch: 88%;
 }
@@ -661,6 +661,18 @@ article p,
   color: var(--ink-2);
   font-size: 0.97rem;
 }
+/* A link inside the meta line (the firm credit) reads as part of the line, not as a row title. */
+.ledger li .ledger-meta a.proj-firm {
+  font: inherit;
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--rule);
+  text-underline-offset: 0.18em;
+  &:hover {
+    color: var(--action);
+    text-decoration-color: currentColor;
+  }
+}
 
 /* Contact close */
 .contact {
@@ -733,9 +745,6 @@ article p,
     padding-top: 0.75rem;
     border-top: 2px solid var(--ink);
   }
-}
-.proj-note {
-  color: var(--ink-2);
 }
 .ledger--projects li {
   scroll-margin-top: 5rem;

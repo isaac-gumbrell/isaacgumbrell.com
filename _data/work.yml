@@ -2,9 +2,17 @@
 # Rendered by the home-page merit-order chart (_includes/merit_order.liquid) and the Projects page.
 # modelling / qualitative flags come straight from each project's listed role:
 #   modelling   = model design, execution, software testing
-#   qualitative = research, review, report drafting or writing
+#   qualitative = research, review, methodology design, report drafting or writing
+# chart_label: the job, as one or two lines under its step on the home-page chart (keep lines short;
+#   a one-year step is only about 64 units wide).
+# firm: the consultancy the work was done with, credited on the Projects page.
 
-consulting_note: Completed with [Robinson Bowmaker Paul](https://rbp.consulting/).
+firms:
+  rbp:
+    name: Robinson Bowmaker Paul
+    url: https://rbp.consulting/
+  dae:
+    name: Deloitte Access Economics
 
 projects:
   # Ordered by start year (the chart stacks them in this order).
@@ -13,6 +21,8 @@ projects:
     short: SPD real-time pricing
     client: Transpower New Zealand
     client_short: Transpower
+    chart_label: ["Real-time", "pricing"]
+    firm: rbp
     start: 2021
     end: 2023
     years: "2021 – 2023"
@@ -28,6 +38,8 @@ projects:
     short: Long-term PASA
     client: Australian Energy Market Operator
     client_short: AEMO
+    chart_label: ["Long-term", "PASA"]
+    firm: rbp
     start: 2022
     end: 2022
     years: "2022"
@@ -43,6 +55,8 @@ projects:
     short: IESO data review
     client: Ontario Independent Electricity System Operator (through PA Consulting)
     client_short: IESO
+    chart_label: ["Data", "review"]
+    firm: rbp
     start: 2022
     end: 2022
     years: "2022"
@@ -58,6 +72,8 @@ projects:
     short: GPG forecast
     client: Australian Energy Market Operator
     client_short: AEMO
+    chart_label: ["Gas generation", "forecast"]
+    firm: rbp
     start: 2022
     end: 2023
     years: "2022, 2023"
@@ -73,6 +89,8 @@ projects:
     short: WEM Investment Certainty
     client: Energy Policy Western Australia
     client_short: Energy Policy WA
+    chart_label: ["Investment", "certainty"]
+    firm: rbp
     start: 2023
     end: 2024
     years: "2023 – 2024"
@@ -88,6 +106,8 @@ projects:
     short: BRCP Review
     client: Energy Policy Western Australia
     client_short: Energy Policy WA
+    chart_label: ["Capacity price", "review"]
+    firm: rbp
     start: 2023
     end: 2024
     years: "2023 – 2024"
@@ -103,6 +123,8 @@ projects:
     short: Pilbara Network Rules
     client: Energy Policy Western Australia
     client_short: Energy Policy WA
+    chart_label: ["Pilbara", "network rules"]
+    firm: rbp
     start: 2024
     end: 2025
     years: "2024 – 2025"
@@ -114,6 +136,40 @@ projects:
         url: https://www.wa.gov.au/government/document-collections/evolution-of-the-pilbara-networks-rules-working-group#meeting-materials
       - label: Scope of Works
         url: https://www.wa.gov.au/system/files/2024-03/evolution_of_the_pilbara_network_rules-scope_of_works.pdf
+
+  - id: competition-benefits
+    title: "Quantifying competition benefits of transmission investment: methodology selection"
+    short: Competition benefits
+    client: Transpower New Zealand
+    client_short: Transpower
+    chart_label: ["Competition", "benefits"]
+    firm: dae
+    start: 2025
+    end: 2025
+    years: "2025"
+    role: Modelling design, report drafting
+    modelling: true
+    qualitative: true
+    links:
+      - label: Methodology selection report
+        url: https://static.transpower.co.nz/public/uncontrolled_docs/Quantifying%20competition%20benefits%20of%20transmission%20investment.%20Methodology%20selection.pdf?VersionId=QMzicFkq.erXOjNoSj5u9fXucOpHh59D
+
+  - id: future-grid-cba
+    title: Future Grid Cost Benefit Assessment methodology (Te Kanapu Future Grid Blueprint)
+    short: Future Grid CBA
+    client: Transpower New Zealand
+    client_short: Transpower
+    chart_label: ["Future Grid", "CBA"]
+    firm: dae
+    start: 2025
+    end: 2026
+    years: "2025 – 2026"
+    role: Methodology design, report drafting
+    modelling: false
+    qualitative: true
+    links:
+      - label: CBA methodology
+        url: https://static.transpower.co.nz/public/2026-08/Transpower%20Future%20Grid%20CBA%20Tool%20-%20Methodology.pdf?VersionId=Umtz.yyh7RtxFyNjvbMi19E1HbiXIIop
 
 writing:
   - title: "Streamline Your Modelling Workflow: Small Efforts Now, Big Productivity Gains Later"

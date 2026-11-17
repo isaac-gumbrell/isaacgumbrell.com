@@ -215,7 +215,7 @@ Flat. There are no shadows in the world; the theme's navbar, portrait image and 
 
 ## Shapes
 
-Corners are nearly square: 2px on buttons, the Market Watch nav button, chips, tags, badges and the status chip; 0 on the portrait and on every chart step. Borders are 1px solid in Ink, Rule or Teal; section tops are 2px solid Ink. The one dashed form is the empty "What's next" step at the end of the chart (1.5px Ink Secondary, dash 6/5). Qualitative work is drawn as a 45° hatch on a 9px pitch.
+Corners are nearly square: 2px on buttons, the Market Watch nav button, chips, tags, badges and the status chip; 0 on the portrait and on every chart step. Borders are 1px solid in Ink, Rule or Teal; section tops are 2px solid Ink. The one dashed form is the empty "What's next?" step at the end of the chart (1.5px Ink Secondary, dash 6/5). Qualitative work is drawn as a 45° hatch on a 9px pitch.
 
 ### Named Rules
 
@@ -270,7 +270,7 @@ Paper navbar with a 1px Rule bottom border and no shadow. The wordmark is Archiv
 
 ### The Merit-Order Chart (signature)
 
-Projects stack left to right in date order on an Ink axis over four Hairline gridlines; step width is years on the project and each step rises 24 units. Fills follow the Three Fills Rule; every step has a 1px Ink edge that thickens to 3px on hover or active, and to a 3px Signal Orange edge on keyboard focus. The final step is an empty dashed Ink Secondary outline labelled "What's next"; it is not a link. The orange demand curve (2.5px, round caps) falls from "New questions" at the upper left and clears at an orange point on that step. A live readout under the chart names the project, client, years and roles of the hovered or focused step, beside a three-row legend. With motion allowed, steps rise from the axis (900ms, cubic-bezier(0.16, 1, 0.3, 1), staggered 70ms), then the curve draws (700ms) and its label and point fade in.
+Projects stack left to right in date order on an Ink axis over four Hairline gridlines; step width is years on the project, and the steps share about 190 units of rise, so each rises 190 ÷ the number of projects (21 units at nine). Each step is labelled underneath with the job (one or two short lines from `chart_label`), then its years; the client appears in the readout, not on the axis. Fills follow the Three Fills Rule; every step has a 1px Ink edge that thickens to 3px on hover or active, and to a 3px Signal Orange edge on keyboard focus. The final step is an empty dashed Ink Secondary outline labelled "What's next?"; it is not a link. The orange demand curve (2.5px, round caps) falls from "New questions" at the upper left and clears at an orange point on that step. A live readout under the chart names the project, client, years and roles of the hovered or focused step, beside a three-row legend. With motion allowed, steps rise from the axis (900ms, cubic-bezier(0.16, 1, 0.3, 1), staggered 70ms), then the curve draws (700ms) and its label and point fade in.
 
 ## Do's and Don'ts
 
@@ -290,6 +290,6 @@ Projects stack left to right in date order on an Ink axis over four Hairline gri
 - **Don't** use Signal Orange for headings, category badges, decoration or anything the visitor cannot act on.
 - **Don't** use cream or warm off-white paper; the paper is cool white (`paper`).
 - **Don't** add a second accent hue or colour feed categories; colour belongs to the status ramp.
-- **Don't** use a dashed outline for anything other than the empty "What's next" step, and never present it as a sales prompt.
+- **Don't** use a dashed outline for anything other than the empty "What's next?" step, and never present it as a sales prompt.
 - **Don't** add uppercase tracked kickers or eyebrows above headings; headings stand on their ruled tops.
 - **Don't** fall back to the headshot beside a headline over three service cards.

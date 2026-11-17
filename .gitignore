@@ -19,3 +19,7 @@ vendor
 
 # Impeccable engine binary (re-downloaded by its launcher on first run)
 .claude/skills/impeccable/scripts/bin/
+
+# Python bytecode
+__pycache__/
+*.pyc
