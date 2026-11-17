@@ -152,7 +152,14 @@ class FeedSession(requests.Session):
     def get(self, url, **kwargs):  # type: ignore[override]
         if self.browser_hosts and self._wants_browser(url):
             return self._browser_get(url)
-        return super().get(url, **kwargs)
+        try:
+            return super().get(url, **kwargs)
+        except requests.exceptions.Timeout:
+            # Some government hosts answer data-centre addresses (GitHub Actions) slowly. One slower
+            # retry; a second timeout fails the source as before.
+            log.info("timed out, retrying once with a longer timeout: %s", url)
+            kwargs["timeout"] = max(60, kwargs.get("timeout") or 0)
+            return super().get(url, **kwargs)
 
     def _start(self) -> bool:
         if self._page or self._unavailable:
@@ -192,12 +199,20 @@ class FeedSession(requests.Session):
         try:
             first = self._page.goto(url, wait_until="domcontentloaded", timeout=45000)
             html = self._page.content()
-            # Give a JS challenge up to 15 s to clear, as it would for a person.
-            for _ in range(15):
-                if not any(m in html.lower() for m in CHALLENGE_MARKERS):
+            # Give a JS challenge time to clear, as it would for a person. It runs slower on CI
+            # runners, so wait up to 30 s, then reload once (as a person would) and wait again.
+            for attempt in range(2):
+                for _ in range(30 if attempt == 0 else 15):
+                    if not any(m in html.lower() for m in CHALLENGE_MARKERS):
+                        break
+                    self._page.wait_for_timeout(1000)
+                    html = self._page.content()
+                if attempt == 0 and any(m in html.lower() for m in CHALLENGE_MARKERS):
+                    log.info("challenge still showing after 30 s, reloading once: %s", url)
+                    self._page.reload(wait_until="domcontentloaded", timeout=45000)
+                    html = self._page.content()
+                else:
                     break
-                self._page.wait_for_timeout(1000)
-                html = self._page.content()
             blocked = any(m in html.lower() for m in CHALLENGE_MARKERS)
             if not blocked:
                 # Listings on these sites are filled in by background requests after load.
