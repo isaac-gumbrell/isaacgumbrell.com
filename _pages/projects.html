@@ -11,13 +11,19 @@ nav_order: 2
 
 <section class="proj-section" aria-labelledby="policy-title">
   <h2 id="policy-title">Policy and market work</h2>
-  <div class="proj-note">{{ work.consulting_note | markdownify }}</div>
   <ul class="ledger ledger--projects">
     {%- for p in newest_first %}
     <li id="{{ p.id }}">
       <span class="ledger-year">{{ p.years }}</span>
       <h3 class="proj-title">{{ p.title }}</h3>
-      <span class="ledger-meta">{{ p.client }}</span>
+      {%- assign firm = work.firms[p.firm] -%} {%- capture firm_name -%} {%- if firm.url -%}<a
+        class="proj-firm"
+        href="{{ firm.url }}"
+        target="_blank"
+        rel="noopener"
+        >{{ firm.name }}</a
+      >{%- else -%}{{ firm.name }}{%- endif -%} {%- endcapture %}
+      <span class="ledger-meta">{{ p.client }}{% if firm %} · with {{ firm_name }}{% endif %}</span>
       <span class="ledger-meta proj-role">
         <span class="proj-role-text">{{ p.role }}</span>
         <span class="proj-tags">
