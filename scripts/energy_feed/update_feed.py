@@ -434,14 +434,22 @@ def link_is_dead(session: requests.Session, url: str) -> bool:
     """True when a researched link plainly does not exist (404/410, or no such host).
 
     Guards against a model guessing a URL. Blocked or erroring pages (403, 429, 5xx, timeouts)
-    are kept, because sites that refuse scripts would otherwise lose every item."""
+    are kept, because sites that refuse scripts would otherwise lose every item.
+
+    Browser hosts (AEMO, ASL) are not checked: a full page render per link is slow, and their
+    links come from their own listings or a search index rather than a guess. A check that fails
+    for any reason keeps the item; it must never stop the run."""
+    if isinstance(session, FeedSession) and session.browser_hosts and session._wants_browser(url):
+        return False
     try:
         resp = session.get(url, timeout=20, stream=True, allow_redirects=True)
-        resp.close()
-        return resp.status_code in (404, 410)
+        status = resp.status_code
+        if resp.raw is not None:
+            resp.close()
+        return status in (404, 410)
     except requests.exceptions.ConnectionError as exc:
         return "Name or service not known" in str(exc) or "NameResolutionError" in str(exc)
-    except requests.RequestException:
+    except Exception:
         return False
 
 
