@@ -1,11 +1,12 @@
 name: Update energy feed
 
 # Refreshes _data/energy_feed.json for the Market Watch pages, then redeploys the site.
-# Runs at about 06:17 and 18:17 Perth time (22:17 and 10:17 UTC). Off the top of the hour, when
-# GitHub's scheduler is busiest and delays or drops scheduled runs.
+# Refreshes about every 12 hours. GitHub delays or drops scheduled runs when busy (a 10:00 UTC run
+# once started 9 hours late, another never ran), so the schedule fires hourly at :17 and the "due"
+# job lets the update through only when the feed is 11+ hours old. Manual runs always go ahead.
 on:
   schedule:
-    - cron: "17 22,10 * * *"
+    - cron: "17 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -17,7 +18,26 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  due:
+    runs-on: ubuntu-latest
+    outputs:
+      run: ${{ steps.check.outputs.run }}
+    steps:
+      - name: Is the feed due for a refresh?
+        id: check
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ "${{ github.event_name }}" != "schedule" ]; then echo "run=true" >> "$GITHUB_OUTPUT"; exit 0; fi
+          # Every run commits the feed (generated_at always changes), so its last commit dates the last refresh.
+          last=$(gh api "repos/${GITHUB_REPOSITORY}/commits?path=_data/energy_feed.json&per_page=1" -q '.[0].commit.committer.date')
+          age=$(( $(date +%s) - $(date -d "${last:-1970-01-01T00:00:00Z}" +%s) ))
+          echo "Feed last updated ${last:-never} ($((age / 3600)) h ago)"
+          if [ "$age" -ge 39600 ]; then echo "run=true" >> "$GITHUB_OUTPUT"; else echo "run=false" >> "$GITHUB_OUTPUT"; fi
+
   update:
+    needs: due
+    if: needs.due.outputs.run == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
