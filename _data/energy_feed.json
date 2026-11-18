@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-18T09:07:10+08:00",
-  "generated_label": "18 Nov 2026, 9:22 AM AWST",
+  "generated_at": "2026-11-19T04:41:05+08:00",
+  "generated_label": "19 Nov 2026, 4:55 AM AWST",
   "mode": "full",
   "model": "~deepseek/deepseek-flash-latest",
   "sources": [
@@ -35,6 +35,158 @@
     "energy.gov.au (https://www.energy.gov.au/news/rss): HTTPSConnectionPool(host='www.energy.gov.au', port=443): Read timed out. (read timeout=60)"
   ],
   "items": [
+    {
+      "id": "c8c00af318d9",
+      "title": "Proposed updates to swimming pool pumps energy efficiency regulations",
+      "url": "https://consult.dcceew.gov.au/proposed-updates-to-swimming-pool-pumps-energy-efficiency-regulations",
+      "source": "DCCEEW",
+      "jurisdiction": "National",
+      "category": "consultation",
+      "summary": "DCCEEW seeks feedback on an exposure draft determination for swimming pool pumps under the Greenhouse and Energy Minimum Standards Act 2012. Submissions close 6 January 2027.",
+      "published": "",
+      "deadline": "2027-01-06",
+      "event_date": "",
+      "importance": "low",
+      "topics": [
+        "consumer_energy",
+        "rules"
+      ],
+      "submission_required": true,
+      "updated": "",
+      "origin": "federal_policy",
+      "enriched": true,
+      "first_seen": "2026-11-19T04:41:05+08:00",
+      "due": "2027-01-06",
+      "actionable": true,
+      "sort_date": "2026-11-19"
+    },
+    {
+      "id": "f318e671f6e9",
+      "title": "Expression of Interest: Bulk Distillate Fuel Supply",
+      "url": "https://scryve.io/tenders/wa/expression-of-interest-bulk-distillate-fuel-supply-631464",
+      "source": "Synergy",
+      "jurisdiction": "WA",
+      "category": "tender",
+      "summary": "Synergy is seeking expressions of interest from fuel suppliers for supply and delivery of bulk distillate to its generation sites, under an arrangement expected to start 1 October 2029. An RFT is anticipated in late November to early December 2026, with the opportunity listed on Tenders WA (ref 631464).",
+      "published": "",
+      "deadline": "2026-12-31",
+      "event_date": "",
+      "importance": "low",
+      "topics": [
+        "gas",
+        "generation"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "tenders",
+      "enriched": true,
+      "first_seen": "2026-11-19T04:41:05+08:00",
+      "due": "2026-12-31",
+      "actionable": true,
+      "sort_date": "2026-11-19"
+    },
+    {
+      "id": "cb961406d47e",
+      "title": "Draft AES Compliance and Enforcement Guide",
+      "url": "https://www.erawa.com.au/alternative-electricity-services/aes-compliance-and-enforcement",
+      "source": "Economic Regulation Authority (WA)",
+      "jurisdiction": "WA",
+      "category": "consultation",
+      "summary": "The ERA is consulting on a draft guide that sets out how it will promote, monitor and enforce compliance with the alternative electricity services (AES) framework. AES registration holders should review it before the final guide is published.",
+      "published": "2026-11-19",
+      "deadline": "2026-11-19",
+      "event_date": "",
+      "importance": "medium",
+      "origin": "source",
+      "enriched": true,
+      "first_seen": "2026-11-10T11:10:33+08:00",
+      "due": "2026-11-19",
+      "actionable": true,
+      "sort_date": "2026-11-19",
+      "topics": [
+        "rules",
+        "consumer_energy",
+        "retail"
+      ],
+      "submission_required": true,
+      "updated": ""
+    },
+    {
+      "id": "4c002af9188e",
+      "title": "Electricity Network Regulation Review (ENRR) – package 2 Hybrid forum",
+      "url": "https://www.aemc.gov.au/calendar/electricity-network-regulation-review-enrr-package-2-hybrid-forum",
+      "source": "AEMC",
+      "jurisdiction": "NEM",
+      "category": "event",
+      "summary": "AEMC hybrid forum on the Electricity Network Regulation Review package 2 at the Swissôtel Sydney and online on Tuesday 23 February 2027, 10.30am–3pm AEDT.",
+      "published": "2026-11-18",
+      "deadline": "",
+      "event_date": "2027-02-23",
+      "importance": "medium",
+      "topics": [
+        "networks",
+        "rules"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "source",
+      "enriched": true,
+      "first_seen": "2026-11-19T04:41:05+08:00",
+      "due": "2027-02-23",
+      "actionable": true,
+      "sort_date": "2026-11-18"
+    },
+    {
+      "id": "2df9ee2dc7e3",
+      "title": "Public forum: Security framework enhancements directions paper",
+      "url": "https://www.aemc.gov.au/calendar/public-forum-security-framework-enhancements-directions-paper",
+      "source": "AEMC",
+      "jurisdiction": "NEM",
+      "category": "event",
+      "summary": "AEMC virtual public forum on Thursday 10 December 2026, 11am–12pm AEDT, covering its Security framework enhancements directions paper to be published the same day.",
+      "published": "2026-11-18",
+      "deadline": "",
+      "event_date": "2026-12-10",
+      "importance": "medium",
+      "topics": [
+        "reliability",
+        "rules"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "source",
+      "enriched": true,
+      "first_seen": "2026-11-19T04:41:05+08:00",
+      "due": "2026-12-10",
+      "actionable": true,
+      "sort_date": "2026-11-18"
+    },
+    {
+      "id": "29c1178a11a2",
+      "title": "Reconsideration of DPP4 default price quality path for Horizon Networks (Ōpōtiki foreseeable large project) – Final decision",
+      "url": "https://www.comcom.govt.nz/regulated-industries/electricity-lines/electricity-lines-price-quality-paths/reopening-the-price-quality-path/dpp4-and-dpp3-reopeners/",
+      "source": "Commerce Commission",
+      "jurisdiction": "NZ",
+      "category": "news",
+      "summary": "The Commerce Commission released its final decision and amendment determination on 18 November 2026 allowing Horizon Energy Distribution's Ōpōtiki foreseeable large project into its 2025–2030 default price-quality path, with an accompanying financial model.",
+      "published": "2026-11-18",
+      "deadline": "",
+      "event_date": "",
+      "importance": "medium",
+      "topics": [
+        "networks",
+        "prices",
+        "rules"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "nz_market",
+      "enriched": true,
+      "first_seen": "2026-11-19T04:41:05+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-11-18"
+    },
     {
       "id": "853c497daef8",
       "title": "Power System Modelling strategy consultation (draft strategy)",
@@ -365,6 +517,31 @@
       "due": "2027-02-01",
       "actionable": true,
       "sort_date": "2026-11-17"
+    },
+    {
+      "id": "817e0710af1d",
+      "title": "CIS projects reach key milestones",
+      "url": "https://www.dcceew.gov.au/about/news/cis-projects-reach-key-milestones",
+      "source": "DCCEEW",
+      "jurisdiction": "National",
+      "category": "news",
+      "summary": "DCCEEW reports that projects backed through the Capacity Investment Scheme have reached construction and financial close milestones.",
+      "published": "2026-11-16",
+      "deadline": "",
+      "event_date": "",
+      "importance": "medium",
+      "topics": [
+        "generation",
+        "storage"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "federal_policy",
+      "enriched": true,
+      "first_seen": "2026-11-19T04:41:05+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-11-16"
     },
     {
       "id": "7e65577905ce",
@@ -1256,32 +1433,6 @@
         "rules"
       ],
       "submission_required": true
-    },
-    {
-      "id": "cb961406d47e",
-      "title": "Draft AES Compliance and Enforcement Guide",
-      "url": "https://www.erawa.com.au/alternative-electricity-services/aes-compliance-and-enforcement",
-      "source": "Economic Regulation Authority (WA)",
-      "jurisdiction": "WA",
-      "category": "consultation",
-      "summary": "The ERA is consulting on a draft guide that sets out how it will promote, monitor and enforce compliance with the alternative electricity services (AES) framework. AES registration holders should review it before the final guide is published.",
-      "published": "",
-      "deadline": "2026-11-19",
-      "event_date": "",
-      "importance": "medium",
-      "origin": "source",
-      "enriched": true,
-      "first_seen": "2026-11-10T11:10:33+08:00",
-      "due": "2026-11-19",
-      "actionable": true,
-      "sort_date": "2026-11-10",
-      "topics": [
-        "rules",
-        "consumer_energy",
-        "retail"
-      ],
-      "submission_required": true,
-      "updated": ""
     },
     {
       "id": "45bd45346c20",
@@ -2591,6 +2742,31 @@
       "updated": ""
     },
     {
+      "id": "b96b2e0a28c5",
+      "title": "New Financial Challenge and Advisory Committee Charter",
+      "url": "https://www.aemo.com.au/newsroom/news-updates/new-financial-challenge-and-advisory-committee-charter",
+      "source": "AEMO",
+      "jurisdiction": "NEM",
+      "category": "news",
+      "summary": "AEMO has released the charter for its new Financial Challenge and Advisory Committee, approved by the AEMO Board on 29 October 2026 after consultation with industry, governments and consumer bodies.",
+      "published": "2026-10-29",
+      "deadline": "",
+      "event_date": "",
+      "importance": "low",
+      "topics": [
+        "rules",
+        "consumer_energy"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "source",
+      "enriched": true,
+      "first_seen": "2026-11-19T04:41:05+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-10-29"
+    },
+    {
       "id": "9aeb9fbc7d9d",
       "title": "Non-Co-optimised Essential System Services Review - Exposure Draft",
       "url": "https://www.wa.gov.au/government/document-collections/the-non-co-optimised-essential-system-services-framework",
@@ -3888,6 +4064,30 @@
       "sort_date": "2026-10-13"
     },
     {
+      "id": "f862b5c35fb9",
+      "title": "New power projects to boost housing lots",
+      "url": "https://www.westernpower.com.au/news/new-power-projects-to-boost-housing-lots/",
+      "source": "Western Power",
+      "jurisdiction": "WA",
+      "category": "news",
+      "summary": "Western Power has four power infrastructure projects underway or starting this year, including 38km of underground lines, unlocking at least 3,470 residential lots in Yanchep, Byford, South Yunderup and Mundijong. Its Housing and Infrastructure Growth Program targets more than 9,600 lots across 11 growth areas over four years.",
+      "published": "2026-10-12",
+      "deadline": "",
+      "event_date": "",
+      "importance": "low",
+      "topics": [
+        "networks"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "wa_politics",
+      "enriched": true,
+      "first_seen": "2026-11-19T04:41:05+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-10-12"
+    },
+    {
       "id": "befeb20f68ab",
       "title": "Australian-made solar robots move towards commercial scale with $31.1 million in ARENA funding",
       "url": "https://arena.gov.au/news/australian-made-solar-robots-move-towards-commercial-scale-with-32-3-million-in-arena-funding/",
@@ -4271,6 +4471,31 @@
         "rules"
       ],
       "submission_required": true
+    },
+    {
+      "id": "1eb6518ad65f",
+      "title": "EUAA 2027 National Conference",
+      "url": "https://euaa.com.au/2027-national-conference-dates-confirmed/",
+      "source": "Energy Users' Association of Australia",
+      "jurisdiction": "NEM",
+      "category": "event",
+      "summary": "Energy Users' Association of Australia will hold its 2027 National Conference on 2–3 June at Crown Promenade, Melbourne, covering contracting, pricing and market settings for large commercial and industrial energy users. Registrations open in early 2027.",
+      "published": "2026-09-18",
+      "deadline": "",
+      "event_date": "2027-06-02",
+      "importance": "medium",
+      "topics": [
+        "prices",
+        "retail"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "events",
+      "enriched": true,
+      "first_seen": "2026-11-19T04:41:05+08:00",
+      "due": "2027-06-02",
+      "actionable": true,
+      "sort_date": "2026-09-18"
     },
     {
       "id": "abca88356e51",
