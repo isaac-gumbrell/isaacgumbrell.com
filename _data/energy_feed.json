@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-17T10:28:01+08:00",
-  "generated_label": "17 Nov 2026, 10:36 AM AWST",
+  "generated_at": "2026-11-18T09:07:10+08:00",
+  "generated_label": "18 Nov 2026, 9:22 AM AWST",
   "mode": "full",
   "model": "~deepseek/deepseek-flash-latest",
   "sources": [
@@ -29,14 +29,114 @@
     "energy.gov.au"
   ],
   "errors": [
-    "AEMO (https://www.aemo.com.au/newsroom/media-release): 403 Client Error: None for url: https://www.aemo.com.au/newsroom/media-release",
-    "AEMO Services (ASL) (https://asl.org.au/news): 403 Client Error: None for url: https://asl.org.au/news",
-    "AER (https://www.aer.gov.au/news): HTTPSConnectionPool(host='www.aer.gov.au', port=443): Read timed out. (read timeout=30)",
-    "Federal Minister for Climate Change and Energy (https://minister.dcceew.gov.au/bowen/media-releases): HTTPSConnectionPool(host='minister.dcceew.gov.au', port=443): Read timed out. (read timeout=30)",
-    "DCCEEW (https://www.dcceew.gov.au/about/news): HTTPSConnectionPool(host='www.dcceew.gov.au', port=443): Read timed out. (read timeout=30)",
-    "energy.gov.au (https://www.energy.gov.au/news/rss): HTTPSConnectionPool(host='www.energy.gov.au', port=443): Read timed out. (read timeout=30)"
+    "AER (https://www.aer.gov.au/news): HTTPSConnectionPool(host='www.aer.gov.au', port=443): Read timed out. (read timeout=60)",
+    "Federal Minister for Climate Change and Energy (https://minister.dcceew.gov.au/bowen/media-releases): HTTPSConnectionPool(host='minister.dcceew.gov.au', port=443): Read timed out. (read timeout=60)",
+    "DCCEEW (https://www.dcceew.gov.au/about/news): HTTPSConnectionPool(host='www.dcceew.gov.au', port=443): Read timed out. (read timeout=60)",
+    "energy.gov.au (https://www.energy.gov.au/news/rss): HTTPSConnectionPool(host='www.energy.gov.au', port=443): Read timed out. (read timeout=60)"
   ],
   "items": [
+    {
+      "id": "853c497daef8",
+      "title": "Power System Modelling strategy consultation (draft strategy)",
+      "url": "https://www.aemo.com.au/consultations/current-and-closed-consultations/power-system-modelling-strategy-consultation",
+      "source": "AEMO",
+      "jurisdiction": "NEM",
+      "category": "consultation",
+      "summary": "AEMO is consulting on its draft inaugural Power System Modelling Strategy and five-year roadmap covering modelling capability, data, tools and governance. Submissions close 5pm AEDT on 7 December 2026, with the final strategy due January 2027.",
+      "published": "2026-11-17",
+      "deadline": "2026-12-07",
+      "event_date": "",
+      "importance": "medium",
+      "topics": [
+        "reliability",
+        "rules"
+      ],
+      "submission_required": true,
+      "updated": "",
+      "origin": "source",
+      "enriched": true,
+      "first_seen": "2026-11-18T09:07:10+08:00",
+      "due": "2026-12-07",
+      "actionable": true,
+      "sort_date": "2026-11-17"
+    },
+    {
+      "id": "e794817ebdfe",
+      "title": "Procedure for Accessing AEMO Systems – draft report consultation",
+      "url": "https://www.aemo.com.au/consultations/current-and-closed-consultations/procedure-for-accessing-aemo-systems",
+      "source": "AEMO",
+      "jurisdiction": "NEM",
+      "category": "consultation",
+      "summary": "AEMO seeks feedback on the draft procedure and access agreement governing how electricity and gas registered participants and their representatives access AEMO confidential information and systems. Submissions close 14 December 2026; final report expected 26 February 2027.",
+      "published": "2026-11-17",
+      "deadline": "2026-12-14",
+      "event_date": "",
+      "importance": "medium",
+      "topics": [
+        "rules",
+        "networks",
+        "gas"
+      ],
+      "submission_required": true,
+      "updated": "",
+      "origin": "source",
+      "enriched": true,
+      "first_seen": "2026-11-18T09:07:10+08:00",
+      "due": "2026-12-14",
+      "actionable": true,
+      "sort_date": "2026-11-17"
+    },
+    {
+      "id": "7447efbd3eb5",
+      "title": "Data centre work program fact sheet",
+      "url": "https://www.aemc.gov.au/node/14042",
+      "source": "AEMC",
+      "jurisdiction": "NEM",
+      "category": "report",
+      "summary": "AEMC fact sheet outlining coordination between energy market bodies on data centre reforms, including work underway on connection, network and market arrangements for large loads.",
+      "published": "2026-11-17",
+      "deadline": "",
+      "event_date": "",
+      "importance": "low",
+      "topics": [
+        "rules",
+        "networks"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "source",
+      "enriched": true,
+      "first_seen": "2026-11-18T09:07:10+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-11-17"
+    },
+    {
+      "id": "3c37da0eca86",
+      "title": "Joint media release: Australia and Republic of Korea seize new clean energy opportunities through bilateral decarbonisation pathway",
+      "url": "https://minister.dcceew.gov.au/bowen/media-releases/joint-media-release-australia-and-republic-korea-seize-new-clean-energy-opportunities-through-bilateral-decarbonisation-pathway",
+      "source": "Minister for Climate Change and Energy",
+      "jurisdiction": "National",
+      "category": "political",
+      "summary": "Australia and the Republic of Korea have agreed a bilateral decarbonisation pathway under their clean energy partnership, aimed at clean energy investment and export opportunities for Australian industry and regions.",
+      "published": "2026-11-17",
+      "deadline": "",
+      "event_date": "",
+      "importance": "medium",
+      "topics": [
+        "hydrogen",
+        "renewables",
+        "emissions"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "federal_policy",
+      "enriched": true,
+      "first_seen": "2026-11-18T09:07:10+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-11-17"
+    },
     {
       "id": "f6e4ca9c8814",
       "title": "BESS and BESS-hybrids updates",
@@ -265,6 +365,32 @@
       "due": "2027-02-01",
       "actionable": true,
       "sort_date": "2026-11-17"
+    },
+    {
+      "id": "7e65577905ce",
+      "title": "Rulings Panel decision on Code breach by Genesis Energy",
+      "url": "https://www.ea.govt.nz/news/press-release/rulings-panel-decision-on-code-breach-by-genesis-energy/",
+      "source": "Electricity Authority Te Mana Hiko",
+      "jurisdiction": "NZ",
+      "category": "news",
+      "summary": "The Rulings Panel found Genesis Energy breached clause 13.82(2) of the Code by not following dispatch instructions for Huntly unit 5 on 26 January 2024. It ordered a $301,875 penalty plus $9,937.50 costs.",
+      "published": "2026-11-16",
+      "deadline": "",
+      "event_date": "",
+      "importance": "medium",
+      "topics": [
+        "rules",
+        "prices",
+        "generation"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "nz_market",
+      "enriched": true,
+      "first_seen": "2026-11-18T09:07:10+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-11-16"
     },
     {
       "id": "0962f455bfd3",
@@ -1556,6 +1682,30 @@
       "updated": ""
     },
     {
+      "id": "62fee61675bc",
+      "title": "Linton Military Camp High Voltage/Low Voltage Electrical Infrastructure Upgrade",
+      "url": "https://www.gets.govt.nz/NZDF/ExternalTenderDetails.htm?id=35432318",
+      "source": "New Zealand Defence Force (GETS)",
+      "jurisdiction": "NZ",
+      "category": "tender",
+      "summary": "Advance notice for an electrical main contractor to deliver a high voltage infrastructure upgrade, associated civil works and a new primary substation at Linton Military Camp, Manawatu. Responses close 20 November 2026.",
+      "published": "2026-11-05",
+      "deadline": "2026-11-20",
+      "event_date": "",
+      "importance": "low",
+      "topics": [
+        "networks"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "nz_opportunities",
+      "enriched": true,
+      "first_seen": "2026-11-18T09:07:10+08:00",
+      "due": "2026-11-20",
+      "actionable": true,
+      "sort_date": "2026-11-05"
+    },
+    {
       "id": "43db24b1eacd",
       "title": "IPRR implementation changes (ERC0458)",
       "url": "https://www.aemc.gov.au/rule-changes/iprr-implementation-changes",
@@ -2567,6 +2717,31 @@
         "rules"
       ],
       "submission_required": true
+    },
+    {
+      "id": "5796efae8f1b",
+      "title": "Apartments and rentals set to plug in to the energy transition",
+      "url": "https://www.wa.gov.au/government/media-statements/Cook%20Labor%20Government/Apartments-and-rentals-set-to-plug-in-to-the-energy-transition-20261027",
+      "source": "Government of Western Australia",
+      "jurisdiction": "WA",
+      "category": "political",
+      "summary": "WA Government announced it will legalise plug-in solar and battery systems, making WA the first state to allow them, with a safety standard consultation opening the same day. A typical system is estimated to save about $240 a year, or about $500 with a battery.",
+      "published": "2026-10-27",
+      "deadline": "",
+      "event_date": "",
+      "importance": "medium",
+      "topics": [
+        "consumer_energy",
+        "renewables"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "wa_politics",
+      "enriched": true,
+      "first_seen": "2026-11-18T09:07:10+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-10-27"
     },
     {
       "id": "59c7d0b3061d",
@@ -3585,6 +3760,32 @@
       "updated": ""
     },
     {
+      "id": "929cec4d6af9",
+      "title": "ASL sets 1,500 MW firming infrastructure target and opens consultation on future tender",
+      "url": "https://asl.org.au/news/media-release/261013-asl-sets-firming-infrastructure-target-and-opens-consultation",
+      "source": "AEMO Services (ASL)",
+      "jurisdiction": "NEM",
+      "category": "news",
+      "summary": "ASL's 2026 Firming Infrastructure Investment Objectives report sets a pathway for 1,500 MW of firming capacity operational by end-May 2033, addressing NSW's forecast shortfall after Bayswater and Vales Point retire. The firming LTESA tender is expected to open in early 2027.",
+      "published": "2026-10-13",
+      "deadline": "2026-11-04",
+      "event_date": "",
+      "importance": "high",
+      "topics": [
+        "reliability",
+        "storage",
+        "generation"
+      ],
+      "submission_required": false,
+      "updated": "2026-10-13",
+      "origin": "source",
+      "enriched": true,
+      "first_seen": "2026-11-18T09:07:10+08:00",
+      "due": "2026-11-04",
+      "actionable": true,
+      "sort_date": "2026-10-13"
+    },
+    {
       "id": "d153b8a4c9df",
       "title": "Draft 2027 General Power System Risk Review approach paper consultation",
       "url": "https://www.aemo.com.au/consultations/current-and-closed-consultations/draft-2027-general-power-system-risk-review-approach-paper-consultation",
@@ -4072,6 +4273,58 @@
       "submission_required": true
     },
     {
+      "id": "abca88356e51",
+      "title": "New fleet of energy projects delivered in NSW",
+      "url": "https://asl.org.au/news/media-release/260918-new-fleet-of-energy-projects-delivered-in-nsw",
+      "source": "AEMO Services (ASL)",
+      "jurisdiction": "NEM",
+      "category": "news",
+      "summary": "All battery and demand response projects from ASL's 2023 firming tender — Smithfield BESS, Orana BESS, Liddell BESS and three Enel X virtual power plants — are now operational, delivering about 1 GW (3 GWh) of firming capacity in NSW.",
+      "published": "2026-09-18",
+      "deadline": "",
+      "event_date": "",
+      "importance": "medium",
+      "topics": [
+        "storage",
+        "reliability",
+        "consumer_energy"
+      ],
+      "submission_required": false,
+      "updated": "2026-09-18",
+      "origin": "source",
+      "enriched": true,
+      "first_seen": "2026-11-18T09:07:10+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-09-18"
+    },
+    {
+      "id": "8c5b3c4fca4d",
+      "title": "Consultation launched as preferred ESEM contract structures take shape",
+      "url": "https://asl.org.au/news/media-release/260916-consultation-launched-as-esem-contract-model-takes-shape",
+      "source": "AEMO Services (ASL)",
+      "jurisdiction": "NEM",
+      "category": "news",
+      "summary": "The industry-led Electricity Contract Co-Design Working Group proposed preferred contract structures for the first ESEM tender, expected late 2027: a Regional Reference PPA for bulk energy, a Dynamic Time of Day Block Spread Swap and a $600 cap contract for firming.",
+      "published": "2026-09-16",
+      "deadline": "",
+      "event_date": "",
+      "importance": "medium",
+      "topics": [
+        "rules",
+        "generation",
+        "storage"
+      ],
+      "submission_required": false,
+      "updated": "2026-09-16",
+      "origin": "source",
+      "enriched": true,
+      "first_seen": "2026-11-18T09:07:10+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-09-16"
+    },
+    {
       "id": "bee558ca0619",
       "title": "Consumer Energy National Technical Regulatory Framework",
       "url": "https://www.energy.gov.au/energy-and-climate-change-ministerial-council/energy-ministers-publications",
@@ -4173,6 +4426,30 @@
         "networks"
       ],
       "submission_required": false
+    },
+    {
+      "id": "39c14c03d872",
+      "title": "AEMO Governance Review",
+      "url": "https://asl.org.au/news/media-release/260810-aemo-governance-review",
+      "source": "AEMO Services (ASL)",
+      "jurisdiction": "NEM",
+      "category": "news",
+      "summary": "ASL notes the AEMO Governance Review final report and Energy Ministers' agreement that ASL become a standalone entity with multi-jurisdictional membership. Current roles, including NSW Consumer Trustee and CIS tender delivery, are unchanged.",
+      "published": "2026-08-10",
+      "deadline": "",
+      "event_date": "",
+      "importance": "low",
+      "topics": [
+        "rules"
+      ],
+      "submission_required": false,
+      "updated": "2026-08-12",
+      "origin": "source",
+      "enriched": true,
+      "first_seen": "2026-11-18T09:07:10+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-08-10"
     },
     {
       "id": "36fd7d7cd903",
