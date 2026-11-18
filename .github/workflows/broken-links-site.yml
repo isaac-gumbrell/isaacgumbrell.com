@@ -17,7 +17,7 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.2" # latest 3.2.x; newer runner images only carry the latest patch
+          ruby-version: "3.3" # latest 3.3.x, as deploy.yml; css_parser now needs Ruby 3.3+
           bundler-cache: true
       - name: Update _config.yml ⚙️
         uses: fjogeleit/yaml-update-action@main
