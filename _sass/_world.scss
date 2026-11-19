@@ -376,6 +376,23 @@ article p,
   font-weight: 560;
   font-stretch: 85%;
 }
+/* Firm brackets under (or, on phones, beside) the steps done with each firm */
+.mo-firm {
+  path {
+    fill: none;
+    stroke: var(--ink-2);
+    stroke-width: 1;
+  }
+  text {
+    fill: var(--ink-2);
+    font-size: 15px;
+    font-weight: 500;
+    font-stretch: 88%;
+  }
+}
+.mo-firm--v text {
+  font-size: 11px;
+}
 .mo-label--years {
   fill: var(--ink-2);
   font-size: 13.5px;

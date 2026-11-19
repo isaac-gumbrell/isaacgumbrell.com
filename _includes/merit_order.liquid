@@ -4,10 +4,12 @@
   Fill encodes the role recorded in _data/work.yml:
     solid = modelling only, solid + hatch = modelling and qualitative, hatch only = qualitative only.
   The final dashed step is the next piece of work; the falling demand curve (new questions) clears there.
-  Each step is labelled with the job (chart_label, one or two lines), not the client.
+  Each step is labelled with the job (chart_label, one or two lines), not the client. A bracket under
+  each run of consecutive steps names the firm the work was done with (work.firms).
   Wide screens get the SVG chart; narrow screens get the same stack turned on its side (.mo-rows).
 {%- endcomment -%}
 {%- assign projects = site.data.work.projects -%}
+{%- assign firms = site.data.work.firms -%}
 {%- assign plot_left = 24 -%}
 {%- assign plot_right = 1184 -%}
 {%- assign base_y = 250 -%}
@@ -27,7 +29,7 @@
 {% include mo_defs.liquid %}
 <figure class="mo" data-merit-order>
   {%- comment -%} aria-label rather than <title>: an SVG <title> shows as a hover tooltip over the chart. {%- endcomment -%}
-  <svg class="mo-chart" viewBox="0 -34 1200 346" role="group" aria-label="My work as a merit order" aria-describedby="mo-desc">
+  <svg class="mo-chart" viewBox="0 -34 1200 384" role="group" aria-label="My work as a merit order" aria-describedby="mo-desc">
     <desc id="mo-desc">
       {{ projects | size }} projects stacked in date order, step width equal to years on the project. Solid steps are modelling,
       hatched steps are qualitative work such as research and report drafting. The last, empty step is what comes next, where the
@@ -43,9 +45,12 @@
     </g>
 
     {%- assign x = plot_left -%}
+    {%- assign firm_brackets = '' -%}
     {%- for p in projects -%}
       {%- assign span = p.end | minus: p.start | plus: 1 -%}
       {%- assign w = unit_w | times: span -%}
+      {%- assign prev_i = forloop.index0 | minus: 1 -%}{%- assign prev = projects[prev_i] -%}
+      {%- if forloop.first or prev.firm != p.firm -%}{%- assign g_x = x -%}{%- endif -%}
       {%- assign idx = forloop.index0 -%}
       {%- assign h = idx | times: step_rise | plus: first_height -%}
       {%- assign y = base_y | minus: h -%}
@@ -79,7 +84,21 @@
         <text class="mo-label mo-label--years" x="{{ cx | round: 1 }}" y="{{ base_y | plus: 56 }}" text-anchor="middle">{{ p.years }}</text>
       </a>
       {%- assign x = x | plus: w -%}
+      {%- assign next = projects[forloop.index] -%}
+      {%- if p.firm and next.firm != p.firm -%}
+        {%- assign firm = firms[p.firm] -%}
+        {%- assign bx1 = g_x | plus: 4 -%}
+        {%- assign bx2 = x | minus: 4 -%}
+        {%- assign bcx = bx1 | plus: bx2 | divided_by: 2.0 -%}
+        {%- assign by = base_y | plus: 70 -%}
+        {%- capture one_bracket -%}
+          <path d="M{{ bx1 | round: 1 }} {{ by | minus: 6 }}V{{ by }}H{{ bx2 | round: 1 }}V{{ by | minus: 6 }}" />
+          <text x="{{ bcx | round: 1 }}" y="{{ by | plus: 18 }}" text-anchor="middle">{{ firm.name }}</text>
+        {%- endcapture -%}
+        {%- assign firm_brackets = firm_brackets | append: one_bracket -%}
+      {%- endif -%}
     {%- endfor -%}
+    <g class="mo-firm" aria-hidden="true">{{ firm_brackets }}</g>
 
     {%- comment -%} What comes next: an empty dashed step where demand clears. {%- endcomment -%}
     {%- assign w = unit_w | times: 2 -%}
@@ -115,14 +134,18 @@
   {%- comment -%} Narrow screens: the same stack turned on its side, one row per step. {%- endcomment -%}
   <div class="mo-rows">
     <p class="mo-rows-cue">Tap a step to see the project.</p>
-    {%- assign v_axis = 116 -%}
-    {%- assign v_len = 214 -%}
+    {%- assign v_axis = 128 -%}
+    {%- assign v_len = 202 -%}
+    {%- assign v_lab = 23 -%}
     {%- assign v_year = 46 -%}
     {%- assign v_top = 40 -%}
     {%- assign v_total = units | times: v_year | plus: v_top | plus: 8 -%}
     <svg class="mo-vchart" viewBox="0 0 340 {{ v_total }}" role="group" aria-label="My work as a merit order, turned on its side">
       {%- assign vy = v_top -%}
+      {%- assign firm_brackets = '' -%}
       {%- for p in projects -%}
+        {%- assign prev_i = forloop.index0 | minus: 1 -%}{%- assign prev = projects[prev_i] -%}
+        {%- if forloop.first or prev.firm != p.firm -%}{%- assign g_y = vy -%}{%- endif -%}
         {%- assign span = p.end | minus: p.start | plus: 1 -%}
         {%- assign rh = span | times: v_year -%}
         {%- assign idx = forloop.index0 -%}
@@ -147,18 +170,31 @@
           {%- endif -%}
           <rect class="mo-edge" x="{{ v_axis }}" y="{{ vy }}" width="{{ bl }}" height="{{ rh }}" />
           {%- assign label = p.chart_label | default: p.short -%}
-          <text class="mo-vlabel" x="0" y="{% if label.size > 1 %}{{ ty | minus: 11 }}{% else %}{{ ty | minus: 2 }}{% endif %}">
-            {%- for line in label -%}<tspan x="0" dy="{% if forloop.first %}0{% else %}14{% endif %}">{{ line }}</tspan>{%- endfor -%}
+          <text class="mo-vlabel" x="{{ v_lab }}" y="{% if label.size > 1 %}{{ ty | minus: 11 }}{% else %}{{ ty | minus: 2 }}{% endif %}">
+            {%- for line in label -%}<tspan x="{{ v_lab }}" dy="{% if forloop.first %}0{% else %}14{% endif %}">{{ line }}</tspan>{%- endfor -%}
           </text>
-          <text class="mo-vlabel mo-vlabel--years" x="0" y="{% if label.size > 1 %}{{ ty | plus: 17 }}{% else %}{{ ty | plus: 14 }}{% endif %}">{{ p.years }}</text>
+          <text class="mo-vlabel mo-vlabel--years" x="{{ v_lab }}" y="{% if label.size > 1 %}{{ ty | plus: 17 }}{% else %}{{ ty | plus: 14 }}{% endif %}">{{ p.years }}</text>
         </a>
         {%- assign vy = vy | plus: rh -%}
+        {%- assign next = projects[forloop.index] -%}
+        {%- if p.firm and next.firm != p.firm -%}
+          {%- assign firm = firms[p.firm] -%}
+          {%- assign by1 = g_y | plus: 4 -%}
+          {%- assign by2 = vy | minus: 4 -%}
+          {%- assign bcy = by1 | plus: by2 | divided_by: 2.0 -%}
+          {%- capture one_bracket -%}
+            <path d="M8 {{ by1 }}H3V{{ by2 }}H8" />
+            <text transform="rotate(-90 17 {{ bcy | round: 1 }})" x="17" y="{{ bcy | round: 1 }}" text-anchor="middle">{{ firm.short | default: firm.name }}</text>
+          {%- endcapture -%}
+          {%- assign firm_brackets = firm_brackets | append: one_bracket -%}
+        {%- endif -%}
       {%- endfor -%}
+      <g class="mo-firm mo-firm--v" aria-hidden="true">{{ firm_brackets }}</g>
       {%- assign rh = 2 | times: v_year -%}
       {%- assign ty = rh | divided_by: 2 | plus: vy -%}
       <g class="mo-next" aria-hidden="true">
         <rect x="{{ v_axis }}" y="{{ vy }}" width="{{ v_len }}" height="{{ rh }}" />
-        <text class="mo-vlabel mo-vlabel--next" x="0" y="{{ ty | plus: 5 }}">What's next?</text>
+        <text class="mo-vlabel mo-vlabel--next" x="{{ v_lab }}" y="{{ ty | plus: 5 }}">What's next?</text>
       </g>
       {%- comment -%}
         Turned on its side, price runs left to right and quantity runs down, so the demand curve

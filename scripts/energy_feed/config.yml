@@ -8,6 +8,8 @@
 #              have no single listing page (events, tenders, political news).
 #
 # jurisdiction: WA | NEM | National (Australia-wide) | NZ | Other
+# media: true marks a news outlet. Triage holds these to a higher bar (significant AU/NZ market news
+#   only, no opinion or product pieces) and they need the model to publish (always llm_only).
 # keeper: true marks an official RSS feed checked for quality (Nov 2026). Prefer these over
 #   scraping or research; don't drop them without re-checking. match: regex a feed item's title
 #   or summary must contain before triage (for whole-of-government tender feeds).
@@ -16,6 +18,7 @@
 settings:
   lookback_days: 30 # ignore direct-source items published before this
   retain_days: 180 # drop items older than this unless a deadline/event is still ahead
+  media_retain_days: 60 # news-outlet items (media: true) go sooner; they arrive daily
   triage_batch_size: 30 # candidates per triage request
   max_agent_iterations: 8 # request/response rounds per agent run
   search_uses_per_beat: 4 # web_search cap per research beat (search fees are most of the cost)
@@ -146,6 +149,63 @@ sources:
     match: &energy_tender "electricity|energy|solar|wind (?:farm|turbine)|batter(?:y|ies)|substation|transmission|generation|renewable|microgrid|hydrogen|geotherm|EV charg|power station|lines compan|biogas|\\bLNG\\b|gas (?:supply|pipeline)"
     llm_only: true # mixed with non-energy tenders; only publish what the model confirms
 
+  # ---- Industry news outlets (feeds checked Nov 2026). Triage keeps only significant market news.
+  - name: RenewEconomy
+    url: https://reneweconomy.com.au/feed/
+    type: rss
+    jurisdiction: NEM
+    category: news
+    media: true
+    llm_only: true
+
+  - name: Energy Magazine
+    url: https://www.energymagazine.com.au/feed/
+    type: rss
+    jurisdiction: National
+    category: news
+    media: true
+    llm_only: true
+
+  - name: ecogeneration
+    url: https://www.ecogeneration.com.au/feed/
+    type: rss
+    jurisdiction: National
+    category: news
+    media: true
+    llm_only: true
+
+  - name: pv magazine Australia
+    url: https://www.pv-magazine-australia.com/feed/
+    type: rss
+    jurisdiction: National
+    category: news
+    media: true
+    llm_only: true
+
+  - name: Australian Energy Council
+    url: https://www.energycouncil.com.au/feed/
+    type: rss
+    jurisdiction: NEM
+    category: news
+    media: true
+    llm_only: true
+
+  - name: Energy Networks Australia
+    url: https://www.energynetworks.com.au/feed/
+    type: rss
+    jurisdiction: National
+    category: news
+    media: true
+    llm_only: true
+
+  - name: RNZ Business
+    url: https://www.rnz.co.nz/rss/business.xml
+    type: rss
+    jurisdiction: NZ
+    category: news
+    media: true
+    llm_only: true # all business news; the model keeps energy only
+
   # ---- New Zealand
   - name: GETS (NZ Government tenders)
     url: https://www.gets.govt.nz/ExternalRSSFeed.htm
@@ -245,6 +305,19 @@ research:
       Clean Energy Council, Energy Networks Australia, EUAA, CEDA energy events, and
       major national conferences. Record the event date and, if relevant, the
       registration deadline.
+
+  - id: industry_news
+    name: Energy industry news (general search)
+    allowed_domains: []
+    prompt: >-
+      Search the news for significant Australian and New Zealand energy-market stories from
+      the last few days that the feeds above may miss: generation, storage and transmission
+      projects reaching financial close, starting operation or closing; market events
+      (price spikes, outages, reserve shortfalls, interventions); major corporate deals and
+      retailer news; and regulatory or government decisions. Prefer reputable outlets
+      (RenewEconomy, AFR, The West Australian, Boiling Cold, BusinessDesk, NZ Herald, RNZ,
+      Energy News) or the primary source. Skip opinion, product launches and overseas news.
+      Record each story once, with the outlet as the source and category news.
 
   # ---- New Zealand (MBIE, Beehive portfolio pages, EECA and the Commerce Commission's
   # release list block or hide content from scripts, so the agent covers them.)

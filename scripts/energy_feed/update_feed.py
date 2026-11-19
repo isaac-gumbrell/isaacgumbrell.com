@@ -573,7 +573,8 @@ def collect_source(session: requests.Session, src: dict, lookback: dt.date) -> l
 
     for f in found:
         f.update(source=src["name"], jurisdiction=src.get("jurisdiction", "Other"),
-                 category_hint=src.get("category", "news"), llm_only=bool(src.get("llm_only")))
+                 category_hint=src.get("category", "news"), llm_only=bool(src.get("llm_only")),
+                 source_type="media" if src.get("media") else "official")
     if src.get("match"):  # large mixed feeds (tender portals): keep only energy-looking items
         match = re.compile(src["match"], re.I)
         found = [f for f in found if match.search(f"{f['title']} {f['snippet']}")]
@@ -826,7 +827,7 @@ def known_items_text(items: list[dict], limit: int = 250) -> str:
     return "\n".join(f"- {i['title']} | {i['url']}" for i in recent) or "(none yet)"
 
 
-def triage(client, cfg: dict, candidates: list[dict]) -> tuple[list[dict], set[str]]:
+def triage(client, cfg: dict, candidates: list[dict], known: list[dict] | None = None) -> tuple[list[dict], set[str]]:
     """Ask Claude which candidates are relevant. Returns (records, triaged candidate ids)."""
     s = cfg["settings"]
     records: list[dict] = []
@@ -834,19 +835,31 @@ def triage(client, cfg: dict, candidates: list[dict]) -> tuple[list[dict], set[s
     size = s["triage_batch_size"]
     for start in range(0, len(candidates), size):
         batch = candidates[start:start + size]
-        payload = [{k: c[k] for k in ("title", "url", "source", "jurisdiction", "category_hint",
+        payload = [{k: c[k] for k in ("title", "url", "source", "source_type", "jurisdiction", "category_hint",
                                       "published", "snippet", "closing_date_on_page") if c.get(k)} for c in batch]
         domains = sorted({urlsplit(c["url"]).netloc for c in batch})
         tools, betas = server_tools(MODEL, domains, 0, s["fetch_uses_per_beat"], search=False)
         user = (
             f"Today is {today().isoformat()}.\n\n"
-            f"Below are {len(batch)} new links collected from official energy-sector sources. "
-            "Record each one that is relevant, using its exact URL. category_hint is the "
+            f"Below are {len(batch)} new links collected from energy-sector sources. "
+            "Record each one that is relevant, using its exact URL. Links with source_type "
+            "\"media\" come from news outlets, which publish far more than this tracker needs: "
+            "record only significant Australian or New Zealand energy-market news (major projects "
+            "reaching financial close, opening or closing; market events such as price spikes, "
+            "outages or reserve shortfalls; regulatory and policy decisions; large deals). Leave "
+            "out opinion pieces, product launches, consumer and EV reviews, overseas news, and "
+            "stories already tracked (see already_tracked) or covered by another candidate here; "
+            "when several outlets report the same story, record it once from the most informative "
+            "one. For a recorded media item, use category news and the outlet as the source. "
+            "category_hint is the "
             "source's usual category; override it when the item is clearly something else. "
             "Use web_fetch on a candidate only when you need its closing date, event date "
             "or enough detail to summarise it; skip fetching for obvious cases. Leave out "
             "links that are navigation pages, document indexes, or not about energy.\n\n"
-            "<candidates>\n" + json.dumps(payload, indent=1, ensure_ascii=False) + "\n</candidates>"
+            "<candidates>\n" + json.dumps(payload, indent=1, ensure_ascii=False) + "\n</candidates>\n\n"
+            "<already_tracked>\n"
+            + "".join(f"- {r.get('title', '')} | {r.get('url', '')}\n" for r in records)  # earlier batches
+            + known_items_text(known or [], limit=150) + "\n</already_tracked>"
         )
         got = run_agent(client, user, tools, betas, s["max_agent_iterations"],
                         f"triage {start // size + 1}")
@@ -939,13 +952,19 @@ def sort_date(item: dict) -> str:
     return item.get("published") or item.get("updated") or item.get("first_seen", "")[:10]
 
 
-def finalise(items: list[dict], retain_days: int) -> list[dict]:
+def finalise(items: list[dict], retain_days: int, media_sources: set[str] | None = None,
+             media_retain_days: int | None = None) -> list[dict]:
+    """Drop items past retention (unless a deadline or event is still ahead), set derived fields, sort.
+
+    News-outlet items (media_sources) go sooner: they arrive daily and age quickly."""
     cutoff = (today() - dt.timedelta(days=retain_days)).isoformat()
+    media_cutoff = (today() - dt.timedelta(days=media_retain_days or retain_days)).isoformat()
     t = today().isoformat()
     kept = []
     for i in items:
         upcoming = max(i.get("deadline") or "", i.get("event_date") or "") >= t
-        if sort_date(i) >= cutoff or upcoming:
+        limit = media_cutoff if media_sources and i.get("source") in media_sources else cutoff
+        if sort_date(i) >= limit or upcoming:
             dates = [d for d in (i.get("deadline"), i.get("event_date")) if d]
             i["due"] = min(dates) if dates else ""
             i["actionable"] = bool(i["category"] in ("consultation", "tender", "event") or i["due"])
@@ -1049,7 +1068,7 @@ def run(args, cfg: dict, feed: dict, state: dict, items: list[dict], errors: lis
                    for i in items if not i.get("enriched") and i["first_seen"][:10] >= backlog_cutoff]
         to_triage = fresh + backlog
         if to_triage:
-            records, triaged = triage(client, cfg, to_triage)
+            records, triaged = triage(client, cfg, to_triage, known=items)
             for r in records:
                 if (it := to_item(r, "source", True, stamp)) and it["id"] in triaged:
                     if it["id"] in pages:
@@ -1099,7 +1118,9 @@ def run(args, cfg: dict, feed: dict, state: dict, items: list[dict], errors: lis
         log.info("refreshed %d existing item(s) from their pages", min(len(stale), MAX_PAGE_READS * 2))
     for i in items:  # every item gets topics and a submission flag, from keywords if nothing better
         enrich_from_page(i, BLANK_PAGE)
-    items = finalise(items, cfg["settings"]["retain_days"])
+    media_sources = {s["name"] for s in cfg["sources"] if s.get("media")}
+    items = finalise(items, cfg["settings"]["retain_days"], media_sources,
+                     cfg["settings"].get("media_retain_days"))
     prune_before = (today() - dt.timedelta(days=cfg["settings"]["retain_days"])).isoformat()
     state["ignored"] = {k: v for k, v in ignored.items() if v >= prune_before}
 
