@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-19T04:41:05+08:00",
-  "generated_label": "19 Nov 2026, 4:55 AM AWST",
+  "generated_at": "2026-11-19T19:52:18+08:00",
+  "generated_label": "19 Nov 2026, 8:08 PM AWST",
   "mode": "full",
   "model": "~deepseek/deepseek-flash-latest",
   "sources": [
@@ -35,6 +35,84 @@
     "energy.gov.au (https://www.energy.gov.au/news/rss): HTTPSConnectionPool(host='www.energy.gov.au', port=443): Read timed out. (read timeout=60)"
   ],
   "items": [
+    {
+      "id": "b9d191f7c96e",
+      "title": "Interim Guideline for Connection of Inverter Based Loads",
+      "url": "https://www.aemo.com.au/consultations/current-and-closed-consultations/interim-guideline-for-connection-of-inverter-based-loads",
+      "source": "AEMO",
+      "jurisdiction": "NEM",
+      "category": "consultation",
+      "summary": "AEMO has published an interim guideline and FAQ for connecting inverter-based loads, including data centres, ahead of new access standards. Feedback closes 17 December 2026, with an updated guideline due early 2027.",
+      "published": "2026-11-19",
+      "deadline": "2026-12-17",
+      "event_date": "2026-12-02",
+      "importance": "high",
+      "topics": [
+        "networks",
+        "rules",
+        "reliability"
+      ],
+      "submission_required": true,
+      "updated": "",
+      "origin": "source",
+      "enriched": true,
+      "first_seen": "2026-11-19T19:52:18+08:00",
+      "due": "2026-12-02",
+      "actionable": true,
+      "sort_date": "2026-11-19"
+    },
+    {
+      "id": "e9deab2e7e55",
+      "title": "AEPC_2026_12 Facility Registration Processes",
+      "url": "https://www.aemo.com.au/consultations/current-and-closed-consultations/aepc_2026_12",
+      "source": "AEMO",
+      "jurisdiction": "WA",
+      "category": "rule_change",
+      "summary": "AEMO has published the final report for Wholesale Electricity Market procedure consultation AEPC_2026_12 on facility registration processes. The consultation, initiated 14 August 2026, is no longer accepting submissions.",
+      "published": "2026-11-19",
+      "deadline": "",
+      "event_date": "",
+      "importance": "medium",
+      "topics": [
+        "rules",
+        "generation",
+        "storage"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "source",
+      "enriched": true,
+      "first_seen": "2026-11-19T19:52:18+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-11-19"
+    },
+    {
+      "id": "35aff4dd07e3",
+      "title": "Call for Expression of Interest for System Restart Service (SWIS-wide)",
+      "url": "https://www.aemo.com.au/consultations/tenders",
+      "source": "AEMO",
+      "jurisdiction": "WA",
+      "category": "tender",
+      "summary": "AEMO has an open call for expressions of interest for system restart services across the South West Interconnected System, listed on its current tenders page. Closing date and full documentation are available from AEMO's VendorPanel tender portal.",
+      "published": "",
+      "deadline": "",
+      "event_date": "",
+      "importance": "medium",
+      "topics": [
+        "reliability",
+        "networks",
+        "generation"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "tenders",
+      "enriched": true,
+      "first_seen": "2026-11-19T19:52:18+08:00",
+      "due": "",
+      "actionable": true,
+      "sort_date": "2026-11-19"
+    },
     {
       "id": "c8c00af318d9",
       "title": "Proposed updates to swimming pool pumps energy efficiency regulations",
@@ -186,6 +264,58 @@
       "due": "",
       "actionable": false,
       "sort_date": "2026-11-18"
+    },
+    {
+      "id": "4c0c06269e1d",
+      "title": "AGL and Endeavour Energy 'FlexTogether' trial waiver application – consultation",
+      "url": "https://www.aer.gov.au/about/strategic-initiatives/energy-innovation-toolkit/energy-innovation-toolkit-decisions/agl-and-endeavour-energy-flextogether-trial-waiver-application/consultation",
+      "source": "AER",
+      "jurisdiction": "NEM",
+      "category": "consultation",
+      "summary": "The AER is seeking feedback on AGL and Endeavour Energy's 'FlexTogether' trial waiver application, covering the proposed waiver framework, consumer benefits and risks, safeguards and transition arrangements. Submissions close 22 January 2027.",
+      "published": "2026-11-17",
+      "deadline": "2027-01-22",
+      "event_date": "",
+      "importance": "medium",
+      "topics": [
+        "consumer_energy",
+        "networks",
+        "retail"
+      ],
+      "submission_required": true,
+      "updated": "",
+      "origin": "federal_policy",
+      "enriched": true,
+      "first_seen": "2026-11-19T19:52:18+08:00",
+      "due": "2027-01-22",
+      "actionable": true,
+      "sort_date": "2026-11-17"
+    },
+    {
+      "id": "eb8b306ee975",
+      "title": "National Electricity Market wholesale market settings review",
+      "url": "https://www.dcceew.gov.au/energy/markets/nem-wms-review",
+      "source": "DCCEEW",
+      "jurisdiction": "NEM",
+      "category": "rule_change",
+      "summary": "DCCEEW has released a draft Bill to amend the National Electricity Law and draft Rules implementing the NEM Review, including a new Electricity Services Entry Mechanism and Market Making Obligation. Consultation closed 13 October 2026; Energy Ministers consider the changes in December 2026.",
+      "published": "2026-11-17",
+      "deadline": "2026-10-13",
+      "event_date": "",
+      "importance": "high",
+      "topics": [
+        "rules",
+        "prices",
+        "reliability"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "federal_policy",
+      "enriched": true,
+      "first_seen": "2026-11-19T19:52:18+08:00",
+      "due": "2026-10-13",
+      "actionable": true,
+      "sort_date": "2026-11-17"
     },
     {
       "id": "853c497daef8",
