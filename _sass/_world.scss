@@ -206,6 +206,16 @@ time {
     font-size: 1.1rem;
     color: var(--ink-2);
     max-width: 65ch;
+    /* A link in the intro (e.g. "email me" on Projects) is an action, so it takes Signal Orange. */
+    a {
+      color: var(--action);
+      text-decoration: underline;
+      text-decoration-color: currentColor;
+      text-underline-offset: 0.18em;
+      &:hover {
+        color: var(--ink);
+      }
+    }
   }
 }
 
@@ -375,6 +385,23 @@ article p,
   font-size: 14.5px;
   font-weight: 560;
   font-stretch: 85%;
+}
+/* Firm brackets under (or, on phones, beside) the steps done with each firm */
+.mo-firm {
+  path {
+    fill: none;
+    stroke: var(--ink-2);
+    stroke-width: 1;
+  }
+  text {
+    fill: var(--ink-2);
+    font-size: 15px;
+    font-weight: 500;
+    font-stretch: 88%;
+  }
+}
+.mo-firm--v text {
+  font-size: 11px;
 }
 .mo-label--years {
   fill: var(--ink-2);
