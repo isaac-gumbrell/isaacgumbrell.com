@@ -5,7 +5,8 @@
     solid = modelling only, solid + hatch = modelling and qualitative, hatch only = qualitative only.
   The final dashed step is the next piece of work; the falling demand curve (new questions) clears there.
   Each step is labelled with the job (chart_label, one or two lines), not the client. A bracket under
-  each run of consecutive steps names the firm the work was done with (work.firms).
+  each run of consecutive steps names the firm the work was done with (work.firms); the last firm's
+  bracket also spans the dashed "What's next?" step.
   Wide screens get the SVG chart; narrow screens get the same stack turned on its side (.mo-rows).
 {%- endcomment -%}
 {%- assign projects = site.data.work.projects -%}
@@ -89,6 +90,7 @@
         {%- assign firm = firms[p.firm] -%}
         {%- assign bx1 = g_x | plus: 4 -%}
         {%- assign bx2 = x | minus: 4 -%}
+        {%- if forloop.last -%}{%- assign bx2 = unit_w | times: 2 | plus: bx2 -%}{%- endif -%}
         {%- assign bcx = bx1 | plus: bx2 | divided_by: 2.0 -%}
         {%- assign by = base_y | plus: 70 -%}
         {%- capture one_bracket -%}
@@ -181,6 +183,7 @@
           {%- assign firm = firms[p.firm] -%}
           {%- assign by1 = g_y | plus: 4 -%}
           {%- assign by2 = vy | minus: 4 -%}
+          {%- if forloop.last -%}{%- assign by2 = v_year | times: 2 | plus: by2 -%}{%- endif -%}
           {%- assign bcy = by1 | plus: by2 | divided_by: 2.0 -%}
           {%- capture one_bracket -%}
             <path d="M8 {{ by1 }}H3V{{ by2 }}H8" />

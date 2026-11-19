@@ -13,8 +13,7 @@ firms:
     short: Robinson Bowmaker Paul # used where space is tight (the sideways phone chart)
     url: https://rbp.consulting/
   dae:
-    name: Deloitte Access Economics
-    short: Deloitte
+    name: Deloitte
 
 projects:
   # Ordered by start year (the chart stacks them in this order).
