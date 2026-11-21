@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-21T04:31:03+08:00",
-  "generated_label": "21 Nov 2026, 4:44 AM AWST",
+  "generated_at": "2026-11-21T19:23:20+08:00",
+  "generated_label": "21 Nov 2026, 7:35 PM AWST",
   "mode": "full",
   "model": "~deepseek/deepseek-flash-latest",
   "sources": [
@@ -43,6 +43,56 @@
     "energy.gov.au (https://www.energy.gov.au/news/rss): HTTPSConnectionPool(host='www.energy.gov.au', port=443): Read timed out. (read timeout=60)"
   ],
   "items": [
+    {
+      "id": "59d50b4f18b7",
+      "title": "Release Notes: WEM Dispatch Engine 4.2.0",
+      "url": "https://www.aemo.com.au/-/media/files/market-it-systems/wem/2027/wemde-420-external-release-notes.pdf?rev=b59b84dbe65243d8bc1dc3148ccaa03c&sc_lang=en",
+      "source": "AEMO",
+      "jurisdiction": "WA",
+      "category": "rule_change",
+      "summary": "AEMO's WEM Dispatch Engine 4.2.0 release implements the Dispatch Algorithm Formulation procedure change, adding Droop Response into Essential System Services pre-processing and reducing RoCoF Control Service Requirement fluctuation. Dispatch case API increments to v29 with a new capacity field.",
+      "published": "",
+      "deadline": "",
+      "event_date": "",
+      "importance": "low",
+      "topics": [
+        "rules",
+        "reliability"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "aemo",
+      "enriched": true,
+      "first_seen": "2026-11-21T19:23:20+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-11-21"
+    },
+    {
+      "id": "49a11fb04314",
+      "title": "New partnership to equip Collie apprentices for the jobs of the future",
+      "url": "https://stateofenergy.wa.gov.au/news/new-partnership-to-equip-collie-apprentices-for-the-jobs-of-the-future",
+      "source": "State of Energy",
+      "jurisdiction": "WA",
+      "category": "news",
+      "summary": "The Cook Labor Government is securing apprenticeship opportunities through a partnership between Synergy and local industry to equip Collie apprentices for future jobs.",
+      "published": "",
+      "deadline": "",
+      "event_date": "",
+      "importance": "low",
+      "topics": [
+        "generation",
+        "networks"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "wa_politics",
+      "enriched": true,
+      "first_seen": "2026-11-21T19:23:20+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-11-21"
+    },
     {
       "id": "6cc328d892ab",
       "title": "Modernising the Greenhouse and Energy Minimum Standards scheme",
@@ -1518,6 +1568,31 @@
       "sort_date": "2026-11-17"
     },
     {
+      "id": "607801902203",
+      "title": "Contact bridging deal fast-tracks Tīwai Line 4 restart",
+      "url": "https://www.businessdesk.co.nz/energy/contact-bridging-deal-fast-tracks-tiwai-line-4-restart/4CG2M2OGGFESNODOEBT3VRXH5M/",
+      "source": "BusinessDesk",
+      "jurisdiction": "NZ",
+      "category": "news",
+      "summary": "A 50MW, three-and-a-half-year bridging electricity agreement with Contact Energy lets NZ Aluminium Smelters restart Tīwai Point's fourth potline in October 2027, about two years earlier than planned, restoring output to about 360,000 tonnes a year.",
+      "published": "2026-11-16",
+      "deadline": "",
+      "event_date": "",
+      "importance": "medium",
+      "topics": [
+        "generation",
+        "prices"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "industry_news",
+      "enriched": true,
+      "first_seen": "2026-11-21T19:23:20+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-11-16"
+    },
+    {
       "id": "62b32319ff00",
       "title": "Early evidence suggests new renewables help conserve hydro water as thermal generation plunges: Transpower",
       "url": "https://www.businessdesk.co.nz/energy/early-evidence-suggests-new-renewables-help-conserve-hydro-water-as-thermal-generation-plunges-transpower/LTJHUQJTQBDV3GYW3O57W4H5VQ/",
@@ -1798,6 +1873,58 @@
       "sort_date": "2026-11-14"
     },
     {
+      "id": "60bfcc4ed4bf",
+      "title": "Massive south west WA wind farm submitted to NEPA",
+      "url": "https://www.energynewsbulletin.net/energy-transition/news-articles/4539476/massive-south-west-wa-wind-farm-submitted-nepa",
+      "source": "Energy News Bulletin",
+      "jurisdiction": "WA",
+      "category": "news",
+      "summary": "Lacour Energy's West Arthur Wind Farm, with up to 92 turbines and a co-located utility-scale battery, has been referred to the National Environmental Protection Agency for assessment. It would connect into the SWIS via the proposed Clean Energy Link-East line.",
+      "published": "2026-11-13",
+      "deadline": "",
+      "event_date": "",
+      "importance": "medium",
+      "topics": [
+        "renewables",
+        "storage",
+        "generation"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "industry_news",
+      "enriched": true,
+      "first_seen": "2026-11-21T19:23:20+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-11-13"
+    },
+    {
+      "id": "c984989f9d3d",
+      "title": "Multi-year coal plant extensions needed to stop power price spikes",
+      "url": "https://www.afr.com/companies/energy/multi-year-coal-plant-extensions-needed-to-stop-power-price-spikes-20261113-p61dr1",
+      "source": "Australian Financial Review",
+      "jurisdiction": "NEM",
+      "category": "report",
+      "summary": "JPMorgan analysis of more than 9GW of coal capacity owned by AGL, Origin and EnergyAustralia says four plants in Victoria and NSW may need to run up to five years longer to avoid price spikes.",
+      "published": "2026-11-13",
+      "deadline": "",
+      "event_date": "",
+      "importance": "medium",
+      "topics": [
+        "generation",
+        "prices",
+        "reliability"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "industry_news",
+      "enriched": true,
+      "first_seen": "2026-11-21T19:23:20+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-11-13"
+    },
+    {
       "id": "feb8490c62a9",
       "title": "Climate Change Minister heads to COP 31",
       "url": "https://www.beehive.govt.nz/release/climate-change-minister-heads-cop-31",
@@ -1820,6 +1947,31 @@
       "due": "",
       "actionable": false,
       "sort_date": "2026-11-13"
+    },
+    {
+      "id": "54a3f2e2ec4c",
+      "title": "\"New purpose:\" Delta submits plans for big, two-hour battery at site of very old NSW coal plant",
+      "url": "https://reneweconomy.com.au/delta-submits-plans-for-big-new-battery-at-site-of-very-old-nsw-coal-plant/",
+      "source": "RenewEconomy",
+      "jurisdiction": "NEM",
+      "category": "news",
+      "summary": "Delta and Samsung C&T have lodged a state significant development application and EIS for a 400MW/800MWh battery at the Vales Point power station site in the Hunter-Central Coast REZ. The EIS will be publicly exhibited later.",
+      "published": "2026-11-12",
+      "deadline": "",
+      "event_date": "",
+      "importance": "medium",
+      "topics": [
+        "storage",
+        "networks"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "industry_news",
+      "enriched": true,
+      "first_seen": "2026-11-21T19:23:20+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-11-12"
     },
     {
       "id": "d1aa107631d6",
@@ -2758,6 +2910,81 @@
         "rules"
       ],
       "submission_required": false
+    },
+    {
+      "id": "0e7119ff289f",
+      "title": "Burrup Common User Transmission Infrastructure – Annual Compliance Report 2025-26",
+      "url": "https://prod.horizonpower.com.au/globalassets/media/documents/annual-reports/20252026/burrup-common-user-transmission-infrastructure--annual-compliance-report-2025-26.pdf",
+      "source": "Horizon Power",
+      "jurisdiction": "WA",
+      "category": "report",
+      "summary": "Horizon Power's annual compliance report for the Burrup Common User Transmission Infrastructure project, a 7km 132kV overhead transmission line to the Burrup Strategic Industrial Area. The project has not yet commenced.",
+      "published": "2026-11-09",
+      "deadline": "",
+      "event_date": "",
+      "importance": "low",
+      "topics": [
+        "networks"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "wa_politics",
+      "enriched": true,
+      "first_seen": "2026-11-21T19:23:20+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-11-09"
+    },
+    {
+      "id": "1d0fcf4566c0",
+      "title": "Jones warns Electricity Authority about future as NZ First holds firm on gentailer split",
+      "url": "https://www.businessdesk.co.nz/energy/shane-jones-warns-electricity-authority-about-future-as-nz-first-holds-firm-on-gentailer-split/SFSXDHUUJBBCVFF6E2MVM6U6MQ/",
+      "source": "BusinessDesk",
+      "jurisdiction": "NZ",
+      "category": "political",
+      "summary": "NZ First's Shane Jones has warned Electricity Authority board members their jobs depend on delivering reforms, as he stands by plans to separate the four major gentailers. Final election results are due 27 November.",
+      "published": "2026-11-09",
+      "deadline": "",
+      "event_date": "",
+      "importance": "high",
+      "topics": [
+        "rules",
+        "retail",
+        "prices"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "industry_news",
+      "enriched": true,
+      "first_seen": "2026-11-21T19:23:20+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-11-09"
+    },
+    {
+      "id": "edd115c13436",
+      "title": "Meridian's 420MW Western Bays Solar Farm referred for fast-track consent",
+      "url": "https://www.businessdesk.co.nz/energy/meridians-420mw-western-bays-solar-farm-referred-for-fast-track-consent/AL7GECQVS5GMZOXFYGWC5HTMXQ/",
+      "source": "BusinessDesk",
+      "jurisdiction": "NZ",
+      "category": "news",
+      "summary": "Meridian Energy's proposed 420MW Western Bays Solar Farm near Lake Taupō has been referred for fast-track consenting. If approved it would generate about 870GWh a year, roughly 2% of New Zealand's current electricity generation.",
+      "published": "2026-11-09",
+      "deadline": "",
+      "event_date": "",
+      "importance": "medium",
+      "topics": [
+        "renewables",
+        "generation"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "industry_news",
+      "enriched": true,
+      "first_seen": "2026-11-21T19:23:20+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-11-09"
     },
     {
       "id": "54deb189b61a",
@@ -3715,6 +3942,31 @@
       "sort_date": "2026-11-01"
     },
     {
+      "id": "5a22e27b678a",
+      "title": "Synergy's Kwinana gas-fired power station plan to be assessed by WA enviro watchdog",
+      "url": "https://www.energynewsbulletin.net/operations/news-articles/4538847/synergys-kwinana-gas-fired-power-station-assessed-wa-enviro-watchdog",
+      "source": "Energy News Bulletin",
+      "jurisdiction": "WA",
+      "category": "news",
+      "summary": "Synergy's proposed Kwinana gas-fired power station will be assessed by Western Australia's environmental watchdog, reported alongside APA's Keralup Energy Hub potentially supplying an AirTrunk data centre.",
+      "published": "2026-10-30",
+      "deadline": "",
+      "event_date": "",
+      "importance": "medium",
+      "topics": [
+        "gas",
+        "generation"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "industry_news",
+      "enriched": true,
+      "first_seen": "2026-11-21T19:23:20+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-10-30"
+    },
+    {
       "id": "570a2fe908be",
       "title": "ADVANCE NOTICE: Independent Technical Advisor for multiple Renewable Energy Projects",
       "url": "https://www.gets.govt.nz//MFAT/ExternalTenderDetails.htm?id=35376046",
@@ -4092,6 +4344,30 @@
         "rules"
       ],
       "submission_required": true
+    },
+    {
+      "id": "2d2933905d77",
+      "title": "Northern Terminal expansion reaches major milestone",
+      "url": "https://letstalkpower.westernpower.com.au/clean-energy-link-north/northern-terminal-expansion-reaches-major-milestone",
+      "source": "Western Power",
+      "jurisdiction": "WA",
+      "category": "news",
+      "summary": "Construction on the Northern Terminal expansion is approximately 85% complete and has moved into the electrical installation phase. The upgrade will strengthen WA's transmission network to support growing energy demand.",
+      "published": "2026-10-27",
+      "deadline": "",
+      "event_date": "",
+      "importance": "medium",
+      "topics": [
+        "networks"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "wa_politics",
+      "enriched": true,
+      "first_seen": "2026-11-21T19:23:20+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-10-27"
     },
     {
       "id": "5796efae8f1b",
@@ -5490,6 +5766,31 @@
       "updated": ""
     },
     {
+      "id": "103c94baf73a",
+      "title": "Record number of WA communities share in Synergy grants",
+      "url": "https://www.wa.gov.au/government/media-statements/Cook%20Labor%20Government/Record-number-of-WA-communities-share-in-Synergy-grants--20261002",
+      "source": "WA Government",
+      "jurisdiction": "WA",
+      "category": "tender",
+      "summary": "A record 25 community organisations across metropolitan and regional Western Australia will receive grants of up to $10,000 as part of Synergy's 2026 Community Giving Fund.",
+      "published": "2026-10-02",
+      "deadline": "",
+      "event_date": "",
+      "importance": "low",
+      "topics": [
+        "consumer_energy",
+        "retail"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "wa_politics",
+      "enriched": true,
+      "first_seen": "2026-11-21T19:23:20+08:00",
+      "due": "",
+      "actionable": true,
+      "sort_date": "2026-10-02"
+    },
+    {
       "id": "9e1d87e0fbe9",
       "title": "Project EnergyConnect prepares to connect three NEM regions",
       "url": "https://www.aemo.com.au/newsroom/news-updates/project-energyconnect-prepares-to-connect-three-nem-regions",
@@ -5850,6 +6151,31 @@
       ],
       "submission_required": false,
       "updated": ""
+    },
+    {
+      "id": "404701edb6dd",
+      "title": "Synergy pilot to help WA households unlock bill savings",
+      "url": "https://www.wa.gov.au/government/media-statements/Cook%20Labor%20Government/Synergy-pilot-to-help-WA-households-unlock-bill-savings-20260830",
+      "source": "WA Government",
+      "jurisdiction": "WA",
+      "category": "news",
+      "summary": "Synergy is introducing a smart switch pilot offering select WA households information about potential electricity bill savings they could make by switching plans.",
+      "published": "2026-08-30",
+      "deadline": "",
+      "event_date": "",
+      "importance": "medium",
+      "topics": [
+        "consumer_energy",
+        "retail"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "wa_politics",
+      "enriched": true,
+      "first_seen": "2026-11-21T19:23:20+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-08-30"
     },
     {
       "id": "cef5da319a15",
