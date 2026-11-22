@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-22T08:26:38+08:00",
-  "generated_label": "22 Nov 2026, 8:38 AM AWST",
+  "generated_at": "2026-11-23T00:24:19+08:00",
+  "generated_label": "23 Nov 2026, 12:38 AM AWST",
   "mode": "full",
   "model": "~deepseek/deepseek-flash-latest",
   "sources": [
@@ -40,10 +40,35 @@
     "AER (https://www.aer.gov.au/news): HTTPSConnectionPool(host='www.aer.gov.au', port=443): Read timed out. (read timeout=60)",
     "Federal Minister for Climate Change and Energy (https://minister.dcceew.gov.au/bowen/media-releases): HTTPSConnectionPool(host='minister.dcceew.gov.au', port=443): Read timed out. (read timeout=60)",
     "DCCEEW (https://www.dcceew.gov.au/about/news): HTTPSConnectionPool(host='www.dcceew.gov.au', port=443): Read timed out. (read timeout=60)",
-    "energy.gov.au (https://www.energy.gov.au/news/rss): HTTPSConnectionPool(host='www.energy.gov.au', port=443): Read timed out. (read timeout=60)",
-    "NZ Government (Beehive) (https://www.beehive.govt.nz/rss.xml): 403 Client Error: Forbidden for url: https://www.beehive.govt.nz/rss.xml"
+    "energy.gov.au (https://www.energy.gov.au/news/rss): HTTPSConnectionPool(host='www.energy.gov.au', port=443): Read timed out. (read timeout=60)"
   ],
   "items": [
+    {
+      "id": "22e0f3ae7d32",
+      "title": "Industry signals 5PJ gas switch-off potential, but system constraints dominate",
+      "url": "https://www.businessdesk.co.nz/energy/industry-signals-5pj-gas-switch-off-potential-but-system-constraints-dominate/2D2M3BXQANLKXJJRV5HRGCO2NA/",
+      "source": "BusinessDesk",
+      "jurisdiction": "NZ",
+      "category": "report",
+      "summary": "Optima Energy Management papers given to the Government identify about 5 petajoules a year of industrial process-heat gas demand that could switch to biomass, heat pumps or electric boilers within three to five years.",
+      "published": "2026-11-23",
+      "deadline": "",
+      "event_date": "",
+      "importance": "medium",
+      "topics": [
+        "gas",
+        "emissions",
+        "networks"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "industry_news",
+      "enriched": true,
+      "first_seen": "2026-11-23T00:24:19+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-11-23"
+    },
     {
       "id": "594c18dc9a12",
       "title": "Security of Supply Assessment 2026",
@@ -673,6 +698,57 @@
       "sort_date": "2026-11-20"
     },
     {
+      "id": "b6d4981a8d1c",
+      "title": "Far North Solar Farm put into receivership by former partner Aquila as big plans evaporate",
+      "url": "https://www.businessdesk.co.nz/news/far-north-solar-farm-put-into-receivership-by-former-partner-aquila-as-big-plans-evaporate/UF7NL6GKBVCX3HMQKV5DFCZC4Y/",
+      "source": "BusinessDesk",
+      "jurisdiction": "NZ",
+      "category": "news",
+      "summary": "Receivers Stephen Keen and Stephen White of Teneo Financial Advisory were appointed to Far North Solar Farm by former joint venture partner Aquila Clean Energy. The developer had once promised more than a gigawatt of solar generation.",
+      "published": "2026-11-19",
+      "deadline": "",
+      "event_date": "",
+      "importance": "medium",
+      "topics": [
+        "renewables",
+        "generation"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "industry_news",
+      "enriched": true,
+      "first_seen": "2026-11-23T00:24:19+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-11-19"
+    },
+    {
+      "id": "589e10150ff6",
+      "title": "Renewables in construction reaches quarterly record",
+      "url": "https://www.energynewsbulletin.net/energy-transition/news-articles/4539735/renewables-construction-reaches-quarterly-record",
+      "source": "Energy News Bulletin",
+      "jurisdiction": "National",
+      "category": "report",
+      "summary": "Construction commitments for Australian renewable projects reached a quarterly record in Q3 2026, led by wind and battery projects, according to a new investment scorecard. It follows a slow rollout in the first half of the year.",
+      "published": "2026-11-19",
+      "deadline": "",
+      "event_date": "",
+      "importance": "medium",
+      "topics": [
+        "renewables",
+        "storage",
+        "generation"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "industry_news",
+      "enriched": true,
+      "first_seen": "2026-11-23T00:24:19+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-11-19"
+    },
+    {
       "id": "9ea581048b98",
       "title": "Competition and Consumer Amendment (AER Inquiry Powers) Bill 2026 – Bills Digest",
       "url": "https://parlinfo.aph.gov.au/parlInfo/search/display/display.w3p;query=Id%3A%22legislation%2Fbillsdgs%2F11135054%22",
@@ -1060,6 +1136,30 @@
       "updated": ""
     },
     {
+      "id": "0e792411eaa2",
+      "title": "Energy Coordination Amendment Bill 2026",
+      "url": "https://www.parliament.wa.gov.au/parliament/bills.nsf/ScreenWebCurrentBillsCat?ViewCat=E",
+      "source": "Parliament of Western Australia",
+      "jurisdiction": "WA",
+      "category": "political",
+      "summary": "Bill amends the Energy Coordination Act 1994 to include liquid fuels in the definition of energy and establish ongoing collection of fuel supply information. Introduced 18 November 2026; now at Legislative Council second reading.",
+      "published": "2026-11-18",
+      "deadline": "",
+      "event_date": "",
+      "importance": "medium",
+      "topics": [
+        "rules"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "wa_politics",
+      "enriched": true,
+      "first_seen": "2026-11-23T00:24:19+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-11-18"
+    },
+    {
       "id": "73699c42ac0d",
       "title": "Electricity Distribution Services Default Price-Quality Path (Horizon Energy Distribution Limited Foreseeable Large Project) Amendment Determination 2026",
       "url": "https://www.comcom.govt.nz/assets/Uploads/Electricity-Distribution-Services-Default-Price-Quality-Path-Horizon-Energy-Distribution-Limited-Foreseeable-Large-Project-Amendment-Determination-2026-18-November-2026.pdf",
@@ -1311,6 +1411,32 @@
       "due": "",
       "actionable": false,
       "sort_date": "2026-11-18"
+    },
+    {
+      "id": "b24f5ea5085f",
+      "title": "EA flags cost-shifting in connection charges",
+      "url": "https://www.businessdesk.co.nz/energy/electricity-authority-flags-cost-shifting-in-lines-companies-connection-charges/2POI46UQNRJZZPLAIFSJMLS2WA/",
+      "source": "BusinessDesk",
+      "jurisdiction": "NZ",
+      "category": "news",
+      "summary": "The Electricity Authority has linked connection charges set by electricity lines companies to cost-shifting onto new network customers, as part of its distribution connection pricing work.",
+      "published": "2026-11-17",
+      "deadline": "",
+      "event_date": "",
+      "importance": "medium",
+      "topics": [
+        "networks",
+        "consumer_energy",
+        "prices"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "industry_news",
+      "enriched": true,
+      "first_seen": "2026-11-23T00:24:19+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-11-17"
     },
     {
       "id": "38b22ef77f98",
@@ -2126,6 +2252,33 @@
       "due": "",
       "actionable": false,
       "sort_date": "2026-11-13"
+    },
+    {
+      "id": "ca23b07876db",
+      "title": "Operational integration and visibility of large inverter-based loads (ERC0455)",
+      "url": "https://www.aemc.gov.au/rule-changes/operational-integration-and-visibility-large-inverter-based-loads",
+      "source": "AEMC",
+      "jurisdiction": "NEM",
+      "category": "rule_change",
+      "summary": "AEMO rule change request on operational integration and visibility of large inverter-based loads (data centres, electrolysers). AEMC consultation paper proposes registration and access standard options; submissions close 17 December 2026.",
+      "published": "2026-11-12",
+      "deadline": "2026-12-17",
+      "event_date": "",
+      "importance": "high",
+      "topics": [
+        "rules",
+        "networks",
+        "reliability",
+        "consumer_energy"
+      ],
+      "submission_required": true,
+      "updated": "",
+      "origin": "federal_policy",
+      "enriched": true,
+      "first_seen": "2026-11-23T00:24:19+08:00",
+      "due": "2026-12-17",
+      "actionable": true,
+      "sort_date": "2026-11-12"
     },
     {
       "id": "9dd8c3d8de5d",
@@ -3942,6 +4095,33 @@
         "consumer_energy"
       ],
       "submission_required": false
+    },
+    {
+      "id": "d2c4f4a27219",
+      "title": "Energy Competition Task Force – Review of EDB-Initiated GXP investments",
+      "url": "https://www.comcom.govt.nz/regulated-industries/electricity-lines/projects/energy-competition-task-force-review-of-edb-initiated-gxp-investments/",
+      "source": "Commerce Commission",
+      "jurisdiction": "NZ",
+      "category": "consultation",
+      "summary": "Issues paper examining a sample of EDB-initiated grid exit point investments, with about $600–700 million of such investment under investigation, development or delivery. It asks whether current arrangements assure efficiency, including consideration of flexibility and battery alternatives; submissions close 5pm, 15 December 2026.",
+      "published": "2026-11-03",
+      "deadline": "2026-12-15",
+      "event_date": "",
+      "importance": "medium",
+      "topics": [
+        "networks",
+        "prices",
+        "rules",
+        "consumer_energy"
+      ],
+      "submission_required": true,
+      "updated": "",
+      "origin": "nz_market",
+      "enriched": true,
+      "first_seen": "2026-11-23T00:24:19+08:00",
+      "due": "2026-12-15",
+      "actionable": true,
+      "sort_date": "2026-11-03"
     },
     {
       "id": "b70751962fba",
