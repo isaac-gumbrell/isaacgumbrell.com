@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-21T19:23:20+08:00",
-  "generated_label": "21 Nov 2026, 7:35 PM AWST",
+  "generated_at": "2026-11-22T08:26:38+08:00",
+  "generated_label": "22 Nov 2026, 8:38 AM AWST",
   "mode": "full",
   "model": "~deepseek/deepseek-flash-latest",
   "sources": [
@@ -40,9 +40,36 @@
     "AER (https://www.aer.gov.au/news): HTTPSConnectionPool(host='www.aer.gov.au', port=443): Read timed out. (read timeout=60)",
     "Federal Minister for Climate Change and Energy (https://minister.dcceew.gov.au/bowen/media-releases): HTTPSConnectionPool(host='minister.dcceew.gov.au', port=443): Read timed out. (read timeout=60)",
     "DCCEEW (https://www.dcceew.gov.au/about/news): HTTPSConnectionPool(host='www.dcceew.gov.au', port=443): Read timed out. (read timeout=60)",
-    "energy.gov.au (https://www.energy.gov.au/news/rss): HTTPSConnectionPool(host='www.energy.gov.au', port=443): Read timed out. (read timeout=60)"
+    "energy.gov.au (https://www.energy.gov.au/news/rss): HTTPSConnectionPool(host='www.energy.gov.au', port=443): Read timed out. (read timeout=60)",
+    "NZ Government (Beehive) (https://www.beehive.govt.nz/rss.xml): 403 Client Error: Forbidden for url: https://www.beehive.govt.nz/rss.xml"
   ],
   "items": [
+    {
+      "id": "594c18dc9a12",
+      "title": "Security of Supply Assessment 2026",
+      "url": "https://www.transpower.co.nz/system-operator/planning-future/security-supply-assessment",
+      "source": "Transpower",
+      "jurisdiction": "NZ",
+      "category": "report",
+      "summary": "Transpower has published its 2026 Security of Supply Assessment, providing a 10-year outlook on New Zealand's electricity supply and demand balance.",
+      "published": "",
+      "deadline": "2023-05-26",
+      "event_date": "",
+      "importance": "high",
+      "topics": [
+        "reliability",
+        "generation",
+        "networks"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "nz_market",
+      "enriched": true,
+      "first_seen": "2026-11-22T08:26:38+08:00",
+      "due": "2023-05-26",
+      "actionable": true,
+      "sort_date": "2026-11-22"
+    },
     {
       "id": "59d50b4f18b7",
       "title": "Release Notes: WEM Dispatch Engine 4.2.0",
@@ -192,6 +219,132 @@
       "due": "2028-05-30",
       "actionable": true,
       "sort_date": "2026-11-21"
+    },
+    {
+      "id": "19e9421aedbe",
+      "title": "New WA acreage released for O&G exploration and CCS",
+      "url": "https://www.energynewsbulletin.net/exploration/news-analysis/4539806/wa-acreage-released-exploration-ccs",
+      "source": "Energy News Bulletin",
+      "jurisdiction": "WA",
+      "category": "news",
+      "summary": "The WA government released seven new exploration plots covering oil, gas and carbon capture and storage opportunities on 20 November. Hancock said development of its new gas discovery is threatened by the federal gas reservation scheme.",
+      "published": "2026-11-20",
+      "deadline": "",
+      "event_date": "",
+      "importance": "medium",
+      "topics": [
+        "gas"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "industry_news",
+      "enriched": true,
+      "first_seen": "2026-11-22T08:26:38+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-11-20"
+    },
+    {
+      "id": "74421a73d0e9",
+      "title": "Greens back at the negotiating table as gas res talks drag on",
+      "url": "https://www.energynewsbulletin.net/policy/news-analysis/4539775/greens-negotiating-table-gas-res-talks-drag",
+      "source": "Energy News Bulletin",
+      "jurisdiction": "National",
+      "category": "political",
+      "summary": "Negotiations on the federal domestic gas reservation bills resumed with the Greens, with hopes of passing the legislation before Parliament rises for Christmas described as all but gone.",
+      "published": "2026-11-20",
+      "deadline": "",
+      "event_date": "",
+      "importance": "high",
+      "topics": [
+        "gas",
+        "rules"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "industry_news",
+      "enriched": true,
+      "first_seen": "2026-11-22T08:26:38+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-11-20"
+    },
+    {
+      "id": "01c06eb7f44c",
+      "title": "\"Zero offshore wind uptake in Australia\" predicts BloombergNEF",
+      "url": "https://www.energynewsbulletin.net/energy-transition/news-analysis/4539772/zero-offshore-wind-uptake-australia",
+      "source": "Energy News Bulletin",
+      "jurisdiction": "National",
+      "category": "report",
+      "summary": "BloombergNEF analysis published on 20 November forecasts no offshore wind capacity will be built in Australia, casting doubt on the sector's role in the energy transition.",
+      "published": "2026-11-20",
+      "deadline": "",
+      "event_date": "",
+      "importance": "medium",
+      "topics": [
+        "renewables",
+        "generation"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "industry_news",
+      "enriched": true,
+      "first_seen": "2026-11-22T08:26:38+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-11-20"
+    },
+    {
+      "id": "27e92ea73f5d",
+      "title": "Reconsideration of DPP4 default price quality path for Wellington Electricity – Moa Point and Eastern Cable unforeseeable large project",
+      "url": "https://www.comcom.govt.nz/assets/Uploads/Reconsideration-of-DPP4-default-price-quality-path-for-Wellington-Electricity-Moa-Point-unforeseeable-large-project-Final-decision-reasons-papers-20-November-2026.pdf",
+      "source": "Commerce Commission",
+      "jurisdiction": "NZ",
+      "category": "news",
+      "summary": "The Commerce Commission has approved Wellington Electricity's application to reopen its DPP4 price path for the Moa Point project. The decision allows recovery of an additional $5.071 million from consumers.",
+      "published": "2026-11-20",
+      "deadline": "",
+      "event_date": "",
+      "importance": "medium",
+      "topics": [
+        "networks",
+        "prices",
+        "rules"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "nz_market",
+      "enriched": true,
+      "first_seen": "2026-11-22T08:26:38+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-11-20"
+    },
+    {
+      "id": "b885e435f98b",
+      "title": "Electricity Distribution Services Default Price-Quality Path (Wellington Electricity Lines Limited Unforeseeable Large Project) Amendment Determination (No.2) 2026",
+      "url": "https://www.comcom.govt.nz/assets/Uploads/Electricity-Distribution-Services-Default-Price-Quality-Path-Wellington-Electricity-Lines-Limited-Unforeseeable-Large-Project-Amendment-Determination-No.-2-2026-20-November-2026.pdf",
+      "source": "Commerce Commission",
+      "jurisdiction": "NZ",
+      "category": "news",
+      "summary": "The Commerce Commission has issued an amendment determination for Wellington Electricity Lines Limited to provide for an unforeseeable large project. The determination comes into force on 20 November 2026.",
+      "published": "2026-11-20",
+      "deadline": "",
+      "event_date": "",
+      "importance": "medium",
+      "topics": [
+        "networks",
+        "prices",
+        "rules"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "nz_market",
+      "enriched": true,
+      "first_seen": "2026-11-22T08:26:38+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-11-20"
     },
     {
       "id": "58bd77b0c0c3",
@@ -905,6 +1058,32 @@
       ],
       "submission_required": true,
       "updated": ""
+    },
+    {
+      "id": "73699c42ac0d",
+      "title": "Electricity Distribution Services Default Price-Quality Path (Horizon Energy Distribution Limited Foreseeable Large Project) Amendment Determination 2026",
+      "url": "https://www.comcom.govt.nz/assets/Uploads/Electricity-Distribution-Services-Default-Price-Quality-Path-Horizon-Energy-Distribution-Limited-Foreseeable-Large-Project-Amendment-Determination-2026-18-November-2026.pdf",
+      "source": "Commerce Commission",
+      "jurisdiction": "NZ",
+      "category": "news",
+      "summary": "The Commerce Commission has amended the default price-quality path for Horizon Energy Distribution Limited to accommodate a foreseeable large project. The determination comes into force on 18 November 2026.",
+      "published": "2026-11-18",
+      "deadline": "",
+      "event_date": "",
+      "importance": "medium",
+      "topics": [
+        "networks",
+        "prices",
+        "rules"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "nz_market",
+      "enriched": true,
+      "first_seen": "2026-11-22T08:26:38+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-11-18"
     },
     {
       "id": "40fe77e6448f",
@@ -1949,6 +2128,31 @@
       "sort_date": "2026-11-13"
     },
     {
+      "id": "9dd8c3d8de5d",
+      "title": "News from Transpower - November 2026",
+      "url": "https://www.transpower.co.nz/news/news-transpower-november-2026",
+      "source": "Transpower",
+      "jurisdiction": "NZ",
+      "category": "news",
+      "summary": "Transpower has published its November 2026 newsletter, covering the engineering panel, large load commissioning guidance, and the Te Mihi bay geothermal project.",
+      "published": "2026-11-12",
+      "deadline": "",
+      "event_date": "",
+      "importance": "low",
+      "topics": [
+        "networks",
+        "generation"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "nz_market",
+      "enriched": true,
+      "first_seen": "2026-11-22T08:26:38+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-11-12"
+    },
+    {
       "id": "54a3f2e2ec4c",
       "title": "\"New purpose:\" Delta submits plans for big, two-hour battery at site of very old NSW coal plant",
       "url": "https://reneweconomy.com.au/delta-submits-plans-for-big-new-battery-at-site-of-very-old-nsw-coal-plant/",
@@ -2147,6 +2351,31 @@
       "due": "",
       "actionable": false,
       "sort_date": "2026-11-11"
+    },
+    {
+      "id": "ef0cfa0594c9",
+      "title": "Plan to build big battery in ex-premier's home town will have to dodge abandoned gold mine shafts",
+      "url": "https://reneweconomy.com.au/plan-to-build-big-battery-in-ex-premiers-home-town-will-have-to-dodge-abandoned-gold-mine-shafts/",
+      "source": "RenewEconomy",
+      "jurisdiction": "NEM",
+      "category": "news",
+      "summary": "Pacific Blue has lodged a federal EPBC referral for a 201MW/855MWh battery at Golden Square in Bendigo, next to the town's main substation, after state consultation closed on 2 November. The site contains abandoned gold mineshafts that must be made safe.",
+      "published": "2026-11-10",
+      "deadline": "",
+      "event_date": "",
+      "importance": "medium",
+      "topics": [
+        "storage",
+        "networks"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "industry_news",
+      "enriched": true,
+      "first_seen": "2026-11-22T08:26:38+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-11-10"
     },
     {
       "id": "cba4c631b514",
@@ -3385,6 +3614,32 @@
       "updated": ""
     },
     {
+      "id": "b6a3b6244400",
+      "title": "2026 Gas Participant Fee Structure consultation",
+      "url": "https://www.aemo.com.au/consultations/current-and-closed-consultations/2026-gas-participant-fee-structure",
+      "source": "AEMO",
+      "jurisdiction": "NEM",
+      "category": "consultation",
+      "summary": "AEMO's draft determination sets the structure of participant fees for gas markets (DWGM, STTM, GBB, retail gas) for the fee period from 1 July 2027. Submissions close 5:00pm AEDT on 18 December 2026.",
+      "published": "2026-11-04",
+      "deadline": "2026-12-18",
+      "event_date": "",
+      "importance": "medium",
+      "topics": [
+        "gas",
+        "prices",
+        "rules"
+      ],
+      "submission_required": true,
+      "updated": "",
+      "origin": "aemo",
+      "enriched": true,
+      "first_seen": "2026-11-22T08:26:38+08:00",
+      "due": "2026-12-18",
+      "actionable": true,
+      "sort_date": "2026-11-04"
+    },
+    {
       "id": "e623f1192a24",
       "title": "Construction \"ramps up\" at state's biggest solar-battery hybrid as deal puts financial close within reach",
       "url": "https://reneweconomy.com.au/construction-ramps-up-at-states-biggest-solar-battery-hybrid-as-new-deal-puts-financial-close-in-sight/",
@@ -3837,6 +4092,30 @@
       "due": "2026-12-15",
       "actionable": true,
       "sort_date": "2026-11-03"
+    },
+    {
+      "id": "b687d424de3d",
+      "title": "AEMO rescinds FWC application to stop Professionals Australia industrial action",
+      "url": "https://www.energynewsbulletin.net/markets/news-analysis/4538895/aemo-rescinds-fwc-application-stop-professionals-australia-industrial-action",
+      "source": "Energy News Bulletin",
+      "jurisdiction": "National",
+      "category": "news",
+      "summary": "AEMO has withdrawn its Fair Work Commission application to halt protected industrial action by Professionals Australia, with the operator still facing continuing action from the union.",
+      "published": "2026-11-02",
+      "deadline": "",
+      "event_date": "",
+      "importance": "low",
+      "topics": [
+        "rules"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "industry_news",
+      "enriched": true,
+      "first_seen": "2026-11-22T08:26:38+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-11-02"
     },
     {
       "id": "8406e6d1f3f7",
