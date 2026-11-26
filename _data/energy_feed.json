@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-26T10:54:45+08:00",
-  "generated_label": "26 Nov 2026, 11:09 AM AWST",
+  "generated_at": "2026-11-27T06:26:02+08:00",
+  "generated_label": "27 Nov 2026, 6:43 AM AWST",
   "mode": "full",
   "model": "~deepseek/deepseek-flash-latest",
   "sources": [
@@ -41,9 +41,186 @@
     "Federal Minister for Climate Change and Energy (https://minister.dcceew.gov.au/bowen/media-releases): HTTPSConnectionPool(host='minister.dcceew.gov.au', port=443): Read timed out. (read timeout=60)",
     "DCCEEW (https://www.dcceew.gov.au/about/news): HTTPSConnectionPool(host='www.dcceew.gov.au', port=443): Read timed out. (read timeout=60)",
     "energy.gov.au (https://www.energy.gov.au/news/rss): HTTPSConnectionPool(host='www.energy.gov.au', port=443): Read timed out. (read timeout=60)",
-    "GETS (NZ Government tenders) (https://www.gets.govt.nz/ExternalRSSFeed.htm): 403 Client Error: Forbidden for url: https://www.gets.govt.nz/ExternalRSSFeed.htm"
+    "GETS (NZ Government tenders) (https://www.gets.govt.nz/ExternalRSSFeed.htm): 403 Client Error: Forbidden for url: https://www.gets.govt.nz/ExternalRSSFeed.htm",
+    "NZ Government (Beehive) (https://www.beehive.govt.nz/rss.xml): 403 Client Error: Forbidden for url: https://www.beehive.govt.nz/rss.xml"
   ],
   "items": [
+    {
+      "id": "4be8de24003b",
+      "title": "Electricity Authority opens four new investigations and concludes another",
+      "url": "https://www.ea.govt.nz/news/general-news/electricity-authority-has-opened-four-new-investigations-and-concludes-another/",
+      "source": "Electricity Authority (NZ)",
+      "jurisdiction": "NZ",
+      "category": "news",
+      "summary": "The Electricity Authority has opened investigations into four alleged breaches of the Electricity Industry Participation Code and closed one investigation.",
+      "published": "2026-11-27",
+      "deadline": "",
+      "event_date": "",
+      "importance": "medium",
+      "topics": [
+        "rules",
+        "retail"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "source",
+      "enriched": true,
+      "first_seen": "2026-11-27T06:26:02+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-11-27"
+    },
+    {
+      "id": "1437e0ade456",
+      "title": "ARENA call for proposals – IPRR reform",
+      "url": "https://arena.gov.au/assets/2026/11/ARENA-Call-for-Proposals-IPRR-Reform-1.pdf",
+      "source": "ARENA",
+      "jurisdiction": "National",
+      "category": "tender",
+      "summary": "ARENA is seeking proposals to fund projects that build aggregator and demand-flexibility capability to participate in AEMO's Integrating Price Responsive Resources reform, with first participant intake in late 2027. No closing date is stated.",
+      "published": "",
+      "deadline": "",
+      "event_date": "",
+      "importance": "medium",
+      "topics": [
+        "consumer_energy",
+        "networks"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "tenders",
+      "enriched": true,
+      "first_seen": "2026-11-27T06:26:02+08:00",
+      "due": "",
+      "actionable": true,
+      "sort_date": "2026-11-27"
+    },
+    {
+      "id": "29274e9a0726",
+      "title": "Another big renewables project abandoned, as council changes tune on separate wind and battery plan",
+      "url": "https://reneweconomy.com.au/another-big-renewables-project-abandoned-as-council-changes-tune-on-separate-wind-and-battery-plan/",
+      "source": "RenewEconomy",
+      "jurisdiction": "NEM",
+      "category": "news",
+      "summary": "The developer of Australia's biggest wind project has walked away from a proposed wind, solar and battery hub, while a local council changed its position on a separate wind and battery plan.",
+      "published": "2026-11-26",
+      "deadline": "",
+      "event_date": "",
+      "importance": "medium",
+      "topics": [
+        "renewables",
+        "storage"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "source",
+      "enriched": true,
+      "first_seen": "2026-11-27T06:26:02+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-11-26"
+    },
+    {
+      "id": "c26f70621f51",
+      "title": "1 GW solar capacity reaches FID in Q3 2026, a confident CER boosts 2027 projection",
+      "url": "https://www.pv-magazine-australia.com/2026/11/26/1-gw-solar-capacity-reaches-fid-in-q3-2026-a-confident-cer-boosts-2027-projection/",
+      "source": "pv magazine Australia",
+      "jurisdiction": "National",
+      "category": "news",
+      "summary": "After 5 GW of large-scale renewable investment to end-Q3 2026, the Clean Energy Regulator raised the lower bound of its 2026–27 financial investment decision projection from 6–8 GW to 8–16 GW.",
+      "published": "2026-11-26",
+      "deadline": "",
+      "event_date": "",
+      "importance": "medium",
+      "topics": [
+        "renewables",
+        "generation"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "source",
+      "enriched": true,
+      "first_seen": "2026-11-27T06:26:02+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-11-26"
+    },
+    {
+      "id": "c8f2400767f2",
+      "title": "NZers missing ways they could save on power, EECA says",
+      "url": "https://www.rnz.co.nz/news/personal-finance/2805250/nzers-missing-ways-they-could-save-on-power-eeca-says",
+      "source": "RNZ Business",
+      "jurisdiction": "NZ",
+      "category": "news",
+      "summary": "EECA research finds New Zealanders are increasingly concerned about losing control of future energy bills and are missing available power savings.",
+      "published": "2026-11-26",
+      "deadline": "",
+      "event_date": "",
+      "importance": "low",
+      "topics": [
+        "consumer_energy",
+        "prices"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "source",
+      "enriched": true,
+      "first_seen": "2026-11-27T06:26:02+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-11-26"
+    },
+    {
+      "id": "b46e8c346735",
+      "title": "Value uncertainty over Synergy green deals",
+      "url": "https://www.businessnews.com.au/article/Value-uncertainty-over-Synergy-green-deals",
+      "source": "Business News",
+      "jurisdiction": "WA",
+      "category": "news",
+      "summary": "Synergy management has conceded it would not have entered wind farm contracts earlier this year without ministerial intervention, amid uncertainty over the deals' value.",
+      "published": "2026-11-26",
+      "deadline": "",
+      "event_date": "",
+      "importance": "high",
+      "topics": [
+        "retail",
+        "prices",
+        "rules"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "industry_news",
+      "enriched": true,
+      "first_seen": "2026-11-27T06:26:02+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-11-26"
+    },
+    {
+      "id": "8469d4cb1fb2",
+      "title": "Automatic Under-Frequency Load Shedding Compliance Amendment 2026",
+      "url": "https://www.ea.govt.nz/code-and-compliance/code-amendments/automatic-under-frequency-load-shedding-compliance-amendment-2026/",
+      "source": "Electricity Authority Te Mana Hiko",
+      "jurisdiction": "NZ",
+      "category": "rule_change",
+      "summary": "Code amendment requiring North Island asset owners and the South Island grid owner to have directors certify AUFLS compliance annually. Made 25 November 2026, in force 1 February 2027, with first certification due 1 June 2027.",
+      "published": "2026-11-26",
+      "deadline": "",
+      "event_date": "",
+      "importance": "medium",
+      "topics": [
+        "rules",
+        "reliability"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "nz_market",
+      "enriched": true,
+      "first_seen": "2026-11-27T06:26:02+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-11-26"
+    },
     {
       "id": "9da6bc703340",
       "title": "Review of algorithmic bidding in the NEM",
@@ -169,6 +346,31 @@
       "due": "",
       "actionable": true,
       "sort_date": "2026-11-26"
+    },
+    {
+      "id": "1c9d7ad6cbce",
+      "title": "Dormant Nilgen wind project returns",
+      "url": "https://www.businessnews.com.au/article/Dormant-Nilgen-wind-project-returns-with-reduced-scale",
+      "source": "Business News",
+      "jurisdiction": "WA",
+      "category": "news",
+      "summary": "A stalled wind farm earmarked for land near Lancelin has revived, with reduced-scale development plans close to submission.",
+      "published": "2026-11-25",
+      "deadline": "",
+      "event_date": "",
+      "importance": "medium",
+      "topics": [
+        "generation",
+        "renewables"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "industry_news",
+      "enriched": true,
+      "first_seen": "2026-11-27T06:26:02+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-11-25"
     },
     {
       "id": "0e5e16a8d9b9",
@@ -448,6 +650,32 @@
         "rules"
       ],
       "submission_required": false
+    },
+    {
+      "id": "bbbc92e0b208",
+      "title": "Electricity Innovation Sandbox – expressions of interest open",
+      "url": "https://www.ea.govt.nz/news/press-release/electricity-authority-launches-electricity-innovation-sandbox-in-queenstown-lakes-and-central-otago/",
+      "source": "Electricity Authority Te Mana Hiko",
+      "jurisdiction": "NZ",
+      "category": "tender",
+      "summary": "The Authority is seeking expressions of interest from market participants, technology providers and community energy organisations to run trials in a regulatory sandbox in Queenstown Lakes and Central Otago from July 2027. EOI close 28 May 2027, with an information webinar on 8 December 2026.",
+      "published": "2026-11-24",
+      "deadline": "2027-05-28",
+      "event_date": "",
+      "importance": "medium",
+      "topics": [
+        "consumer_energy",
+        "rules",
+        "retail"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "nz_opportunities",
+      "enriched": true,
+      "first_seen": "2026-11-27T06:26:02+08:00",
+      "due": "2027-05-28",
+      "actionable": true,
+      "sort_date": "2026-11-24"
     },
     {
       "id": "5a6e83d0e17c",
@@ -1837,6 +2065,32 @@
       "sort_date": "2026-11-20"
     },
     {
+      "id": "022279eba07d",
+      "title": "Pilbara Network Modelling Project Announcement",
+      "url": "https://www.wa.gov.au/government/announcements/pilbara-network-modelling-project-announcement",
+      "source": "Department of Energy and Economic Diversification",
+      "jurisdiction": "WA",
+      "category": "news",
+      "summary": "DEED has started the Pilbara Network Modelling Project, a scenarios-based study of how demand and supply could evolve on the North-West Interconnected System to inform policy and investment. A public webinar is scheduled for 2 December 2026, 3-4pm AWST.",
+      "published": "2026-11-19",
+      "deadline": "",
+      "event_date": "2026-12-02",
+      "importance": "medium",
+      "topics": [
+        "networks",
+        "generation",
+        "reliability"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "wa_politics",
+      "enriched": true,
+      "first_seen": "2026-11-27T06:26:02+08:00",
+      "due": "2026-12-02",
+      "actionable": true,
+      "sort_date": "2026-11-19"
+    },
+    {
       "id": "126010790b01",
       "title": "EDF Australia acquires grid forming Holloway BESS in New England REZ",
       "url": "https://www.pv-magazine-australia.com/2026/11/19/edf-australia-acquires-grid-forming-holloway-bess-in-new-england-rez/",
@@ -2653,6 +2907,31 @@
       "sort_date": "2026-11-18"
     },
     {
+      "id": "718498e1caa3",
+      "title": "Yindjibarndi Energy plots 2029 start for 1.5GW Baru Marnda build",
+      "url": "https://www.businessnews.com.au/article/Yindjibarndi-Energy-plots-2029-start-for-15GW-Baru-Marnda-build",
+      "source": "Business News",
+      "jurisdiction": "WA",
+      "category": "news",
+      "summary": "Part-Aboriginal-owned Yindjibarndi Energy plans to break ground in 2029 on its first billion-dollar project, the 1.5GW Baru Marnda wind farm, to supply Pilbara industrial users.",
+      "published": "2026-11-17",
+      "deadline": "",
+      "event_date": "",
+      "importance": "high",
+      "topics": [
+        "generation",
+        "renewables"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "industry_news",
+      "enriched": true,
+      "first_seen": "2026-11-27T06:26:02+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-11-17"
+    },
+    {
       "id": "7876e8424890",
       "title": "Western Power's regulatory test waiver application for new transmission works to connect Trina Solar's Kadathinni Solar and Battery Energy Storage project - Decision",
       "url": "https://www.erawa.com.au/sites/default/files/notice-western-power-regulatory-test-waiver-application-trina-solar-battery-energy-storage-project.pdf",
@@ -3139,6 +3418,32 @@
       "sort_date": "2026-11-17"
     },
     {
+      "id": "d469e53c5a8a",
+      "title": "Why SA power hit $3,120 at 14:35 on Thursday",
+      "url": "https://nemiq.com.au/incident-notes/2026-11-12-sa1-price-spike",
+      "source": "NEMiQ",
+      "jurisdiction": "NEM",
+      "category": "news",
+      "summary": "South Australia's wholesale price reached $3,119.88/MWh at 14:35 on 12 November after a 132 kV line near Mannum tripped and 28 MW of bulk load disconnected.",
+      "published": "2026-11-16",
+      "deadline": "",
+      "event_date": "",
+      "importance": "high",
+      "topics": [
+        "prices",
+        "reliability",
+        "networks"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "industry_news",
+      "enriched": true,
+      "first_seen": "2026-11-27T06:26:02+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-11-16"
+    },
+    {
       "id": "eef8dba033b7",
       "title": "Alinta's bill for Clarke Energy contract dispute climbs",
       "url": "https://www.energynewsbulletin.net/operations/news-articles/4539541/alintas-newman-power-station-li",
@@ -3543,6 +3848,32 @@
       "due": "",
       "actionable": false,
       "sort_date": "2026-11-13"
+    },
+    {
+      "id": "048bbc16db8b",
+      "title": "First contracts imminent for $80b Australian Renewable Energy Hub",
+      "url": "https://www.businessnews.com.au/article/First-contracts-imminent-for-80b-Australian-Renewable-Energy-Hub",
+      "source": "Business News",
+      "jurisdiction": "WA",
+      "category": "news",
+      "summary": "The Australian Renewable Energy Hub is now expected to cost more than $80 billion to build, with first construction contracts due to be released imminently.",
+      "published": "2026-11-12",
+      "deadline": "",
+      "event_date": "",
+      "importance": "high",
+      "topics": [
+        "hydrogen",
+        "renewables",
+        "generation"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "industry_news",
+      "enriched": true,
+      "first_seen": "2026-11-27T06:26:02+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-11-12"
     },
     {
       "id": "ca23b07876db",
@@ -4241,7 +4572,7 @@
       "category": "event",
       "summary": "Downstream, New Zealand's main energy-industry conference, will be held at Tākina in Wellington on 10–11 March 2027. Topics include network performance, distributed energy, retail, regulated markets, emissions and technology; the 2026 event drew more than 570 delegates.",
       "published": "",
-      "deadline": "",
+      "deadline": "2026-11-30",
       "event_date": "2027-03-10",
       "importance": "medium",
       "topics": [
@@ -4255,7 +4586,7 @@
       "origin": "nz_opportunities",
       "enriched": true,
       "first_seen": "2026-11-10T15:43:09+08:00",
-      "due": "2027-03-10",
+      "due": "2026-11-30",
       "actionable": true,
       "sort_date": "2026-11-10"
     },
@@ -5135,6 +5466,31 @@
       "updated": ""
     },
     {
+      "id": "16ca7fcf9aba",
+      "title": "Panel approves $2b Twin Hills wind farm in Mid West",
+      "url": "https://www.businessnews.com.au/article/Panel-approves-2b-Twin-Hills-wind-farm-in-Mid-West",
+      "source": "Business News",
+      "jurisdiction": "WA",
+      "category": "news",
+      "summary": "A Western Australian development assessment panel has unanimously approved the $2 billion Twin Hills wind farm in the state's Mid West.",
+      "published": "2026-11-04",
+      "deadline": "",
+      "event_date": "",
+      "importance": "high",
+      "topics": [
+        "generation",
+        "renewables"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "industry_news",
+      "enriched": true,
+      "first_seen": "2026-11-27T06:26:02+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-11-04"
+    },
+    {
       "id": "b6a3b6244400",
       "title": "2026 Gas Participant Fee Structure consultation",
       "url": "https://www.aemo.com.au/consultations/current-and-closed-consultations/2026-gas-participant-fee-structure",
@@ -5371,14 +5727,14 @@
       "category": "rule_change",
       "summary": "On 5 November 2026 the AEMC initiated an ECMC-proposed rule change (ERC0463) to modernise how energy businesses communicate with consumers under the electricity rules. It is being considered together with the gas and retail versions (GRC0096, RRC0078).",
       "published": "2026-11-04",
-      "deadline": "",
+      "deadline": "2027-02-11",
       "event_date": "",
       "importance": "medium",
       "origin": "source",
       "enriched": true,
       "first_seen": "2026-11-10T11:10:33+08:00",
-      "due": "",
-      "actionable": false,
+      "due": "2027-02-11",
+      "actionable": true,
       "sort_date": "2026-11-04",
       "topics": [
         "retail",
@@ -5769,6 +6125,32 @@
       "sort_date": "2026-11-01"
     },
     {
+      "id": "b20c3843ebfb",
+      "title": "WA, Italy sign critical minerals, energy deal",
+      "url": "https://www.businessnews.com.au/article/WA-Italy-sign-critical-minerals-energy-memorandum",
+      "source": "Business News",
+      "jurisdiction": "WA",
+      "category": "political",
+      "summary": "Western Australia signed a memorandum of understanding with Italy's export credit agency to support major projects spanning critical minerals, energy and advanced manufacturing.",
+      "published": "2026-10-30",
+      "deadline": "",
+      "event_date": "",
+      "importance": "medium",
+      "topics": [
+        "renewables",
+        "hydrogen",
+        "emissions"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "industry_news",
+      "enriched": true,
+      "first_seen": "2026-11-27T06:26:02+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-10-30"
+    },
+    {
       "id": "5a22e27b678a",
       "title": "Synergy's Kwinana gas-fired power station plan to be assessed by WA enviro watchdog",
       "url": "https://www.energynewsbulletin.net/operations/news-articles/4538847/synergys-kwinana-gas-fired-power-station-assessed-wa-enviro-watchdog",
@@ -6020,6 +6402,31 @@
       "updated": ""
     },
     {
+      "id": "905592384bd8",
+      "title": "EPA to assess $700m Kwinana gas plant",
+      "url": "https://www.businessnews.com.au/article/EPA-to-assess-700m-Kwinana-gas-plant",
+      "source": "Business News",
+      "jurisdiction": "WA",
+      "category": "news",
+      "summary": "Western Australia's Environmental Protection Authority will assess Synergy's proposal for a new $700 million gas-fired power facility at the former Kwinana power station site.",
+      "published": "2026-10-29",
+      "deadline": "",
+      "event_date": "",
+      "importance": "medium",
+      "topics": [
+        "gas",
+        "generation"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "industry_news",
+      "enriched": true,
+      "first_seen": "2026-11-27T06:26:02+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-10-29"
+    },
+    {
       "id": "b96b2e0a28c5",
       "title": "New Financial Challenge and Advisory Committee Charter",
       "url": "https://www.aemo.com.au/newsroom/news-updates/new-financial-challenge-and-advisory-committee-charter",
@@ -6171,6 +6578,32 @@
         "rules"
       ],
       "submission_required": true
+    },
+    {
+      "id": "923428bcbfe4",
+      "title": "State govt sets 'ambitious' renewables target in plan to cap industrial power costs",
+      "url": "https://www.businessnews.com.au/article/State-govt-sets-ambitious-renewables-target-in-plan-to-cap-industrial-power-costs",
+      "source": "Business News",
+      "jurisdiction": "WA",
+      "category": "political",
+      "summary": "The WA government launched a plan to reduce industrial power costs, including a 75 per cent SWIS renewable energy generation target and a $150 million energy investment fund.",
+      "published": "2026-10-27",
+      "deadline": "",
+      "event_date": "",
+      "importance": "high",
+      "topics": [
+        "renewables",
+        "prices",
+        "emissions"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "industry_news",
+      "enriched": true,
+      "first_seen": "2026-11-27T06:26:02+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-10-27"
     },
     {
       "id": "2d2933905d77",
