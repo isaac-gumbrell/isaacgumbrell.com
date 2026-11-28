@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-27T23:16:03+08:00",
-  "generated_label": "27 Nov 2026, 11:33 PM AWST",
+  "generated_at": "2026-11-28T16:02:04+08:00",
+  "generated_label": "28 Nov 2026, 4:18 PM AWST",
   "mode": "full",
   "model": "~deepseek/deepseek-flash-latest",
   "sources": [
@@ -44,6 +44,31 @@
     "GETS (NZ Government tenders) (https://www.gets.govt.nz/ExternalRSSFeed.htm): 403 Client Error: Forbidden for url: https://www.gets.govt.nz/ExternalRSSFeed.htm"
   ],
   "items": [
+    {
+      "id": "2b5c429900b0",
+      "title": "Bowen: Qld to blame for Australia missing emissions reductions targets",
+      "url": "https://www.energynewsbulletin.net/energy-transition/news-analysis/4540122/bowen-qld-blame-australia-missing-emissions-reductions-targets",
+      "source": "Energy News Bulletin",
+      "jurisdiction": "National",
+      "category": "political",
+      "summary": "Climate Change Minister Chris Bowen has blamed Queensland for Australia missing its emissions reduction targets, as the Climate Change Authority advises reform of the Safeguard Mechanism.",
+      "published": "2026-11-27",
+      "deadline": "",
+      "event_date": "",
+      "importance": "medium",
+      "topics": [
+        "emissions",
+        "rules"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "industry_news",
+      "enriched": true,
+      "first_seen": "2026-11-28T16:02:04+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-11-27"
+    },
     {
       "id": "45d21314d134",
       "title": "Capacity Investment Scheme Tender 12 – NEM Generation",
@@ -244,6 +269,106 @@
       "due": "",
       "actionable": true,
       "sort_date": "2026-11-27"
+    },
+    {
+      "id": "2c3cdd5df4da",
+      "title": "Annual Climate Change Statement 2026",
+      "url": "https://www.dcceew.gov.au/climate-change/publications/annual-climate-change-statement-2026",
+      "source": "DCCEEW",
+      "jurisdiction": "National",
+      "category": "report",
+      "summary": "Australia's fifth Annual Climate Change Statement reports national emissions fell 6.2 Mt in 2026, with electricity the largest source of reductions. Renewables supplied 45.9% of NEM electricity in the year to 30 September 2026, and 622,000 home batteries have been installed since July 2025.",
+      "published": "2026-11-26",
+      "deadline": "",
+      "event_date": "",
+      "importance": "high",
+      "topics": [
+        "emissions",
+        "renewables",
+        "consumer_energy"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "federal_policy",
+      "enriched": true,
+      "first_seen": "2026-11-28T16:02:04+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-11-26"
+    },
+    {
+      "id": "cbea28d1bfc9",
+      "title": "Australia's emissions projections 2026",
+      "url": "https://www.dcceew.gov.au/climate-change/publications/australias-emissions-projections-2026",
+      "source": "DCCEEW",
+      "jurisdiction": "National",
+      "category": "report",
+      "summary": "Projects emissions to 2040: a 42% cut below 2005 levels by 2030 and 48% by 2035 under current policies, short of the 62-70% 2035 target. Electricity emissions are projected to fall more than 61% between 2026 and 2030.",
+      "published": "2026-11-26",
+      "deadline": "",
+      "event_date": "",
+      "importance": "high",
+      "topics": [
+        "emissions",
+        "renewables"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "federal_policy",
+      "enriched": true,
+      "first_seen": "2026-11-28T16:02:04+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-11-26"
+    },
+    {
+      "id": "4f74e5eb5a6c",
+      "title": "Verdant Earth Technologies loses court bid to reopen Redbank power station",
+      "url": "https://www.energynewsbulletin.net/energy-transition/news-articles/4540118/verdant-earth-technologies-loses-court-bid-reopen-redbank-power-station",
+      "source": "Energy News Bulletin",
+      "jurisdiction": "NEM",
+      "category": "news",
+      "summary": "Verdant Earth Technologies has lost its court challenge seeking to reopen the closed Redbank power station in New South Wales after appealing the Independent Planning Commission's decision.",
+      "published": "2026-11-26",
+      "deadline": "",
+      "event_date": "",
+      "importance": "medium",
+      "topics": [
+        "generation"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "industry_news",
+      "enriched": true,
+      "first_seen": "2026-11-28T16:02:04+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-11-26"
+    },
+    {
+      "id": "a47b6a98cd4b",
+      "title": "APA's proposed Beetaloo pipeline reaches Canberra for assessment",
+      "url": "https://www.energynewsbulletin.net/operations/news-articles/4540054/apas-proposed-beetaloo-pipeline-reaches-canberra-assessment",
+      "source": "Energy News Bulletin",
+      "jurisdiction": "Other",
+      "category": "news",
+      "summary": "APA Group's proposed Beetaloo Basin gas pipeline has been referred to the federal government for environmental assessment, with environmental groups seeking a full assessment.",
+      "published": "2026-11-26",
+      "deadline": "",
+      "event_date": "",
+      "importance": "medium",
+      "topics": [
+        "gas",
+        "emissions"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "industry_news",
+      "enriched": true,
+      "first_seen": "2026-11-28T16:02:04+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-11-26"
     },
     {
       "id": "4aa7a7f30343",
@@ -4204,6 +4329,32 @@
       "sort_date": "2026-11-13"
     },
     {
+      "id": "d81dfa2099fb",
+      "title": "Capability Class 2 Technologies Review – Exposure Draft of ESM Amending Rules",
+      "url": "https://www.wa.gov.au/government/document-collections/capability-class-2-technologies-review",
+      "source": "Energy Policy WA",
+      "jurisdiction": "WA",
+      "category": "rule_change",
+      "summary": "Exposure draft Electricity System and Market Amending Rules implement the review outcomes, including storage state-of-charge obligations during Lack of Reserve events and changed demand-side program availability windows. Feedback closes 5pm AWST 10 December 2026.",
+      "published": "2026-11-12",
+      "deadline": "2026-12-10",
+      "event_date": "",
+      "importance": "high",
+      "topics": [
+        "storage",
+        "rules",
+        "reliability"
+      ],
+      "submission_required": true,
+      "updated": "",
+      "origin": "wa_politics",
+      "enriched": true,
+      "first_seen": "2026-11-28T16:02:04+08:00",
+      "due": "2026-12-10",
+      "actionable": true,
+      "sort_date": "2026-11-12"
+    },
+    {
       "id": "048bbc16db8b",
       "title": "First contracts imminent for $80b Australian Renewable Energy Hub",
       "url": "https://www.businessnews.com.au/article/First-contracts-imminent-for-80b-Australian-Renewable-Energy-Hub",
@@ -4914,33 +5065,6 @@
       "enriched": true,
       "first_seen": "2026-11-10T15:43:09+08:00",
       "due": "2026-12-09",
-      "actionable": true,
-      "sort_date": "2026-11-10"
-    },
-    {
-      "id": "a89a975157ba",
-      "title": "Downstream 2027",
-      "url": "https://www.freemanmedia.co.nz/event/853426/downstream",
-      "source": "Freeman",
-      "jurisdiction": "NZ",
-      "category": "event",
-      "summary": "Downstream, New Zealand's main energy-industry conference, will be held at Tākina in Wellington on 10–11 March 2027. Topics include network performance, distributed energy, retail, regulated markets, emissions and technology; the 2026 event drew more than 570 delegates.",
-      "published": "",
-      "deadline": "2026-11-30",
-      "event_date": "2027-03-10",
-      "importance": "medium",
-      "topics": [
-        "networks",
-        "consumer_energy",
-        "retail",
-        "emissions"
-      ],
-      "submission_required": false,
-      "updated": "",
-      "origin": "nz_opportunities",
-      "enriched": true,
-      "first_seen": "2026-11-10T15:43:09+08:00",
-      "due": "2026-11-30",
       "actionable": true,
       "sort_date": "2026-11-10"
     },
@@ -6352,6 +6476,31 @@
       "sort_date": "2026-11-03"
     },
     {
+      "id": "7966110a13dd",
+      "title": "Greater Geraldton part of $6m Western Power regional rollout of 100 early fault detection devices",
+      "url": "https://www.geraldtonguardian.com.au/news/geraldton-guardian/greater-geraldton-part-of-6m-western-power-regional-rollout-of-100-early-fault-detection-devices--c-23094575",
+      "source": "Geraldton Guardian",
+      "jurisdiction": "WA",
+      "category": "news",
+      "summary": "Western Power is spending $6 million to install 100 early fault detection devices across regional WA, with Greater Geraldton among the locations in the rollout.",
+      "published": "2026-11-02",
+      "deadline": "",
+      "event_date": "",
+      "importance": "low",
+      "topics": [
+        "networks",
+        "reliability"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "industry_news",
+      "enriched": true,
+      "first_seen": "2026-11-28T16:02:04+08:00",
+      "due": "",
+      "actionable": false,
+      "sort_date": "2026-11-02"
+    },
+    {
       "id": "b687d424de3d",
       "title": "AEMO rescinds FWC application to stop Professionals Australia industrial action",
       "url": "https://www.energynewsbulletin.net/markets/news-analysis/4538895/aemo-rescinds-fwc-application-stop-professionals-australia-industrial-action",
@@ -7420,6 +7569,33 @@
       ],
       "submission_required": false,
       "updated": ""
+    },
+    {
+      "id": "a89a975157ba",
+      "title": "Downstream 2027",
+      "url": "https://www.freemanmedia.co.nz/event/853426/downstream",
+      "source": "Freeman",
+      "jurisdiction": "NZ",
+      "category": "event",
+      "summary": "Downstream, New Zealand's main energy-industry conference, will be held at Tākina in Wellington on 10–11 March 2027. Topics include network performance, distributed energy, retail, regulated markets, emissions and technology; the 2026 event drew more than 570 delegates.",
+      "published": "2026-10-22",
+      "deadline": "2026-11-30",
+      "event_date": "2027-03-10",
+      "importance": "medium",
+      "topics": [
+        "networks",
+        "consumer_energy",
+        "retail",
+        "emissions"
+      ],
+      "submission_required": false,
+      "updated": "",
+      "origin": "nz_opportunities",
+      "enriched": true,
+      "first_seen": "2026-11-10T15:43:09+08:00",
+      "due": "2026-11-30",
+      "actionable": true,
+      "sort_date": "2026-10-22"
     },
     {
       "id": "fa607cd66bd3",
